@@ -3,7 +3,7 @@
   
 ## Features
 * Sign in
-* View movies and select movies
+* View and select movies
 * Like movies
 * Show recommended movies
 * Account options
