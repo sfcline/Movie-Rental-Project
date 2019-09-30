@@ -25,9 +25,6 @@ public class Controller implements Initializable {
     try {
       Class.forName(JDBC_DRIVER);
 
-      /*For this following line of code I receive a empty database password flag on FindBugs
-       * this issue will be addressed in later versions if a password is to be implemented
-       */
       conn = DriverManager.getConnection(DB_URL, USER, PASS);
       statement = conn.createStatement();
 
