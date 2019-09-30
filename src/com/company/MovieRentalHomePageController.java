@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
+
 public class MovieRentalHomePageController implements Initializable {
 
     ///////////inserting Objects to be displayed on Survey Scene//////////////////////
