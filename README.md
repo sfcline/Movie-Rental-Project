@@ -8,6 +8,21 @@
 * Show recommended movies
 * Account options
 
+## Getting Started
+Requirements:
+* Java SE Runtime Environment 8 
+
+Instructions:
+* Run Application
+* Sign up
+* Sign in
+
+## Built With
+* IntelliJ IDEA 2019.2.2
+
+## Acknowledgements
+* https://stackoverflow.com
+
 ## Authors
 * Jeremy Martin
 * Liana Madden
