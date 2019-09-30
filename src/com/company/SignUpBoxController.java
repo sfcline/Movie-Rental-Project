@@ -1,6 +1,6 @@
 package com.company;
 
-import static sample.SignUpBox.SignUpWindow;
+import static com.company.SignUpBox.SignUpWindow;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

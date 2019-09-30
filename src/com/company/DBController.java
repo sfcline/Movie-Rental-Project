@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
-public class Controller implements Initializable {
+public class DBController implements Initializable {
 
   static final String JDBC_DRIVER = "org.h2.Driver";
   static final String DB_URL = "jdbc:h2:./libs/movieDB";
