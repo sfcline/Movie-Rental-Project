@@ -18,7 +18,9 @@ public class DBController implements Initializable {
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
+    System.out.println("initialize");
     connectToDB();
+    testDB();
 
   }
 
@@ -34,6 +36,20 @@ public class DBController implements Initializable {
 
     } catch (Exception ex) {
       ex.printStackTrace();
+    }
+  }
+  public void testDB(){
+    System.out.println("Testing");
+    try {
+      String sql =
+          "INSERT INTO Users(USER_NAME, PASSWORD, PREF_ID, HIST_ID) "
+              + "VALUES " + "( 'Bob The Builder', 'password', 1, 'History' );";
+      // String sql = "SELECT * FROM USERS";
+      statement.execute(sql);
+
+    } catch (Exception ex) {
+      ex.printStackTrace();
+      System.out.println("Nope");
     }
   }
 }
