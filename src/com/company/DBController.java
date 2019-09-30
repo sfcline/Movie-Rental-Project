@@ -19,6 +19,7 @@ public class DBController implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     connectToDB();
+
   }
 
   public void connectToDB() {
