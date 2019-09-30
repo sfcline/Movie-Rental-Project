@@ -10,7 +10,7 @@ import javafx.fxml.Initializable;
 public class Controller implements Initializable {
 
   static final String JDBC_DRIVER = "org.h2.Driver";
-  static final String DB_URL = "jdbc:h2:./lib/movieDB";
+  static final String DB_URL = "jdbc:h2:./libs/movieDB";
   static final String USER = "";
   static final String PASS = "";
   private Connection conn = null;
