@@ -4,19 +4,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class MovieRentalHomePageController {
-
+public class AccountPageController {
     ///////////inserting Objects to be displayed on Survey Scene//////////////////////
-@FXML
-    Button accountBtn = new Button();
+    @FXML
+    Button homeBtn = new Button();
 
     public void signInButtonPressed(ActionEvent event) throws Exception {
-        openAccountPage();
+        openMovieRentalHomePage();
     }//end pressButton
 
-    //Opens the Account Page
-  public void openAccountPage() throws Exception {
-    AccountPage.display("Account Page");
-        }
+    //Opens the Home Page
+    public void openMovieRentalHomePage() throws Exception {
+        MovieRentalHomePage.display("Movie Rental Homepage");
+    }
 }//end controller
-
