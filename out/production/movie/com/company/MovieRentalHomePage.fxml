@@ -20,7 +20,7 @@
       <children>
             <ImageView fx:id="Logo" fitHeight="308.0" fitWidth="202.0" layoutX="-14.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="file:/C:/Users/liana/IdeaProjects/Movie-Rental-Project/Images/Generic_Movie_Company_Logo.gif" />
+                  <Image url="@Generic_Movie_Company_Logo.gif" />
                </image>
             </ImageView>
             <Button layoutX="206.0" layoutY="51.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="HOME" textFill="#fc9e4f">
