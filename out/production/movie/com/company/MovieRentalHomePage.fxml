@@ -28,7 +28,7 @@
                   <Font size="22.0" />
                </font>
             </Button>
-            <Button fx:id="accountBtn" layoutX="344.0" layoutY="51.0" mnemonicParsing="false" onAction="#openAccountPage" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #474448;" text="ACCOUNT" textFill="#fc9e4f">
+            <Button fx:id="accountBtn" layoutX="344.0" layoutY="51.0" mnemonicParsing="false" onAction="#openAccountPage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #474448;" text="ACCOUNT" textFill="#fc9e4f">
                <font>
                   <Font size="22.0" />
                </font>
@@ -68,7 +68,7 @@
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                       </rowConstraints>
                                        <children>
-                                          <Sphere radius="50" />
+                                          <Sphere radius="50.0" />
                                           <Sphere radius="50" GridPane.columnIndex="1" />
                                           <Sphere radius="50" GridPane.columnIndex="2" />
                                           <Sphere radius="50" GridPane.columnIndex="3" />
