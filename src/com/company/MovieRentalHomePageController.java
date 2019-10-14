@@ -15,8 +15,8 @@ public class MovieRentalHomePageController {
     }//end pressButton
 
     //Opens the Account Page
-  public void openAccountPage() throws Exception {
-    AccountPage.display("Account Page");
-        }
+    public void openAccountPage() throws Exception {
+        AccountPage.display("Account Page");
+    }
 }//end controller
 
