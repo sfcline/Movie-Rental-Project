@@ -23,9 +23,8 @@ public class SignInBoxController {
 
 
     // When sign in button is pressed Prints to console and authenticates users
-    public void signInButtonPressed(ActionEvent event) throws Exception {
+    public void signInButtonPressed(ActionEvent event) {
         authenticateUser();
-        openMovieRentalHome();
     }//end pressButton
 
     // tests if username and password are valid, if they are prints prompt, clears fields, and grants access to survey
@@ -36,6 +35,12 @@ public class SignInBoxController {
             passwordCheck.setText("User Authentication Successful.");
             usernameField.clear();
             passwordField.clear();
+            try {
+                openMovieRentalHome();
+            } catch (Exception e) {
+                passwordCheck.setTextFill(Paint.valueOf("#cc0000"));
+                passwordCheck.setText(e.toString());
+            }
             SignInBox.close();
 
         }else{
