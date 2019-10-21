@@ -36,7 +36,7 @@
             </Text>
                   <ImageView fitHeight="96.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="file:/C:/Users/liana/IdeaProjects/Movie-Rental-Project/Images/Generic_Movie_Company_Logo.gif" />
+                        <Image url="@Generic_Movie_Company_Logo.gif" />
                      </image>
                   </ImageView>
           </children>
