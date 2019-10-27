@@ -3,6 +3,7 @@ package com.company;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javax.swing.*;
 import java.awt.*;
@@ -17,6 +18,8 @@ public class MovieRentalHomePageController {
     ///////////inserting Objects to be displayed on Survey Scene//////////////////////
 @FXML
     Button accountBtn = new Button();
+    Button homeBtn = new Button();
+    Button moodBtn = new Button();
 
     public void signInButtonPressed(ActionEvent event) throws Exception {
         openAccountPage();
@@ -26,12 +29,13 @@ public class MovieRentalHomePageController {
     public void openAccountPage() throws Exception {
         AccountPage.display("Account Page");
     }
-    public void handleButtonMouseEntered(ActionEvent e){
-        accountBtn.setTextFill(Color.valueOf(white));
-
+    public void handleButtonMouseEntered(MouseEvent e){
+        Button tmp = (Button)e.getSource();
+        tmp.setTextFill(Color.valueOf(white));
     }
-    public void handleButtonMouseExit(){
-        accountBtn.setTextFill(Color.valueOf(orange));
+    public void handleButtonMouseExit(MouseEvent e){
+        Button tmp = (Button)e.getSource();
+        tmp.setTextFill(Color.valueOf(orange));
     }
 }//end controller
 

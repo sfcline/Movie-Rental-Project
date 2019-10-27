@@ -23,7 +23,7 @@
                   <Image url="@Generic_Movie_Company_Logo.gif" />
                </image>
             </ImageView>
-            <Button layoutX="206.0" layoutY="51.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="HOME" textFill="#fc9e4f">
+            <Button fx:id="homeBtn" layoutX="206.0" layoutY="51.0" mnemonicParsing="false" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="HOME" textFill="#fc9e4f">
                <font>
                   <Font size="22.0" />
                </font>
@@ -33,7 +33,7 @@
                   <Font size="22.0" />
                </font>
             </Button>
-            <Button layoutX="499.0" layoutY="53.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="IN A MOOD" textFill="#fc9e4f">
+            <Button fx:id="moodBtn" layoutX="499.0" layoutY="53.0" mnemonicParsing="false" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="IN A MOOD" textFill="#fc9e4f">
                <font>
                   <Font size="22.0" />
                </font>
