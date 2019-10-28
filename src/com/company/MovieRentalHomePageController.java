@@ -30,10 +30,6 @@ public class MovieRentalHomePageController {
         openMovieRentalHome();
     }//end pressButton
 
-    public void moodButtonPressed(ActionEvent event) throws Exception {
-        openMoodPage();
-    }
-
     //Opens the Account Page
     public void openAccountPage() throws Exception {
         AccountPage.display("Account Page");
@@ -42,11 +38,6 @@ public class MovieRentalHomePageController {
     //Opens the Home Page
     public void openMovieRentalHome() throws Exception {
         MovieRentalHomePage.display("Movie Rental Homepage");
-    }
-
-    //Opens the Mood Page
-    public void openMoodPage() throws Exception {
-        InAMoodPage.display("In A Mood Page");
     }
 
     public void handleButtonMouseEntered(MouseEvent e){

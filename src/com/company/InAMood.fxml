@@ -28,7 +28,7 @@
                   <Font size="22.0" />
                </font>
             </Button>
-            <Button fx:id="moodBtn" layoutX="499.0" layoutY="53.0" mnemonicParsing="false" onAction="#moodButtonPressed" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="IN A MOOD" textFill="#fc9e4f">
+            <Button fx:id="moodBtn" layoutX="499.0" layoutY="53.0" mnemonicParsing="false" onAction="#moodButtonPressed" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="IN A MOOD" textFill="#f6f6f6">
                <font>
                   <Font size="22.0" />
                </font>
