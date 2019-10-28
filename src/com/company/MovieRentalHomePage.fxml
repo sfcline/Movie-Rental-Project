@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,10 +9,9 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Sphere?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.MovieRentalHomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.MovieRentalHomePageController">
   <children>
     <AnchorPane layoutX="1.0" prefHeight="185.0" prefWidth="1142.0" style="-fx-background-color: #474448;">
       <children>
@@ -46,13 +43,12 @@
           <content>
             <AnchorPane prefHeight="761.0" prefWidth="1130.0" style="-fx-background-color: #474448;">
               <children>
-                <ScrollPane layoutX="-1.0" layoutY="14.0" pannable="true" prefHeight="208.0" prefWidth="1145.0" vbarPolicy="NEVER">
-                  <content>
-                    <AnchorPane prefHeight="188.0" prefWidth="1300.0" style="-fx-background-color: #474448;">
+                        <ScrollPane layoutX="-3.0" layoutY="-11.0" pannable="true" prefHeight="200.0" prefWidth="1145.0" vbarPolicy="NEVER">
+                           <content>
+                              <AnchorPane prefHeight="188.0" prefWidth="1300.0" style="-fx-background-color: #474448;">
                                  <children>
                                     <GridPane prefHeight="185.0" prefWidth="1300.0">
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -63,46 +59,33 @@
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                      </rowConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
                                        <children>
-                                          <Sphere radius="50.0" />
-                                          <Sphere radius="50" GridPane.columnIndex="1" />
-                                          <Sphere radius="50" GridPane.columnIndex="2" />
-                                          <Sphere radius="50" GridPane.columnIndex="3" />
-                                          <Sphere radius="50" GridPane.columnIndex="4" />
-                                          <Sphere radius="50" GridPane.columnIndex="5" />
-                                          <Sphere radius="50" GridPane.columnIndex="6" />
-                                          <Sphere radius="50" GridPane.columnIndex="7" />
-                                          <Sphere radius="50" GridPane.columnIndex="8" />
-                                          <Sphere radius="50" GridPane.columnIndex="9" />
-                                          <Sphere radius="50" GridPane.columnIndex="10" />
-                                          <Label text="Movie Name" textFill="#fcf7f7" />
-                                          <Label text="Movie Name" textFill="#fcf7f7" GridPane.columnIndex="1" />
-                                          <Label text="Movie Name" textFill="#fcf7f7" GridPane.columnIndex="2" />
-                                          <Label text="Movie Name" textFill="#fcf7f7" GridPane.columnIndex="3" />
-                                          <Label text="Movie Name" textFill="#fcf7f7" GridPane.columnIndex="4" />
-                                          <Label text="Movie Name" textFill="#fcf7f7" GridPane.columnIndex="5" />
-                                          <Label text="Movie Name" textFill="#fcf7f7" GridPane.columnIndex="6" />
-                                          <Label text="Movie Name" textFill="#fcf7f7" GridPane.columnIndex="7" />
-                                          <Label text="Movie Name" textFill="#fcf7f7" GridPane.columnIndex="8" />
-                                          <Label text="Movie Name" textFill="#fcf7f7" GridPane.columnIndex="9" />
-                                          <Label text="Movie Name" textFill="#fcf7f7" GridPane.columnIndex="10" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" />
                                        </children>
                                     </GridPane>
                                  </children>
-                    </AnchorPane>
-                  </content>
-                  <opaqueInsets>
-                    <Insets bottom="-1.0" />
-                  </opaqueInsets>
-                  <padding>
-                    <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
-                  </padding>
-                </ScrollPane>
-                <ScrollPane layoutX="-3.0" layoutY="189.0" pannable="true" prefHeight="200.0" prefWidth="1145.0" vbarPolicy="NEVER">
+                              </AnchorPane>
+                           </content>
+                           <padding>
+                              <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
+                           </padding>
+                        </ScrollPane>
+                <ScrollPane layoutX="-3.0" layoutY="175.0" pannable="true" prefHeight="200.0" prefWidth="1145.0" vbarPolicy="NEVER">
                   <content>
                     <AnchorPane prefHeight="188.0" prefWidth="1300.0" style="-fx-background-color: #474448;">
                                  <children>
@@ -124,17 +107,17 @@
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                        </rowConstraints>
                                        <children>
-                                          <Sphere radius="50" />
-                                          <Sphere radius="50" GridPane.columnIndex="1" />
-                                          <Sphere radius="50" GridPane.columnIndex="2" />
-                                          <Sphere radius="50" GridPane.columnIndex="3" />
-                                          <Sphere radius="50" GridPane.columnIndex="4" />
-                                          <Sphere radius="50" GridPane.columnIndex="5" />
-                                          <Sphere radius="50" GridPane.columnIndex="6" />
-                                          <Sphere radius="50" GridPane.columnIndex="7" />
-                                          <Sphere radius="50" GridPane.columnIndex="8" />
-                                          <Sphere radius="50" GridPane.columnIndex="9" />
-                                          <Sphere radius="50" GridPane.columnIndex="10" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" />
                                        </children>
                                     </GridPane>
                                  </children>
@@ -144,9 +127,9 @@
                     <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
                   </padding>
                 </ScrollPane>
-                <ScrollPane layoutX="-3.0" layoutY="378.0" pannable="true" prefHeight="200.0" prefWidth="1145.0" vbarPolicy="NEVER">
-                  <content>
-                    <AnchorPane prefHeight="188.0" prefWidth="1300.0" style="-fx-background-color: #474448;">
+                        <ScrollPane layoutX="-3.0" layoutY="360.0" pannable="true" prefHeight="200.0" prefWidth="1145.0" vbarPolicy="NEVER">
+                           <content>
+                              <AnchorPane prefHeight="188.0" prefWidth="1300.0" style="-fx-background-color: #474448;">
                                  <children>
                                     <GridPane prefHeight="185.0" prefWidth="1300.0">
                                        <columnConstraints>
@@ -166,29 +149,29 @@
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                        </rowConstraints>
                                        <children>
-                                          <Sphere radius="50" />
-                                          <Sphere radius="50" GridPane.columnIndex="1" />
-                                          <Sphere radius="50" GridPane.columnIndex="2" />
-                                          <Sphere radius="50" GridPane.columnIndex="3" />
-                                          <Sphere radius="50" GridPane.columnIndex="4" />
-                                          <Sphere radius="50" GridPane.columnIndex="5" />
-                                          <Sphere radius="50" GridPane.columnIndex="6" />
-                                          <Sphere radius="50" GridPane.columnIndex="7" />
-                                          <Sphere radius="50" GridPane.columnIndex="8" />
-                                          <Sphere radius="50" GridPane.columnIndex="9" />
-                                          <Sphere radius="50" GridPane.columnIndex="10" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
                                        </children>
                                     </GridPane>
                                  </children>
-                    </AnchorPane>
-                  </content>
-                  <padding>
-                    <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-3.0" />
-                  </padding>
-                </ScrollPane>
-                <ScrollPane layoutX="-3.0" layoutY="561.0" pannable="true" prefHeight="200.0" prefWidth="1145.0" vbarPolicy="NEVER">
-                  <content>
-                    <AnchorPane prefHeight="188.0" prefWidth="1300.0" style="-fx-background-color: #474448;">
+                              </AnchorPane>
+                           </content>
+                           <padding>
+                              <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
+                           </padding>
+                        </ScrollPane>
+                        <ScrollPane layoutX="-3.0" layoutY="541.0" pannable="true" prefHeight="200.0" prefWidth="1145.0" vbarPolicy="NEVER">
+                           <content>
+                              <AnchorPane prefHeight="188.0" prefWidth="1300.0" style="-fx-background-color: #474448;">
                                  <children>
                                     <GridPane prefHeight="185.0" prefWidth="1300.0">
                                        <columnConstraints>
@@ -208,29 +191,26 @@
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                        </rowConstraints>
                                        <children>
-                                          <Sphere radius="50" />
-                                          <Sphere radius="50" GridPane.columnIndex="1" />
-                                          <Sphere radius="50" GridPane.columnIndex="2" />
-                                          <Sphere radius="50" GridPane.columnIndex="3" />
-                                          <Sphere radius="50" GridPane.columnIndex="4" />
-                                          <Sphere radius="50" GridPane.columnIndex="5" />
-                                          <Sphere radius="50" GridPane.columnIndex="6" />
-                                          <Sphere radius="50" GridPane.columnIndex="7" />
-                                          <Sphere radius="50" GridPane.columnIndex="8" />
-                                          <Sphere radius="50" GridPane.columnIndex="9" />
-                                          <Sphere radius="50" GridPane.columnIndex="10" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" />
+                                          <ImageView fitHeight="180.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="10" />
                                        </children>
                                     </GridPane>
                                  </children>
-                    </AnchorPane>
-                  </content>
-                  <cursor>
-                    <Cursor fx:constant="HAND" />
-                  </cursor>
-                  <padding>
-                    <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
-                  </padding>
-                </ScrollPane>
+                              </AnchorPane>
+                           </content>
+                           <padding>
+                              <Insets bottom="-1.0" left="-1.0" right="-1.0" top="-1.0" />
+                           </padding>
+                        </ScrollPane>
               </children>
             </AnchorPane>
           </content>
