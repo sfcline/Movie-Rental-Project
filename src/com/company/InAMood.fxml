@@ -18,17 +18,17 @@
                   <Image url="@Generic_Movie_Company_Logo.gif" />
                </image>
             </ImageView>
-            <Button layoutX="206.0" layoutY="51.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="HOME" textFill="#fc9e4f">
+            <Button fx:id="homeBtn" layoutX="206.0" layoutY="51.0" mnemonicParsing="false" onAction="#homeButtonPressed" onMouseDragEntered="#handleButtonMouseEntered" onMouseDragExited="#handleButtonMouseExit" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="HOME" textFill="#fc9e4f">
                <font>
                   <Font size="22.0" />
                </font>
             </Button>
-            <Button fx:id="accountBtn" layoutX="344.0" layoutY="51.0" mnemonicParsing="false" onAction="#openAccountPage" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #474448;" text="ACCOUNT" textFill="#fc9e4f">
+            <Button fx:id="accountBtn" layoutX="344.0" layoutY="51.0" mnemonicParsing="false" onAction="#accountButtonPressed" onMouseDragEntered="#handleButtonMouseEntered" onMouseDragExited="#handleButtonMouseExit" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #474448;" text="ACCOUNT" textFill="#fc9e4f">
                <font>
                   <Font size="22.0" />
                </font>
             </Button>
-            <Button layoutX="499.0" layoutY="53.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="IN A MOOD" textFill="#fc9e4f">
+            <Button fx:id="moodBtn" layoutX="499.0" layoutY="53.0" mnemonicParsing="false" onAction="#moodButtonPressed" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="IN A MOOD" textFill="#fc9e4f">
                <font>
                   <Font size="22.0" />
                </font>
@@ -52,7 +52,7 @@
                <children>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="27.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 10;" text="ROMANTIC" textAlignment="CENTER" textFill="#f6f6f6">
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="27.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 10;" text="TO STRAIGHT VIBE, DUDE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -61,7 +61,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 10;" text="ENTERTAIN CHILDREN" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 10;" text="TO GET MY GROOVE ON" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
@@ -70,52 +70,92 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" text="Button" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO LAUGH" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" text="Button" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO FALL ASLEEP" textFill="#f6f6f6">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" text="Button" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="FOR CHILDREN TO LEAVE ME ALONE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" text="Button" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="FOR ROMANCE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" text="Button" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO FEEL SMART" textFill="#f6f6f6">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" text="Button" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO FEEL PRODUCTIVE" textFill="#f6f6f6">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" text="Button" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO COOK" textFill="#f6f6f6" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" text="Button" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO BE INSPIRED" textFill="#f6f6f6">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" text="Button" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO CRY" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" text="Button" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="26.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="FOR PEOPLE TO LEAVE MY HOUSE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                </children>

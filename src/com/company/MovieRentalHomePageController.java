@@ -22,14 +22,33 @@ public class MovieRentalHomePageController {
     Button homeBtn = new Button();
     Button moodBtn = new Button();
 
-    public void signInButtonPressed(ActionEvent event) throws Exception {
+    public void accountButtonPressed(ActionEvent event) throws Exception {
         openAccountPage();
     }//end pressButton
+
+    public void homeButtonPressed(ActionEvent event) throws Exception {
+        openMovieRentalHome();
+    }//end pressButton
+
+    public void moodButtonPressed(ActionEvent event) throws Exception {
+        openMoodPage();
+    }
 
     //Opens the Account Page
     public void openAccountPage() throws Exception {
         AccountPage.display("Account Page");
     }
+
+    //Opens the Home Page
+    public void openMovieRentalHome() throws Exception {
+        MovieRentalHomePage.display("Movie Rental Homepage");
+    }
+
+    //Opens the Mood Page
+    public void openMoodPage() throws Exception {
+        InAMoodPage.display("In A Mood Page");
+    }
+
     public void handleButtonMouseEntered(MouseEvent e){
         Button tmp = (Button)e.getSource();
         tmp.setTextFill(Color.valueOf(white));
