@@ -37,7 +37,7 @@ public abstract class Account {
   public void setAccountID(int accountID) throws IllegalAccountArgumentException {
     if (accountID > 0) {
       this.accountID = accountID;
-    } else {
+    }  else {
       throw new IllegalAccountArgumentException(
           "Invalid Account ID "
               + accountID

@@ -6,7 +6,7 @@ public class Users extends Account {
 
   private ArrayList<Movie> preferences;
 
-  private ArrayList<Movie> history;
+  private  ArrayList<Movie> history;
 
   Users(
       int accountID,
