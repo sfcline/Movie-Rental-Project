@@ -2,17 +2,14 @@ package com.company;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javax.swing.*;
 import java.awt.*;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
-public class MovieRentalHomePageController implements Initializable {
+public class MovieRentalHomePageController {
 
     final String orange = "#fc9e4f";
     final String darkGray = "#474448";
@@ -22,24 +19,43 @@ public class MovieRentalHomePageController implements Initializable {
     ///////////inserting Objects to be displayed on Survey Scene//////////////////////
 @FXML
     Button accountBtn = new Button();
+    Button homeBtn = new Button();
+    Button moodBtn = new Button();
 
-    @FXML
-    private GridPane topGridPane;
-
-    public void signInButtonPressed(ActionEvent event) throws Exception {
+    public void accountButtonPressed(ActionEvent event) throws Exception {
         openAccountPage();
     }//end pressButton
+
+    public void homeButtonPressed(ActionEvent event) throws Exception {
+        openMovieRentalHome();
+    }//end pressButton
+
+    public void moodButtonPressed(ActionEvent event) throws Exception {
+        openMoodPage();
+    }
 
     //Opens the Account Page
     public void openAccountPage() throws Exception {
         AccountPage.display("Account Page");
     }
-    public void handleButtonMouseEntered(ActionEvent e){
-        accountBtn.setTextFill(Color.valueOf(white));
 
+    //Opens the Home Page
+    public void openMovieRentalHome() throws Exception {
+        MovieRentalHomePage.display("Movie Rental Homepage");
     }
-    public void handleButtonMouseExit(){
-        accountBtn.setTextFill(Color.valueOf(orange));
+
+    //Opens the Mood Page
+    public void openMoodPage() throws Exception {
+        InAMoodPage.display("In A Mood Page");
+    }
+
+    public void handleButtonMouseEntered(MouseEvent e){
+        Button tmp = (Button)e.getSource();
+        tmp.setTextFill(Color.valueOf(white));
+    }
+    public void handleButtonMouseExit(MouseEvent e){
+        Button tmp = (Button)e.getSource();
+        tmp.setTextFill(Color.valueOf(orange));
     }
 
     public ArrayList<Movie> getTestArrayList(){
@@ -99,12 +115,6 @@ public class MovieRentalHomePageController implements Initializable {
             ex.printStackTrace();
         }
         return movieList;
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        ArrayList<Movie> testList = new ArrayList<>(getTestArrayList());
-        //topGridPane.add(testList.get(0),0,0);
     }
 }//end controller
 
