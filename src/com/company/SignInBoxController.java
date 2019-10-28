@@ -59,4 +59,4 @@ public class SignInBoxController {
     public void openMovieRentalHome() throws Exception {
         MovieRentalHomePage.display("Movie Rental Homepage");
     }
-}//end SignInOrSignUpBoxController
+}//end MovieRentalController
