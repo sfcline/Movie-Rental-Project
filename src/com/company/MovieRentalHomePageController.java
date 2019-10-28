@@ -2,13 +2,17 @@ package com.company;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javax.swing.*;
 import java.awt.*;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class MovieRentalHomePageController {
+public class MovieRentalHomePageController implements Initializable {
 
     final String orange = "#fc9e4f";
     final String darkGray = "#474448";
@@ -18,6 +22,9 @@ public class MovieRentalHomePageController {
     ///////////inserting Objects to be displayed on Survey Scene//////////////////////
 @FXML
     Button accountBtn = new Button();
+
+    @FXML
+    private GridPane topGridPane;
 
     public void signInButtonPressed(ActionEvent event) throws Exception {
         openAccountPage();
@@ -92,6 +99,12 @@ public class MovieRentalHomePageController {
             ex.printStackTrace();
         }
         return movieList;
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        ArrayList<Movie> testList = new ArrayList<>(getTestArrayList());
+        //topGridPane.add(testList.get(0),0,0);
     }
 }//end controller
 
