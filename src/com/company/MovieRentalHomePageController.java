@@ -2,11 +2,11 @@ package com.company;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
 import javax.imageio.ImageIO;
@@ -106,18 +106,19 @@ public class MovieRentalHomePageController {
         banner_rec_7.setImage(img7);
         banner_rec_lbl_7.setText("The Lion King");
     }
-    public void growBanner() {
-        scaleImg(banner_rec_0,1.01);
+
+    public void handleImageMouseEntered(MouseEvent e){
+        ImageView tmp = (ImageView)e.getSource();
+        tmp.setScaleX(1.01);
+        tmp.setScaleY(1.01);
     }
 
-    public void shrinkBanner() {
-        scaleImg(banner_rec_0,.99);
+    public void handleImageMouseExit(MouseEvent e){
+        ImageView tmp = (ImageView)e.getSource();
+        tmp.setScaleX(.99);
+        tmp.setScaleY(.99);
     }
 
-    public void scaleImg(Node img,double amount) {
-        img.setScaleX(amount);
-        img.setScaleY(amount);
-    }
 }//end
 
 /*
