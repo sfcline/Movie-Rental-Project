@@ -65,9 +65,36 @@ public class MovieRentalHomePageController {
         accountBtn.setTextFill(Color.valueOf(orange));
     }
 
-    public void loadMovies() {
+    public void loadMovies() throws IllegalMovieArgumentException{
         //Load Image 0
+        /*
         Image img0 = new Image(MOVIE_PREFIX+"/dM2w364MScsjFf8pfMbaWUcWrR.jpg");
+        banner_rec_0.setImage(img0);
+        banner_rec_lbl_0.setText("Pulp Fiction");
+        */
+        Movie test1 = new Movie(
+                1,
+                "Pulp Fiction",
+                "R",
+                "Crime",
+                154,
+                8.9,
+                "John Travolta",
+                "Quentin Tarintino",
+                "Quentin Tarintino",
+                "A burger-loving "
+                        + "hit man; his philosophical partner; a drug-addled gangster's moll and a washed-up boxer "
+                        + "converge in "
+                        + "this sprawling; comedic crime caper. Their adventures unfurl in three stories that"
+                        + " ingeniously "
+                        + "trip back and forth in time.",
+                140.950236,
+                MOVIE_PREFIX+"/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
+                "9/10/1994",
+                "Just because you are a character doesn't mean you have character.");
+        //Load Image 0
+
+        Image img0 = new Image(test1.getPoster());
         banner_rec_0.setImage(img0);
         banner_rec_lbl_0.setText("Pulp Fiction");
 

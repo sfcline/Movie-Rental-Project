@@ -8,6 +8,8 @@ public class Users extends Account {
 
   private  ArrayList<Movie> history;
 
+  private ArrayList<Movie> recommendationsList;
+
   Users(
       int accountID,
       String userName,
@@ -20,6 +22,7 @@ public class Users extends Account {
     super(accountID, userName, password, firstName, lastName, emailAddress);
     this.preferences = new ArrayList<>(newPref);
     this.history = new ArrayList<>();
+    setNewUserRecommendationsList();
   }
 
   public ArrayList<Movie> getPreferences() {
@@ -41,5 +44,13 @@ public class Users extends Account {
 
   public void setHistory(Movie newEntry) {
     this.history.add(0,newEntry);
+  }
+  public void setRecommendationsList(){
+    //insert whateever recommendation algorithm we want here
+    //this.recommendationsList = newRecommendations;
+  }
+  public void setNewUserRecommendationsList(){
+    recommendationsList = new ArrayList<>();
+    //recommendationsList.add(Movie);
   }
 }
