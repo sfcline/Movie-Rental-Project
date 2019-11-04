@@ -3,16 +3,16 @@ package com.company;
 import static com.company.SignUpBox.SignUpWindow;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
+
 
 public class SignUpBoxController {
     ///////////inserting Objects to be displayed on Survey Scene//////////////////////
     @FXML
     Button signUpBtn = new Button();
+    @FXML
+    RadioButton ageButton = new RadioButton();
     @FXML
     TextField username1 = new TextField();
     @FXML
@@ -27,6 +27,9 @@ public class SignUpBoxController {
     Label errorCodeBottom = new Label();
     @FXML
     Label newUserLabel = new Label();
+    @FXML
+    Label ageError = new Label();
+
     //////////////////////////////////////////////////////////////////////////////////
 
     //Checks if Username Fields 1 & 2 are of correct length and if they match
@@ -89,14 +92,21 @@ public class SignUpBoxController {
         /*This portion will also be used to check if user already exists.
         * based on this result as well as username and password status
         * we will create a new user or reject and prompt the User*/
-        if (UsernameStatus && PasswordStatus) {                                 //If Username is UNIQUE, then add user to DataBase
-            //User.setUsername(username1.getText().trim());
-            //User.setPassword(password1.getText().trim());
-            System.out.println("[remove this later] NEW USER CREATED!");
-            SignUpWindow.close();
-        }else{                                                                  //If Username is not UNIQUE, then reject user Creation
-            newUserLabel.setTextFill(Paint.valueOf("#cc0000"));//Red
-            newUserLabel.setText("Unable to Create New User.");
-        }//end if-else
+        if (ageButton.isSelected()) {
+            ageError.setText(" ");
+            if (UsernameStatus && PasswordStatus) {                                 //If Username is UNIQUE, then add user to DataBase
+                //User.setUsername(username1.getText().trim());
+                //User.setPassword(password1.getText().trim());
+                System.out.println("[remove this later] NEW USER CREATED!");
+                SignUpWindow.close();
+            } else {                                                                  //If Username is not UNIQUE, then reject user Creation
+                newUserLabel.setTextFill(Paint.valueOf("#cc0000"));//Red
+                newUserLabel.setText("Unable to Create New User.");
+            }
+        }else {
+            ageError.setTextFill(Paint.valueOf("#cc0000"));
+            ageError.setText("You must be over the age of 13 to create an account.");
+        }
+        //end if-else
     }//end signUpButtonPressed
 }
