@@ -193,7 +193,7 @@
                                        <children>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -203,7 +203,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -213,7 +213,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -223,7 +223,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -233,7 +233,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -243,7 +243,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -253,7 +253,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -263,7 +263,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="7">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -303,7 +303,7 @@
                                        <children>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="https://image.tmdb.org/t/p/original/b9QJr2oblOu1grgOMUZF1xkUJdh.jpg" />
                                                    </image>
@@ -316,7 +316,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -326,7 +326,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -336,7 +336,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -346,7 +346,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -356,7 +356,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -366,7 +366,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -376,7 +376,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="7">
                                              <children>
-                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
