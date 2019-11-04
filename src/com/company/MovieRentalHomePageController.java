@@ -2,12 +2,20 @@ package com.company;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class MovieRentalHomePageController {
 
@@ -19,93 +27,102 @@ public class MovieRentalHomePageController {
     ///////////inserting Objects to be displayed on Survey Scene//////////////////////
 @FXML
     Button accountBtn = new Button();
-    Button homeBtn = new Button();
-    Button moodBtn = new Button();
+    @FXML
+    Button load_movies_btn = new Button();
+@FXML
+    ImageView banner_rec_0,
+        banner_rec_1,
+        banner_rec_2,
+        banner_rec_3,
+        banner_rec_4,
+        banner_rec_5,
+        banner_rec_6,
+        banner_rec_7 = new ImageView();
 
-    public void accountButtonPressed(ActionEvent event) throws Exception {
-        openAccountPage();
-    }//end pressButton
+@FXML
+    Label banner_rec_lbl_0,
+        banner_rec_lbl_1,
+        banner_rec_lbl_2,
+        banner_rec_lbl_3,
+        banner_rec_lbl_4,
+        banner_rec_lbl_5,
+        banner_rec_lbl_6,
+        banner_rec_lbl_7 = new Label();
 
-    public void homeButtonPressed(ActionEvent event) throws Exception {
-        openMovieRentalHome();
-    }//end pressButton
+    //////////////////////////////////////////////////////////////////////////////////
+    final public String MOVIE_PREFIX = "https://image.tmdb.org/t/p/original";
 
     //Opens the Account Page
     public void openAccountPage() throws Exception {
         AccountPage.display("Account Page");
     }
 
-    //Opens the Home Page
-    public void openMovieRentalHome() throws Exception {
-        MovieRentalHomePage.display("Movie Rental Homepage");
+    public void handleButtonMouseEntered(ActionEvent e){
+        accountBtn.setTextFill(Color.valueOf(white));
     }
 
-    public void handleButtonMouseEntered(MouseEvent e){
-        Button tmp = (Button)e.getSource();
-        tmp.setTextFill(Color.valueOf(white));
-    }
-    public void handleButtonMouseExit(MouseEvent e){
-        Button tmp = (Button)e.getSource();
-        tmp.setTextFill(Color.valueOf(orange));
+    public void handleButtonMouseExit(){
+        accountBtn.setTextFill(Color.valueOf(orange));
     }
 
-    public ArrayList<Movie> getTestArrayList(){
+    public void loadMovies() {
+        //Load Image 0
+        Image img0 = new Image(MOVIE_PREFIX+"/dM2w364MScsjFf8pfMbaWUcWrR.jpg");
+        banner_rec_0.setImage(img0);
+        banner_rec_lbl_0.setText("Pulp Fiction");
 
-        ArrayList<Movie> movieList = new ArrayList<>();
+        //Load Image 1
+        Image img1 = new Image(MOVIE_PREFIX+"/yE5d3BUhE8hCnkMUJOo1QDoOGNz.jpg");
+        banner_rec_1.setImage(img1);
+        banner_rec_lbl_1.setText("Forrest Gump");
 
-        try {
+        //Load Image 2
+        Image img2 = new Image(MOVIE_PREFIX+"/yPisjyLweCl1tbgwgtzBCNCBle.jpg");
+        banner_rec_2.setImage(img2);
+        banner_rec_lbl_2.setText("Schindlers List");
 
-            Movie test1 =
-                    new Movie(
-                            1,
-                            "Pulp Fiction",
-                            "R",
-                            "Crime",
-                            154,
-                            8.9,
-                            "John Travolta",
-                            "Quentin Tarintino",
-                            "Quentin Tarintino",
-                            "A burger-loving "
-                                    + "hit man; his philosophical partner; a drug-addled gangster's moll and a washed-up boxer "
-                                    + "converge in "
-                                    + "this sprawling; comedic crime caper. Their adventures unfurl in three stories that"
-                                    + " ingeniously "
-                                    + "trip back and forth in time.",
-                            140.950236,
-                            "/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
-                            "9/10/1994",
-                            "Just because you are a character doesn't mean you have character.");
-            Movie test2 =
-                    new Movie(
-                            2,
-                            "Forest Gump",
-                            "PG-13",
-                            "Comedy",
-                            142,
-                            8.8,
-                            "Tom Hanks",
-                            "Robert Zemeckis",
-                            "Winston Groom",
-                            "A man with a low IQ has accomplished great things in his life and been present "
-                                    + "during significant historic events - in each case; far exceeding what anyone"
-                                    + " imagined he could do. Yet; despite all the things he has attained; his one true "
-                                    + "love eludes him. 'Forrest Gump' is the story of a man who rose above his challenges;"
-                                    + " and who proved that determination; courage; and love are more important than ability.",
-                            48.307194,
-                            "/yE5d3BUhE8hCnkMUJOo1QDoOGNz.jpg",
-                            "7/6/1994",
-                            "The world will never be the same; once you've seen it through the eyes of Forrest Gump.");
-            movieList.add(test1);
-            movieList.add(test2);
+        //Load Image 3
+        Image img3 = new Image(MOVIE_PREFIX+"/5bqI54aIyPDzPKkScwJprzbAsIi.jpg");
+        banner_rec_3.setImage(img3);
+        banner_rec_lbl_3.setText("DragonHeart");
 
-        } catch (IllegalMovieArgumentException e) {
-            e.printStackTrace();
+        //Load Image 4
+        Image img4 = new Image(MOVIE_PREFIX+"/b9QJr2oblOu1grgOMUZF1xkUJdh.jpg");
+        banner_rec_4.setImage(img4);
+        banner_rec_lbl_4.setText("Beauty and the Beast");
 
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        return movieList;
+        //Load Image 5
+        Image img5 = new Image(MOVIE_PREFIX+"/2y4dmgWYRMYXdD1UyJVcn2HSd1D.jpg");
+        banner_rec_5.setImage(img5);
+        banner_rec_lbl_5.setText("Terminator 2: Judgment Day");
+
+        //Load Image 6
+        Image img6 = new Image(MOVIE_PREFIX+"/rhIRbceoE9lR4veEXuwCC2wARtG.jpg");
+        banner_rec_6.setImage(img6);
+        banner_rec_lbl_6.setText("Toy Story");
+
+        //Load Image 7
+        Image img7 = new Image(MOVIE_PREFIX+"/bKPtXn9n4M4s8vvZrbw40mYsefB.jpg");
+        banner_rec_7.setImage(img7);
+        banner_rec_lbl_7.setText("The Lion King");
     }
-}//end controller
+    public void growBanner() {
+        scaleImg(banner_rec_0,1.01);
+    }
+
+    public void shrinkBanner() {
+        scaleImg(banner_rec_0,.99);
+    }
+
+    public void scaleImg(Node img,double amount) {
+        img.setScaleX(amount);
+        img.setScaleY(amount);
+    }
+}//end
+
+/*
+* No Piracy.
+* No sharing licenses.
+* No underaged children watching rated R.
+* */
 
