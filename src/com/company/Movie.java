@@ -1,3 +1,7 @@
+/**
+ * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
+ * Stephen Cline, Sean Lamont
+ */
 package com.company;
 
 import java.util.ArrayList;
@@ -83,6 +87,11 @@ public class Movie {
     setTagLine(tagLine);
   }
 
+  /**
+   * Returns Movie Id.
+   *
+   * @return int movieID of Movie.
+   */
   public int getMovieID() {
     return movieID;
   }
@@ -105,6 +114,11 @@ public class Movie {
     }
   }
 
+  /**
+   * Returns Movie Title.
+   *
+   * @return String title of Movie.
+   */
   public String getTitle() {
     return title;
   }
@@ -124,6 +138,11 @@ public class Movie {
     }
   }
 
+  /**
+   * Returns Movie Rating.
+   *
+   * @return Rating Enum of Movie.
+   */
   public Ratings getRating() {
     return rating;
   }
@@ -147,6 +166,11 @@ public class Movie {
     }
   }
 
+  /**
+   * Returns Movie Genre.
+   *
+   * @return Genre Enum of Movie.
+   */
   public String getGenre() {
     return genre;
   }
@@ -166,6 +190,11 @@ public class Movie {
     }
   }
 
+  /**
+   * Returns Movie Run Time.
+   *
+   * @return double, runTime of Movie.
+   */
   public double getRunTime() {
     return runTime;
   }
@@ -185,6 +214,11 @@ public class Movie {
     }
   }
 
+  /**
+   * Returns Movie Score.
+   *
+   * @return double score of Movie.
+   */
   public double getScore() {
     return score;
   }
@@ -204,6 +238,11 @@ public class Movie {
     }
   }
 
+  /**
+   * Returns Movie Star.
+   *
+   * @return String star of Movie.
+   */
   public String getStar() {
     return star;
   }
@@ -223,6 +262,11 @@ public class Movie {
     }
   }
 
+  /**
+   * Returns Movie Director.
+   *
+   * @return String director of Movie.
+   */
   public String getDirector() {
     return director;
   }
@@ -245,6 +289,11 @@ public class Movie {
     }
   }
 
+  /**
+   * Returns Movie Writer.
+   *
+   * @return String writer of Movie.
+   */
   public String getWriter() {
     return writer;
   }
@@ -264,6 +313,11 @@ public class Movie {
     }
   }
 
+  /**
+   * Returns Movie Overview.
+   *
+   * @return String overview of Movie.
+   */
   public String getOverview() {
     return overview;
   }
@@ -286,6 +340,11 @@ public class Movie {
     }
   }
 
+  /**
+   * Returns Movie Popularity.
+   *
+   * @return String popularity of Movie.
+   */
   public double getPopularity() {
     return popularity;
   }
@@ -308,6 +367,11 @@ public class Movie {
     }
   }
 
+  /**
+   * Returns Movie Poster URL.
+   *
+   * @return String poster of Movie.
+   */
   public String getPoster() {
     return poster;
   }
@@ -327,6 +391,11 @@ public class Movie {
     }
   }
 
+  /**
+   * Returns Movie Release Date.
+   *
+   * @return String releaseDate of Movie.
+   */
   public String getReleaseDate() {
     return releaseDate;
   }
@@ -349,6 +418,11 @@ public class Movie {
     }
   }
 
+  /**
+   * Returns Movie Tag Line.
+   *
+   * @return String tagLine of Movie.
+   */
   public String getTagLine() {
     return tagLine;
   }

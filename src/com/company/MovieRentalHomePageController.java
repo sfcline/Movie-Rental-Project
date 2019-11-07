@@ -1,3 +1,7 @@
+/**
+ * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
+ * Stephen Cline, Sean Lamont
+ */
 package com.company;
 
 import javafx.event.ActionEvent;
@@ -17,139 +21,161 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/** MovieRentalHomePageController, controls everything on the main page of the program. */
 public class MovieRentalHomePageController {
 
-    final String orange = "#fc9e4f";
-    final String darkGray = "#474448";
-    final String lightGray = "#6b6d76";
-    final String white = "#f6f6f6";
+  final String orange = "#fc9e4f";
+  final String darkGray = "#474448";
+  final String lightGray = "#6b6d76";
+  final String white = "#f6f6f6";
 
-    ///////////inserting Objects to be displayed on Survey Scene//////////////////////
-@FXML
-    Button accountBtn = new Button();
-    @FXML
-    Button load_movies_btn = new Button();
-@FXML
-    ImageView banner_rec_0,
-        banner_rec_1,
-        banner_rec_2,
-        banner_rec_3,
-        banner_rec_4,
-        banner_rec_5,
-        banner_rec_6,
-        banner_rec_7 = new ImageView();
+  /////////// inserting Objects to be displayed on Survey Scene//////////////////////
+  @FXML Button accountBtn = new Button();
+  @FXML Button load_movies_btn = new Button();
+  @FXML
+  ImageView banner_rec_0,
+      banner_rec_1,
+      banner_rec_2,
+      banner_rec_3,
+      banner_rec_4,
+      banner_rec_5,
+      banner_rec_6,
+      banner_rec_7 = new ImageView();
+  @FXML
+  Label banner_rec_lbl_0,
+      banner_rec_lbl_1,
+      banner_rec_lbl_2,
+      banner_rec_lbl_3,
+      banner_rec_lbl_4,
+      banner_rec_lbl_5,
+      banner_rec_lbl_6,
+      banner_rec_lbl_7 = new Label();
 
-@FXML
-    Label banner_rec_lbl_0,
-        banner_rec_lbl_1,
-        banner_rec_lbl_2,
-        banner_rec_lbl_3,
-        banner_rec_lbl_4,
-        banner_rec_lbl_5,
-        banner_rec_lbl_6,
-        banner_rec_lbl_7 = new Label();
+  //////////////////////////////////////////////////////////////////////////////////
+  public final String MOVIE_PREFIX = "https://image.tmdb.org/t/p/original";
 
-    //////////////////////////////////////////////////////////////////////////////////
-    final public String MOVIE_PREFIX = "https://image.tmdb.org/t/p/original";
+  /**
+   * Opens the Account Page
+   *
+   * @throws Exception exception.
+   */
+  public void openAccountPage() throws Exception {
+    AccountPage.display("Account Page");
+  }
 
-    //Opens the Account Page
-    public void openAccountPage() throws Exception {
-        AccountPage.display("Account Page");
-    }
+  /**
+   * Modifies color of object when moused over.
+   *
+   * @param e object to be modified.
+   */
+  public void handleButtonMouseEntered(ActionEvent e) {
+    accountBtn.setTextFill(Color.valueOf(white));
+  }
 
-    public void handleButtonMouseEntered(ActionEvent e){
-        accountBtn.setTextFill(Color.valueOf(white));
-    }
+  /** Modifies color of object when moused over. */
+  public void handleButtonMouseExit() {
+    accountBtn.setTextFill(Color.valueOf(orange));
+  }
 
-    public void handleButtonMouseExit(){
-        accountBtn.setTextFill(Color.valueOf(orange));
-    }
+  /**
+   * Test Class for GUI to load movies in. Will be removed later.
+   *
+   * @throws IllegalMovieArgumentException thrown if parameter to make Movie is rejected.
+   */
+  public void loadMovies() throws IllegalMovieArgumentException {
+    // Load Image 0
+    /*
+    Image img0 = new Image(MOVIE_PREFIX+"/dM2w364MScsjFf8pfMbaWUcWrR.jpg");
+    banner_rec_0.setImage(img0);
+    banner_rec_lbl_0.setText("Pulp Fiction");
+    */
+    Movie test1 =
+        new Movie(
+            1,
+            "Pulp Fiction",
+            "R",
+            "Crime",
+            154,
+            8.9,
+            "John Travolta",
+            "Quentin Tarintino",
+            "Quentin Tarintino",
+            "A burger-loving "
+                + "hit man; his philosophical partner; a drug-addled gangster's moll and a washed-up boxer "
+                + "converge in "
+                + "this sprawling; comedic crime caper. Their adventures unfurl in three stories that"
+                + " ingeniously "
+                + "trip back and forth in time.",
+            140.950236,
+            MOVIE_PREFIX + "/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
+            "9/10/1994",
+            "Just because you are a character doesn't mean you have character.");
+    // Load Image 0
 
-    public void loadMovies() throws IllegalMovieArgumentException{
-        //Load Image 0
-        /*
-        Image img0 = new Image(MOVIE_PREFIX+"/dM2w364MScsjFf8pfMbaWUcWrR.jpg");
-        banner_rec_0.setImage(img0);
-        banner_rec_lbl_0.setText("Pulp Fiction");
-        */
-        Movie test1 = new Movie(
-                1,
-                "Pulp Fiction",
-                "R",
-                "Crime",
-                154,
-                8.9,
-                "John Travolta",
-                "Quentin Tarintino",
-                "Quentin Tarintino",
-                "A burger-loving "
-                        + "hit man; his philosophical partner; a drug-addled gangster's moll and a washed-up boxer "
-                        + "converge in "
-                        + "this sprawling; comedic crime caper. Their adventures unfurl in three stories that"
-                        + " ingeniously "
-                        + "trip back and forth in time.",
-                140.950236,
-                MOVIE_PREFIX+"/dM2w364MScsjFf8pfMbaWUcWrR.jpg",
-                "9/10/1994",
-                "Just because you are a character doesn't mean you have character.");
-        //Load Image 0
+    Image img0 = new Image(test1.getPoster());
+    banner_rec_0.setImage(img0);
+    banner_rec_lbl_0.setText("Pulp Fiction");
 
-        Image img0 = new Image(test1.getPoster());
-        banner_rec_0.setImage(img0);
-        banner_rec_lbl_0.setText("Pulp Fiction");
+    // Load Image 1
+    Image img1 = new Image(MOVIE_PREFIX + "/yE5d3BUhE8hCnkMUJOo1QDoOGNz.jpg");
+    banner_rec_1.setImage(img1);
+    banner_rec_lbl_1.setText("Forrest Gump");
 
-        //Load Image 1
-        Image img1 = new Image(MOVIE_PREFIX+"/yE5d3BUhE8hCnkMUJOo1QDoOGNz.jpg");
-        banner_rec_1.setImage(img1);
-        banner_rec_lbl_1.setText("Forrest Gump");
+    // Load Image 2
+    Image img2 = new Image(MOVIE_PREFIX + "/yPisjyLweCl1tbgwgtzBCNCBle.jpg");
+    banner_rec_2.setImage(img2);
+    banner_rec_lbl_2.setText("Schindlers List");
 
-        //Load Image 2
-        Image img2 = new Image(MOVIE_PREFIX+"/yPisjyLweCl1tbgwgtzBCNCBle.jpg");
-        banner_rec_2.setImage(img2);
-        banner_rec_lbl_2.setText("Schindlers List");
+    // Load Image 3
+    Image img3 = new Image(MOVIE_PREFIX + "/5bqI54aIyPDzPKkScwJprzbAsIi.jpg");
+    banner_rec_3.setImage(img3);
+    banner_rec_lbl_3.setText("DragonHeart");
 
-        //Load Image 3
-        Image img3 = new Image(MOVIE_PREFIX+"/5bqI54aIyPDzPKkScwJprzbAsIi.jpg");
-        banner_rec_3.setImage(img3);
-        banner_rec_lbl_3.setText("DragonHeart");
+    // Load Image 4
+    Image img4 = new Image(MOVIE_PREFIX + "/b9QJr2oblOu1grgOMUZF1xkUJdh.jpg");
+    banner_rec_4.setImage(img4);
+    banner_rec_lbl_4.setText("Beauty and the Beast");
 
-        //Load Image 4
-        Image img4 = new Image(MOVIE_PREFIX+"/b9QJr2oblOu1grgOMUZF1xkUJdh.jpg");
-        banner_rec_4.setImage(img4);
-        banner_rec_lbl_4.setText("Beauty and the Beast");
+    // Load Image 5
+    Image img5 = new Image(MOVIE_PREFIX + "/2y4dmgWYRMYXdD1UyJVcn2HSd1D.jpg");
+    banner_rec_5.setImage(img5);
+    banner_rec_lbl_5.setText("Terminator 2: Judgment Day");
 
-        //Load Image 5
-        Image img5 = new Image(MOVIE_PREFIX+"/2y4dmgWYRMYXdD1UyJVcn2HSd1D.jpg");
-        banner_rec_5.setImage(img5);
-        banner_rec_lbl_5.setText("Terminator 2: Judgment Day");
+    // Load Image 6
+    Image img6 = new Image(MOVIE_PREFIX + "/rhIRbceoE9lR4veEXuwCC2wARtG.jpg");
+    banner_rec_6.setImage(img6);
+    banner_rec_lbl_6.setText("Toy Story");
 
-        //Load Image 6
-        Image img6 = new Image(MOVIE_PREFIX+"/rhIRbceoE9lR4veEXuwCC2wARtG.jpg");
-        banner_rec_6.setImage(img6);
-        banner_rec_lbl_6.setText("Toy Story");
+    // Load Image 7
+    Image img7 = new Image(MOVIE_PREFIX + "/bKPtXn9n4M4s8vvZrbw40mYsefB.jpg");
+    banner_rec_7.setImage(img7);
+    banner_rec_lbl_7.setText("The Lion King");
+  }
 
-        //Load Image 7
-        Image img7 = new Image(MOVIE_PREFIX+"/bKPtXn9n4M4s8vvZrbw40mYsefB.jpg");
-        banner_rec_7.setImage(img7);
-        banner_rec_lbl_7.setText("The Lion King");
-    }
-    public void growBanner() {
-        scaleImg(banner_rec_0,1.01);
-    }
+  /** Increases size of banner when called. */
+  public void growBanner() {
+    scaleImg(banner_rec_0, 1.01);
+  }
 
-    public void shrinkBanner() {
-        scaleImg(banner_rec_0,.99);
-    }
+  /** Decreases size of banner when called. */
+  public void shrinkBanner() {
+    scaleImg(banner_rec_0, .99);
+  }
 
-    public void scaleImg(Node img,double amount) {
-        img.setScaleX(amount);
-        img.setScaleY(amount);
-    }
-}//end
+  /**
+   * Modifies scale of image to passed in parameters.
+   *
+   * @param img the image to be modified.
+   * @param amount The amount to modify the image by.
+   */
+  public void scaleImg(Node img, double amount) {
+    img.setScaleX(amount);
+    img.setScaleY(amount);
+  }
+} // end
 
 /*
-* No Piracy.
-* No sharing licenses.
-* No underaged children watching rated R.
-* */
-
+ * No Piracy.
+ * No sharing licenses.
+ * No underaged children watching rated R.
+ * */
