@@ -114,7 +114,7 @@ public class MovieRentalHomePageController {
 
     Image img0 = new Image(test1.getPoster());
     banner_rec_0.setImage(img0);
-    banner_rec_lbl_0.setText("Pulp Fiction");
+    banner_rec_lbl_0.setText(test1.getTitle());
 
     // Load Image 1
     Image img1 = new Image(MOVIE_PREFIX + "/yE5d3BUhE8hCnkMUJOo1QDoOGNz.jpg");

@@ -22,6 +22,8 @@ public class Main extends Application {
   @Override
   public void start(Stage primaryStage) throws Exception {
     SignInBox.display("Sign In");
+    DBController dbcontroller = new DBController();
+    dbcontroller.connectToDB();
 
     // Refuses access to survey if user hasn't signed in
     if (!(primaryStage.isFocused() && User.hasSignedIn())) {
