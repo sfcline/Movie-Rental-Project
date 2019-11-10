@@ -55,7 +55,7 @@
          <children>
             <ScrollPane hbarPolicy="NEVER" layoutX="471.0" layoutY="132.0" prefHeight="464.0" prefWidth="1142.0" style="-fx-background-color: #f6f6f6;" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1000.0" prefWidth="1142.0" style="-fx-background-color: #f6f6f6;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1458.0" prefWidth="1142.0" style="-fx-background-color: #f6f6f6;">
                      <children>
                         <AnchorPane prefHeight="269.0" prefWidth="1142.0" style="-fx-background-color: #f6f6f6;">
                            <children>
@@ -379,6 +379,226 @@
                                                    </effect>
                                                 </ImageView>
                                                 <Label fx:id="ComLabel8" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="807.0" prefHeight="269.0" prefWidth="1142.0" style="-fx-background-color: #f6f6f6;">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="531.0" layoutY="24.0" text="Family" textAlignment="CENTER" textFill="#514e4e">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutY="69.0" minHeight="0.0" minWidth="0.0" prefHeight="199.0" prefWidth="1142.0" style="-fx-background-color: #f6f6f6;">
+                                 <children>
+                                    <GridPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="199.0" prefWidth="1142.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
+                                             <children>
+                                                <ImageView fx:id="FamBanner1" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="FamLabel1" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <ImageView fx:id="FamBanner2" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="FamLabel2" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
+                                             <children>
+                                                <ImageView fx:id="FamBanner3" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="FamLabel3" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
+                                             <children>
+                                                <ImageView fx:id="FamBanner4" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="FamLabel4" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
+                                             <children>
+                                                <ImageView fx:id="FamBanner5" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="FamLabel5" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefHeight="0.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
+                                             <children>
+                                                <ImageView fx:id="FamBanner6" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="FamLabel6" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
+                                             <children>
+                                                <ImageView fx:id="FamBanner7" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="FamLabel7" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="7">
+                                             <children>
+                                                <ImageView fx:id="FamBanner8" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="FamLabel8" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="1076.0" prefHeight="269.0" prefWidth="1142.0" style="-fx-background-color: #f6f6f6;">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="539.0" layoutY="24.0" text="Horror" textAlignment="CENTER" textFill="#514e4e">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutY="69.0" minHeight="0.0" minWidth="0.0" prefHeight="199.0" prefWidth="1142.0" style="-fx-background-color: #f6f6f6;">
+                                 <children>
+                                    <GridPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="199.0" prefWidth="1142.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
+                                             <children>
+                                                <ImageView fx:id="HorBanner1" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="HorLabel1" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
+                                             <children>
+                                                <ImageView fx:id="HorBanner2" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="HorLabel2" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
+                                             <children>
+                                                <ImageView fx:id="HorBanner3" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="HorLabel3" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
+                                             <children>
+                                                <ImageView fx:id="HorBanner4" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="HorLabel4" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
+                                             <children>
+                                                <ImageView fx:id="HorBanner5" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="HorLabel5" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefHeight="0.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
+                                             <children>
+                                                <ImageView fx:id="HorBanner6" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="HorLabel6" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
+                                             <children>
+                                                <ImageView fx:id="HorBanner7" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="HorLabel7" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="7">
+                                             <children>
+                                                <ImageView fx:id="HorBanner8" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
+                                                <Label fx:id="HorLabel8" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
                                              </children>
                                           </AnchorPane>
                                        </children>

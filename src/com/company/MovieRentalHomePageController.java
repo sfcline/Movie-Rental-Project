@@ -26,12 +26,17 @@ public class MovieRentalHomePageController {
   @FXML
   ImageView RecBanner1, RecBanner2, RecBanner3, RecBanner4, RecBanner5, RecBanner6, RecBanner7, RecBanner8,
           RomBanner1, RomBanner2, RomBanner3, RomBanner4, RomBanner5, RomBanner6, RomBanner7, RomBanner8,
-          ComBanner1, ComBanner2, ComBanner3, ComBanner4, ComBanner5, ComBanner6, ComBanner7, ComBanner8
+          ComBanner1, ComBanner2, ComBanner3, ComBanner4, ComBanner5, ComBanner6, ComBanner7, ComBanner8,
+          FamBanner1, FamBanner2, FamBanner3, FamBanner4, FamBanner5, FamBanner6, FamBanner7, FamBanner8,
+          HorBanner1, HorBanner2, HorBanner3, HorBanner4, HorBanner5, HorBanner6, HorBanner7, HorBanner8
+  
           = new ImageView();
   @FXML
   Label RecLabel1, RecLabel2, RecLabel3, RecLabel4, RecLabel5, RecLabel6, RecLabel7, RecLabel8, 
           RomLabel1, RomLabel2, RomLabel3, RomLabel4, RomLabel5, RomLabel6, RomLabel7, RomLabel8,
-          ComLabel1, ComLabel2, ComLabel3, ComLabel4, ComLabel5, ComLabel6, ComLabel7, ComLabel8
+          ComLabel1, ComLabel2, ComLabel3, ComLabel4, ComLabel5, ComLabel6, ComLabel7, ComLabel8,
+          FamLabel1, FamLabel2, FamLabel3, FamLabel4, FamLabel5, FamLabel6, FamLabel7, FamLabel8,
+          HorLabel1, HorLabel2, HorLabel3, HorLabel4, HorLabel5, HorLabel6, HorLabel7, HorLabel8
           = new Label();
 
   //////////////////////////////////////////////////////////////////////////////////
@@ -81,6 +86,17 @@ public class MovieRentalHomePageController {
             ComLabel1, ComLabel2, ComLabel3, ComLabel4,
             ComLabel5, ComLabel6, ComLabel7, ComLabel8);
     Comedy.autoSetRowWithTag("Comedy");
+    MovieRow Family = new MovieRow(FamBanner1, FamBanner2, FamBanner3, FamBanner4,
+            FamBanner5, FamBanner6, FamBanner7, FamBanner8,
+            FamLabel1, FamLabel2, FamLabel3, FamLabel4,
+            FamLabel5, FamLabel6, FamLabel7, FamLabel8);
+    Family.autoSetRowWithTag("Family");
+    MovieRow Horror = new MovieRow(HorBanner1, HorBanner2, HorBanner3, HorBanner4,
+            HorBanner5, HorBanner6, HorBanner7, HorBanner8,
+            HorLabel1, HorLabel2, HorLabel3, HorLabel4,
+            HorLabel5, HorLabel6, HorLabel7, HorLabel8);
+    Horror.autoSetRowWithTag("Horror");
+    
 
   }
 
