@@ -25,11 +25,13 @@ public class MovieRentalHomePageController {
   @FXML Button load_movies_btn = new Button();
   @FXML
   ImageView RecBanner1, RecBanner2, RecBanner3, RecBanner4, RecBanner5, RecBanner6, RecBanner7, RecBanner8,
-          RomBanner1, RomBanner2, RomBanner3, RomBanner4, RomBanner5, RomBanner6, RomBanner7, RomBanner8 
+          RomBanner1, RomBanner2, RomBanner3, RomBanner4, RomBanner5, RomBanner6, RomBanner7, RomBanner8,
+          ComBanner1, ComBanner2, ComBanner3, ComBanner4, ComBanner5, ComBanner6, ComBanner7, ComBanner8
           = new ImageView();
   @FXML
   Label RecLabel1, RecLabel2, RecLabel3, RecLabel4, RecLabel5, RecLabel6, RecLabel7, RecLabel8, 
-          RomLabel1, RomLabel2, RomLabel3, RomLabel4, RomLabel5, RomLabel6, RomLabel7, RomLabel8
+          RomLabel1, RomLabel2, RomLabel3, RomLabel4, RomLabel5, RomLabel6, RomLabel7, RomLabel8,
+          ComLabel1, ComLabel2, ComLabel3, ComLabel4, ComLabel5, ComLabel6, ComLabel7, ComLabel8
           = new Label();
 
   //////////////////////////////////////////////////////////////////////////////////
@@ -74,6 +76,12 @@ public class MovieRentalHomePageController {
             RomLabel1, RomLabel2, RomLabel3, RomLabel4,
             RomLabel5, RomLabel6, RomLabel7, RomLabel8);
     Romance.autoSetRowWithTag("Romance");
+    MovieRow Comedy = new MovieRow(ComBanner1, ComBanner2, ComBanner3, ComBanner4,
+            ComBanner5, ComBanner6, ComBanner7, ComBanner8,
+            ComLabel1, ComLabel2, ComLabel3, ComLabel4,
+            ComLabel5, ComLabel6, ComLabel7, ComLabel8);
+    Comedy.autoSetRowWithTag("Comedy");
+
   }
 
   /** Increases size of banner when called. */
