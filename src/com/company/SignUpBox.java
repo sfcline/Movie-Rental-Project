@@ -13,7 +13,7 @@ public class SignUpBox {
     public static void display(String title) throws Exception {
         Parent root = FXMLLoader.load(SignInBox.class.getResource("SignUpBox.fxml"));
         SignUpWindow.setTitle("Sign Up");
-        SignUpWindow.setScene(new Scene(root, 390, 425));
+        SignUpWindow.setScene(new Scene(root, 390, 665));
         SignUpWindow.setResizable(false);
         SignUpWindow.show();
 
