@@ -20,6 +20,7 @@ public class AccountPageController {
 
   /////////// inserting Objects to be displayed on Survey Scene//////////////////////
   @FXML Button homeBtn = new Button();
+  @FXML Button moodBtn = new Button();
   @FXML Button changePass = new Button();
   @FXML Button loginInfo = new Button();
   @FXML Button personalInfo = new Button();
@@ -42,6 +43,11 @@ public class AccountPageController {
     openMovieRentalHomePage();
     AccountPage.close();
   } // end pressButton
+
+  public void InAMoodBtnPressed() throws Exception {
+    openMoodPage();
+    AccountPage.close();
+  }
 
   public void changePassPressed(){
     emailSent.setVisible(true);
@@ -98,5 +104,8 @@ public class AccountPageController {
    */
   public void openMovieRentalHomePage() throws Exception {
     MovieRentalHomePage.display("Movie Rental Homepage");
+  }
+  public void openMoodPage() throws Exception {
+    InAMoodPage.display("In A Mood Page");
   }
 } // end controller

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.AccountPageController">
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.AccountPageController">
     <children>
         <AnchorPane prefHeight="122.0" prefWidth="1142.0" style="-fx-background-color: #474448;">
             <children>
@@ -31,7 +37,7 @@
                   <DropShadow />
                </effect>
                 </Button>
-                <Button layoutX="697.0" layoutY="14.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="In a Mood" textFill="#fc9e4f">
+                <Button fx:id="moodBtn" layoutX="697.0" layoutY="14.0" mnemonicParsing="false" onAction="#InAMoodBtnPressed" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="In a Mood" textFill="#fc9e4f">
                     <font>
                         <Font size="22.0" />
                     </font>
