@@ -25,4 +25,8 @@ public class AccountPage {
     AccountWindow.setResizable(false);
     AccountWindow.show();
   }
+
+  public static void close(){
+    AccountWindow.close();
+  }
 }
