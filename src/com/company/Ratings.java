@@ -1,5 +1,10 @@
+/**
+ * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
+ * Stephen Cline, Sean Lamont
+ */
 package com.company;
 
+/** Ratings Enum used to limit and assign ratings on movies. */
 public enum Ratings {
   G("G"),
   PG("PG"),
@@ -13,6 +18,11 @@ public enum Ratings {
     this.rating = rating;
   }
 
+  /**
+   * Returns appropriate readable String for Enum.
+   *
+   * @return String, readable description fo Rating.
+   */
   public String toString() {
     switch (this) {
       case G:

@@ -1,3 +1,7 @@
+/**
+ * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
+ * Stephen Cline, Sean Lamont
+ */
 package com.company;
 
 import java.util.ArrayList;
