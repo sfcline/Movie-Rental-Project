@@ -14,6 +14,17 @@ public class MoodMoviesPageController {
     Button homeBtn = new Button();
     @FXML
     Button moodBtn = new Button();
+    @FXML Button grooveBtn = new Button();
+    @FXML Button smartBtn = new Button();
+    @FXML Button inspiredBtn = new Button();
+    @FXML Button laughBtn = new Button();
+    @FXML Button childrenBtn = new Button();
+    @FXML Button productiveBtn = new Button();
+    @FXML Button cryBtn = new Button();
+    @FXML Button leaveBtn = new Button();
+    @FXML Button cookBtn = new Button();
+    @FXML Button romanceBtn = new Button();
+    @FXML Button sleepBtn = new Button();
     @FXML
     ImageView RecBanner1, RecBanner2, RecBanner3, RecBanner4, RecBanner5, RecBanner6, RecBanner7, RecBanner8
             = new ImageView();
