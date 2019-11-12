@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.MovieRentalHomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.InAMoodPageController">
   <children>
     <AnchorPane layoutX="1.0" layoutY="88.0" prefHeight="579.0" prefWidth="1151.0" style="-fx-background-color: #f6f6f6;">
          <children>
@@ -29,7 +29,7 @@
                <children>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="47.0" layoutY="37.0" mnemonicParsing="false" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO STRAIGHT VIBE, DUDE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="dudeBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO STRAIGHT VIBE, DUDE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -182,7 +182,7 @@
                   <Image url="@Generic_Movie_Company_Logo.gif" />
                </image>
             </ImageView>
-            <Button layoutX="314.0" layoutY="13.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="Home" textFill="#fc9e4f" AnchorPane.rightAnchor="699.0">
+            <Button fx:id="homeBtn" layoutX="314.0" layoutY="13.0" mnemonicParsing="false" onAction="#openMovieRentalHomePage" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="Home" textFill="#fc9e4f" AnchorPane.rightAnchor="699.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -206,7 +206,6 @@
                   <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
                </effect>
             </Button>
-            <Button fx:id="load_movies_btn" layoutX="893.0" layoutY="32.0" mnemonicParsing="false" onAction="#loadMovies" text="Load Movies" />
          </children>
          <effect>
             <DropShadow height="25.0" radius="5.75" spread="0.25" width="0.0" />

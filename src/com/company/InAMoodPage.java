@@ -17,7 +17,7 @@ public class InAMoodPage {
     public static void display(String title) throws Exception {
         Parent root =
                 FXMLLoader.load(MovieRentalHomePage.class.getResource("InAMood.fxml"));
-        InAMoodPage.setTitle(title);
+        InAMoodPage.setTitle("In A Mood Page");
         InAMoodPage.setScene(new Scene(root, 1142, 658));
         InAMoodPage.setResizable(false);
         InAMoodPage.show();

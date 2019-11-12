@@ -12,6 +12,7 @@ public class InAMoodPageController {
 
     @FXML Button accountBtn = new Button();
     @FXML Button homeBtn = new Button();
+    @FXML Button dudeBtn = new Button();
 
 
     public void openMovieRentalHomePage() throws Exception {
@@ -22,4 +23,9 @@ public class InAMoodPageController {
         AccountPage.display("Account Page");
         InAMoodPage.close();
     }
+    public void openMoodMoviePage() throws Exception {
+        MoodMoviesPage.display("Mood Movies Page");
+        InAMoodPage.close();
+    }
+
 }
