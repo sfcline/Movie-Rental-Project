@@ -23,6 +23,7 @@ public class MovieRentalHomePageController {
   /////////// inserting Objects to be displayed on Survey Scene//////////////////////
   @FXML Button accountBtn = new Button();
   @FXML Button load_movies_btn = new Button();
+  @FXML Button moodBtn = new Button();
   @FXML
   ImageView RecBanner1, RecBanner2, RecBanner3, RecBanner4, RecBanner5, RecBanner6, RecBanner7, RecBanner8,
           RomBanner1, RomBanner2, RomBanner3, RomBanner4, RomBanner5, RomBanner6, RomBanner7, RomBanner8,
@@ -48,6 +49,11 @@ public class MovieRentalHomePageController {
    */
   public void openAccountPage() throws Exception {
     AccountPage.display("Account Page");
+    MovieRentalHomePage.close();
+  }
+  public void openMoodPage() throws Exception {
+    InAMoodPage.display("In A Mood Page");
+    MovieRentalHomePage.close();
   }
 
   /**

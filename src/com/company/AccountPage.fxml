@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,35 +12,44 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.AccountPageController">
     <children>
         <AnchorPane prefHeight="122.0" prefWidth="1142.0" style="-fx-background-color: #474448;">
             <children>
-                <ImageView fx:id="Logo" fitHeight="125.0" fitWidth="162.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="Logo" fitHeight="125.0" fitWidth="162.0" layoutX="76.0" layoutY="-17.0" onMouseClicked="#homeBtnPressed" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@Generic_Movie_Company_Logo.gif" />
                     </image>
                 </ImageView>
-                <Button fx:id="homeBtn" layoutX="206.0" layoutY="51.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="HOME" textFill="#fc9e4f">
+                <Button fx:id="homeBtn" layoutX="310.0" layoutY="14.0" mnemonicParsing="false" onAction="#homeBtnPressed" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="Home" textFill="#fc9e4f">
                     <font>
                         <Font size="22.0" />
                     </font>
+               <effect>
+                  <DropShadow />
+               </effect>
                 </Button>
-                <Button layoutX="344.0" layoutY="51.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #474448;" text="ACCOUNT" textFill="#f6f6f6">
+                <Button layoutX="504.0" layoutY="14.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #474448;" text="Account" textFill="#f6f6f6">
                     <font>
                         <Font size="22.0" />
                     </font>
+               <effect>
+                  <DropShadow />
+               </effect>
                 </Button>
-                <Button layoutX="499.0" layoutY="53.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="IN A MOOD" textFill="#fc9e4f">
+                <Button fx:id="moodBtn" layoutX="697.0" layoutY="14.0" mnemonicParsing="false" onAction="#InAMoodBtnPressed" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="In a Mood" textFill="#fc9e4f">
                     <font>
                         <Font size="22.0" />
                     </font>
+               <effect>
+                  <DropShadow />
+               </effect>
                 </Button>
             </children>
         </AnchorPane>
-      <AnchorPane layoutY="111.0" prefHeight="540.0" prefWidth="1142.0" style="-fx-background-color: #6b6d76;" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="111.0">
+      <AnchorPane layoutY="111.0" prefHeight="540.0" prefWidth="1142.0" style="-fx-background-color: #6b6d76;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="111.0">
          <children>
-            <GridPane layoutX="471.0" layoutY="70.0" prefHeight="410.0" prefWidth="1142.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+            <GridPane layoutX="471.0" layoutY="70.0" prefHeight="487.0" prefWidth="1142.0" AnchorPane.bottomAnchor="-17.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -64,17 +74,17 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="461.0" prefWidth="618.0" style="-fx-background-color: #777983;" text="Login Info" textAlignment="CENTER" textFill="#f6f6f6">
+                        <Button fx:id="loginInfo" mnemonicParsing="false" onAction="#loginInfoPressed" prefHeight="461.0" prefWidth="618.0" style="-fx-background-color: #777983;" text="Login Info" textAlignment="CENTER" textFill="#fc9e4f">
                            <effect>
                               <DropShadow />
                            </effect>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="461.0" prefWidth="618.0" style="-fx-background-color: #777983;" text="Personal Information" textAlignment="CENTER" textFill="#f6f6f6" GridPane.rowIndex="1">
+                        <Button fx:id="personalInfo" mnemonicParsing="false" onAction="#personalInfoPressed" prefHeight="461.0" prefWidth="618.0" style="-fx-background-color: #777983;" text="Personal Information" textAlignment="CENTER" textFill="#f6f6f6" GridPane.rowIndex="1">
                            <effect>
                               <DropShadow />
                            </effect>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="461.0" prefWidth="618.0" style="-fx-background-color: #777983;" text="Viewing History" textAlignment="CENTER" textFill="#f6f6f6" GridPane.rowIndex="2">
+                        <Button fx:id="viewingHistory" mnemonicParsing="false" onAction="#viewingHistoryPressed" prefHeight="461.0" prefWidth="618.0" style="-fx-background-color: #777983;" text="Viewing History" textAlignment="CENTER" textFill="#f6f6f6" GridPane.rowIndex="2">
                            <effect>
                               <DropShadow />
                            </effect>
@@ -108,14 +118,49 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                   </GridPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3" />
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3">
+                     <children>
+                        <Label fx:id="userLabel" layoutX="14.0" layoutY="14.0" text="Username:" textFill="#f6f6f6">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="username" layoutX="165.0" layoutY="14.0" text="Test" textFill="#f6f6f6">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="passLabel" layoutX="14.0" layoutY="60.0" text="Password :" textFill="#f6f6f6">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="enterPass" layoutX="165.0" layoutY="70.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Enter your new password" />
+                        <TextField fx:id="confirmPass" layoutX="165.0" layoutY="106.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Confirm your new password" />
+                        <Button fx:id="changePass" layoutX="194.0" layoutY="141.0" mnemonicParsing="false" onAction="#changePassPressed" text="Change Password" />
+                        <Label fx:id="emailSent" layoutX="56.0" layoutY="183.0" text="A confirmation has been sent to your email." textFill="#f6f6f6" visible="false">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="piTest" layoutX="371.0" layoutY="198.0" text="Personal Info Test" textFill="#f6f6f6" visible="false">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="vhTest" layoutX="368.0" layoutY="198.0" text="Viewing History Test" textFill="#f6f6f6" visible="false">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #111111;" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3" />
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222222;" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3" />
                </children>
             </GridPane>
-            <AnchorPane prefHeight="70.0" prefWidth="1142.0" style="-fx-background-color: #777983;">
+            <AnchorPane cacheShape="false" centerShape="false" layoutY="-20.0" prefHeight="90.0" prefWidth="1142.0" scaleShape="false" style="-fx-background-color: #777983;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Label layoutX="52.0" layoutY="19.0" text="My Account:" textAlignment="CENTER" textFill="#f6f6f6">
+                  <Label layoutX="52.0" layoutY="29.0" text="My Account:" textAlignment="CENTER" textFill="#f6f6f6">
                      <font>
                         <Font size="22.0" />
                      </font>

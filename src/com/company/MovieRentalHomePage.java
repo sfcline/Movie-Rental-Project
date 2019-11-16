@@ -22,9 +22,13 @@ public class MovieRentalHomePage {
   public static void display(String title) throws Exception {
     Parent root =
         FXMLLoader.load(MovieRentalHomePage.class.getResource("MovieRentalHomePage.fxml"));
-    MovieRentalWindow.setTitle("Movie Rental Homepage");
+    MovieRentalWindow.setTitle(title);
     MovieRentalWindow.setScene(new Scene(root, 1142, 658));
     MovieRentalWindow.setResizable(false);
     MovieRentalWindow.show();
+  }
+
+  public static void close(){
+    MovieRentalWindow.close();
   }
 }
