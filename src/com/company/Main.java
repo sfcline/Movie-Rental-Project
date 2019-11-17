@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 /** Main class, calls Controllers */
 public class Main extends Application {
 
+
   /**
    * Sets up Movie Rental Home Page
    *
@@ -24,11 +25,6 @@ public class Main extends Application {
     SignInBox.display("Sign In");
     DBController dbcontroller = new DBController();
     dbcontroller.connectToDB();
-
-    // Refuses access to survey if user hasn't signed in
-    if (!(primaryStage.isFocused() && User.hasSignedIn())) {
-      primaryStage.close();
-    }
   } // ends start
 
   /**

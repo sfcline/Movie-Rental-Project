@@ -47,18 +47,4 @@ public class MoodMoviesPageController {
         MoodMoviesPage.close();
 
     }
-    /** Increases size of banner when called. */
-    public void growBanner() {
-        scaleImg(RecBanner1, 1.01);
-    }
-
-    /** Decreases size of banner when called. */
-    public void shrinkBanner() {
-        scaleImg(RecBanner1, .99);
-    }
-
-    public void scaleImg(Node img, double amount) {
-        img.setScaleX(amount);
-        img.setScaleY(amount);
-    }
 }

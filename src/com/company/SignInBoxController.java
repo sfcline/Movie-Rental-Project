@@ -6,11 +6,10 @@ package com.company;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
+
+import java.util.concurrent.TimeUnit;
 
 /** Controls all functions of the sign in box. */
 public class SignInBoxController {
@@ -25,10 +24,9 @@ public class SignInBoxController {
   /**
    * When sign in button is pressed Prints to console and authenticates users.
    *
-   * @param event sign in button pressed.
    * @throws Exception exception.
    */
-  public void signInButtonPressed(ActionEvent event) throws Exception {
+  public void signInButtonPressed() throws Exception {
     authenticateUser();
     openMovieRentalHome();
   } // end pressButton
@@ -39,13 +37,11 @@ public class SignInBoxController {
    */
   public void authenticateUser() {
     Boolean passwordStatus = User.isGoodPassword(usernameField.getText(), passwordField.getText());
-    if (passwordStatus == true) {
+    if (passwordStatus) {
       passwordCheck.setTextFill(Paint.valueOf("#009918"));
       passwordCheck.setText("User Authentication Successful.");
       usernameField.clear();
       passwordField.clear();
-      SignInBox.close();
-
     } else {
       passwordCheck.setTextFill(Paint.valueOf("#cc0000"));
       passwordCheck.setText("User Authentication Failed. Please Try Again");
@@ -70,5 +66,8 @@ public class SignInBoxController {
    */
   public void openMovieRentalHome() throws Exception {
     MovieRentalHomePage.display("Movie Rental Homepage");
+    if (MovieRentalHomePage.MovieRentalWindow.isShowing()) {
+      SignInBox.close();
+    }
   }
 } // end SignInOrSignUpBoxController

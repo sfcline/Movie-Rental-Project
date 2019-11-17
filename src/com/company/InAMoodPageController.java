@@ -1,7 +1,11 @@
 package com.company;
 
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 public class InAMoodPageController {
 
@@ -28,4 +32,23 @@ public class InAMoodPageController {
         InAMoodPage.close();
     }
 
+    /**
+     * @param e - Mouse Event thrown by mouse entering the Node
+     */
+    public void handleButtonMouseEntered(MouseEvent e){
+        Button tmp = (Button)e.getSource();
+        tmp.setScaleX(1.03);
+        tmp.setScaleY(1.03);
+        tmp.setCursor(Cursor.HAND);
+    }
+
+    /**
+     * @param e - Mouse Event thrown by mouse entering the Node
+     */
+    public void handleButtonMouseExit(MouseEvent e){
+        Button tmp = (Button)e.getSource();
+        tmp.setScaleX(.97);
+        tmp.setScaleY(.97);
+        tmp.setCursor(Cursor.DEFAULT);
+    }
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.InAMoodPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.InAMoodPageController">
   <children>
     <AnchorPane layoutX="1.0" layoutY="88.0" prefHeight="579.0" prefWidth="1151.0" style="-fx-background-color: #f6f6f6;">
          <children>
@@ -29,7 +29,7 @@
                <children>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="dudeBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO STRAIGHT VIBE, DUDE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="dudeBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO STRAIGHT VIBE, DUDE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -41,7 +41,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <children>
-                        <Button fx:id="grooveBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO GET MY GROOVE ON" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="grooveBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO GET MY GROOVE ON" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -53,7 +53,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                      <children>
-                        <Button fx:id="laughBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO LAUGH" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="laughBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO LAUGH" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -65,7 +65,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                      <children>
-                        <Button fx:id="sleepBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO FALL ASLEEP" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="sleepBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO FALL ASLEEP" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -77,7 +77,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Button fx:id="childrenBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="FOR CHILDREN TO BE ENTERTAINED" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="childrenBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="FOR CHILDREN TO BE ENTERTAINED" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -89,7 +89,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Button fx:id="romanceBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="FOR ROMANCE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="romanceBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="FOR ROMANCE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -101,7 +101,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                      <children>
-                        <Button fx:id="smartBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO FEEL SMART" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="smartBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO FEEL SMART" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -113,7 +113,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <children>
-                        <Button fx:id="productiveBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO FEEL PRODUCTIVE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="productiveBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO FEEL PRODUCTIVE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -125,7 +125,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <children>
-                        <Button fx:id="cookBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO COOK" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="cookBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO COOK" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -137,7 +137,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
                      <children>
-                        <Button fx:id="inspiredBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO BE INSPIRED" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="inspiredBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO BE INSPIRED" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -149,7 +149,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <children>
-                        <Button fx:id="cryBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO CRY" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="cryBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO CRY" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -161,7 +161,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <children>
-                        <Button fx:id="leaveBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="FOR PEOPLE TO LEAVE MY HOUSE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="leaveBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onAction="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="FOR PEOPLE TO LEAVE MY HOUSE" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>
@@ -182,7 +182,7 @@
                   <Image url="@Generic_Movie_Company_Logo.gif" />
                </image>
             </ImageView>
-            <Button fx:id="homeBtn" layoutX="314.0" layoutY="13.0" mnemonicParsing="false" onAction="#openMovieRentalHomePage" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="Home" textFill="#fc9e4f" AnchorPane.rightAnchor="699.0">
+            <Button fx:id="homeBtn" layoutX="314.0" layoutY="13.0" mnemonicParsing="false" onAction="#openMovieRentalHomePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="Home" textFill="#fc9e4f" AnchorPane.rightAnchor="699.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -190,7 +190,7 @@
                   <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
                </effect>
             </Button>
-            <Button fx:id="accountBtn" layoutX="506.0" layoutY="13.0" mnemonicParsing="false" onAction="#openAccountPage" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #474448;" text="Account" textFill="#fc9e4f">
+            <Button fx:id="accountBtn" layoutX="506.0" layoutY="13.0" mnemonicParsing="false" onAction="#openAccountPage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #474448;" text="Account" textFill="#fc9e4f">
                <font>
                   <Font size="22.0" />
                </font>
@@ -198,7 +198,7 @@
                   <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
                </effect>
             </Button>
-            <Button layoutX="701.0" layoutY="13.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="In a Mood" textFill="#f6f6f6" AnchorPane.leftAnchor="701.0">
+            <Button layoutX="701.0" layoutY="13.0" mnemonicParsing="false" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="In a Mood" textFill="#f6f6f6" AnchorPane.leftAnchor="701.0">
                <font>
                   <Font size="22.0" />
                </font>

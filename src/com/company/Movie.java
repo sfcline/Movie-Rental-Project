@@ -36,6 +36,8 @@ public class Movie {
 
   private String tagLine;
 
+  private String imageView;
+
   /**
    * Movie Constructor.
    *
@@ -56,20 +58,20 @@ public class Movie {
    * @throws IllegalMovieArgumentException throws exception.
    */
   public Movie(
-      int movieID,
-      String title,
-      String rating,
-      String genre,
-      double runTime,
-      double score,
-      String star,
-      String director,
-      String writer,
-      String overview,
-      double popularity,
-      String poster,
-      String releaseDate,
-      String tagLine)
+          int movieID,
+          String title,
+          String rating,
+          String genre,
+          double runTime,
+          double score,
+          String star,
+          String director,
+          String writer,
+          String overview,
+          double popularity,
+          String poster,
+          String releaseDate,
+          String tagLine)
       throws IllegalMovieArgumentException {
     setMovieID(movieID);
     setTitle(title);
@@ -434,14 +436,24 @@ public class Movie {
    * @throws IllegalMovieArgumentException thrown if invalid String.
    */
   public void setTagLine(String tagLine) throws IllegalMovieArgumentException {
-    if (tagLine != null && tagLine.length() > 0) {
-      this.tagLine = tagLine;
+    this.tagLine = tagLine;
+  }
+
+  /**
+   * Sets Movie's PosterID.
+   *
+   * @param imageView String release date.
+   * @throws IllegalMovieArgumentException thrown if invalid String.
+   */
+  public void setImageView(String imageView) throws IllegalMovieArgumentException {
+    if (imageView != null && imageView.length() > 0) {
+      this.imageView = imageView;
     } else {
       throw new IllegalMovieArgumentException(
-          "Invalid Tag Line "
-              + tagLine
-              + " Tag Line must be "
-              + "greater than zero characters long.");
+              "Invalid Image View ID "
+                      + imageView
+                      + " Image View ID must be "
+                      + "greater than zero characters long.");
     }
   }
 
@@ -481,4 +493,6 @@ public class Movie {
     }
     return isUnique;
   }
+
+
 }
