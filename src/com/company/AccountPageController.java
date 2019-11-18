@@ -5,9 +5,11 @@
 package com.company;
 
 import javafx.fxml.FXML;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
 /** AccountPageController class, controls the account page. */
@@ -107,5 +109,27 @@ public class AccountPageController {
   }
   public void openMoodPage() throws Exception {
     InAMoodPage.display("In A Mood Page");
+  }
+
+
+
+  /**
+   * @param e - Mouse Event thrown by mouse entering the Node
+   */
+  public void handleButtonMouseEntered(MouseEvent e){
+    Button tmp = (Button)e.getSource();
+    tmp.setScaleX(1.03);
+    tmp.setScaleY(1.03);
+    tmp.setCursor(Cursor.HAND);
+  }
+
+  /**
+   * @param e - Mouse Event thrown by mouse entering the Node
+   */
+  public void handleButtonMouseExit(MouseEvent e){
+    Button tmp = (Button)e.getSource();
+    tmp.setScaleX(.97);
+    tmp.setScaleY(.97);
+    tmp.setCursor(Cursor.DEFAULT);
   }
 } // end controller

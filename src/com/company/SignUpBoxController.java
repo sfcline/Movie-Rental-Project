@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Paint;
 
+import java.sql.SQLException;
+
 /** Controls all aspects of the Sign Up Box Page. */
 public class SignUpBoxController {
   /////////// inserting Objects to be displayed on Main Program Scene//////////////////////
@@ -23,6 +25,7 @@ public class SignUpBoxController {
   @FXML Label errorCodeBottom = new Label();
   @FXML Label newUserLabel = new Label();
   @FXML Label ageError = new Label();
+  private DBController SignUpController = new DBController();
 
   /**
    * Checks if Username Fields 1 & 2 are of correct length and if they match.
@@ -93,7 +96,7 @@ public class SignUpBoxController {
   } // end checkPasswordLength
 
   /** Called when the sign up button is pressed. */
-  public void signUpButtonPressed() {
+  public void signUpButtonPressed() throws SQLException {
     boolean UsernameStatus = checkUsernameLength();
     boolean PasswordStatus = checkPasswordLength();
     /*This portion will also be used to check if user already exists.
@@ -102,8 +105,7 @@ public class SignUpBoxController {
     if (ageButton.isSelected()) {
       ageError.setText(" ");
       if (UsernameStatus && PasswordStatus) { // If Username is UNIQUE, then add user to DataBase
-        // User.setUsername(username1.getText().trim());
-        // User.setPassword(password1.getText().trim());
+        SignUpController.insertIntoUsers(username1.getText().trim(),password1.getText().trim());
         System.out.println("[remove this later] NEW USER CREATED!");
         SignUpWindow.close();
       } else { // If Username is not UNIQUE, then reject user Creation

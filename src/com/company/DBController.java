@@ -76,49 +76,39 @@ public class DBController {
    * @param Movie_ID - Movie Id of the requested Poster
    * @return Poster - Poster Suffix of movie requested
    */
-  public String selectMoviePosterFromMoviesWhereMovieIDis(int Movie_ID) {
-    String Poster = "";
+  public Movie selectMovieFromMoviesWhereMovieIDis(int Movie_ID) {
     ResultSet rs = null;
+    Movie movie = null;
     try {
-      String insertQuery = "SELECT POSTER FROM MOVIES WHERE MOVIE_ID=?;";
+      String insertQuery = "SELECT * FROM MOVIES WHERE MOVIE_ID=?;";
       PreparedStatement pstmt = conn.prepareStatement(insertQuery);
       pstmt.setInt(1, Movie_ID);
       rs = pstmt.executeQuery();
 
       while (rs.next()) {
-        Poster = rs.getString("POSTER");
+        movie = new Movie(rs.getInt("movie_id"),
+                rs.getString("title"),
+                rs.getString("rating"),
+                rs.getString("genre"),
+                rs.getDouble("runtime"),
+                rs.getDouble("score"),
+                rs.getString("star"),
+                rs.getString("director"),
+                rs.getString("writer"),
+                rs.getString("overview"),
+                rs.getInt("popularity"),
+                rs.getString("poster"),
+                rs.getString("release_date"),
+                rs.getString("tagline"));
       }
-    } catch (SQLException e) {
+    } catch (SQLException | IllegalMovieArgumentException e) {
       System.out.println("ERROR: Selecting Poster from Movies Failed.");
       System.out.println("Reason:" + e);
     }
-    return Poster;
+    return movie;
   }//end selectMoviePosterFromMoviesWhereMovieIDis
 
-  /**
-   * Selects Title where a Movie ID is equal to the Parameter
-   *
-   * @param Movie_ID - Movie Id of the requested Title
-   * @return Title - Title of movie requested
-   */
-  public String selectMovieTitleFromMoviesWhereMovieIDis(int Movie_ID) {
-    String Title = "";
-    ResultSet rs = null;
-    try {
-      String insertQuery = "SELECT TITLE FROM MOVIES WHERE MOVIE_ID=?;";
-      PreparedStatement pstmt = conn.prepareStatement(insertQuery);
-      pstmt.setInt(1, Movie_ID);
-      rs = pstmt.executeQuery();
 
-      while (rs.next()) {
-        Title = rs.getString("TITLE");
-      }
-    } catch (SQLException e) {
-      System.out.println("ERROR: Selecting Title from Movies Failed.");
-      System.out.println("Reason:" + e);
-    }
-    return Title;
-  }//end selectMoviePosterFromMoviesWhereMovieIDis
 
   /**
    * Selects Poster Suffix where a Title is equal to the Parameter
@@ -152,10 +142,12 @@ public class DBController {
    * @param Tag- Movie Id of the requested Poster
    * @return Poster - Poster Suffix of movie requested
    */
-  public String selectRANDOMMoviePosterFromMoviesWhereTagIs(String Tag) {
+  public ArrayList<Movie> selectRANDOMMoviePostersFromMoviesWhereTagIs(String Tag, int amountofPosters) {
     ArrayList<String> MovieNames = new ArrayList<>();
-    String Poster = "";
+    String[] Posters = new String[amountofPosters];
     ResultSet rs = null;
+    Movie movie = null;
+    ArrayList<Movie> Movies = new ArrayList<>();
     try {
       String insertQuery = "SELECT MOVIE_NAME FROM TAGFORMOVIES WHERE TAG_NAME=?;";
       PreparedStatement pstmt = conn.prepareStatement(insertQuery);
@@ -170,22 +162,40 @@ public class DBController {
       System.out.println("Reason1:" + e);
     }
     Random rdm = new Random();
-    String movieChoice = MovieNames.get(rdm.nextInt(MovieNames.size()));
-    try {
-      String insertQuery = "SELECT POSTER FROM MOVIES WHERE TITLE=?;";
-      PreparedStatement pstmt = conn.prepareStatement(insertQuery);
-      pstmt.setString(1, movieChoice);
-      rs = pstmt.executeQuery();
+    for (int i = 0; i < amountofPosters; i++) {
+      String movieChoice = MovieNames.get(rdm.nextInt((MovieNames.size()-i)));
+      Posters[i] = movieChoice;
+      MovieNames.remove(movieChoice);
+      try {
+        String insertQuery = "SELECT * FROM MOVIES WHERE TITLE=?;";
+        PreparedStatement pstmt = conn.prepareStatement(insertQuery);
+        pstmt.setString(1, Posters[i]);
+        rs = pstmt.executeQuery();
 
-      while (rs.next()) {
-        Poster = (rs.getString("POSTER"));
+        while (rs.next()) {
+          movie = new Movie(rs.getInt("movie_id"),
+                  rs.getString("title"),
+                  rs.getString("rating"),
+                  rs.getString("genre"),
+                  rs.getDouble("runtime"),
+                  rs.getDouble("score"),
+                  rs.getString("star"),
+                  rs.getString("director"),
+                  rs.getString("writer"),
+                  rs.getString("overview"),
+                  rs.getInt("popularity"),
+                  rs.getString("poster"),
+                  rs.getString("release_date"),
+                  rs.getString("tagline"));
+          Posters[i] = (movie.getPoster());
+          Movies.add(movie);
+        }
+      } catch (SQLException | IllegalMovieArgumentException e) {
+        System.out.println("ERROR: Selecting Poster from MovieNames Failed.");
+        System.out.println("Reason2:" + e);
       }
-    } catch (SQLException e) {
-      System.out.println("ERROR: Selecting Poster from MovieNames Failed.");
-      System.out.println("Reason2:" + e);
     }
-
-    return Poster;
+    return Movies;
   }//end selectMoviePosterFromMoviesWhereMovieIDis
 
   /**
@@ -212,4 +222,81 @@ public class DBController {
     }
     return Title;
   }
+
+  public void insertIntoUsers(String val1, String val2) throws SQLException {
+    if (!selectFromUsersWhereUsernameIs(val1)) {
+      String[] insertValues = {val1, val2};
+      try {
+        String insertQuery = "INSERT INTO USERS"
+                + "(USER_NAME, PASSWORD)" + " VALUES (?, ?);";
+        PreparedStatement pstmt = conn.prepareStatement(insertQuery);
+        pstmt.setString(1, insertValues[0]);
+        pstmt.setString(2, insertValues[1]);
+        pstmt.executeUpdate();
+      } catch (SQLException e) {
+        System.out.println("ERROR: insertIntoUsers Failed!");
+        System.out.println(e);
+      }
+    }else {
+      System.out.println("User Already Exists!");
+    }
+  }//end insert into users
+
+  /**
+   * Used to find if a user exist's with the chosen Username
+   *
+   * @param value - value of Username that you are searching for
+   * @return userExists - true or false depending
+   * */
+  public boolean selectFromUsersWhereUsernameIs(String value) {
+    boolean userExists = true;
+    ResultSet rs = null;
+    try {
+      String insertQuery = "SELECT * FROM USERS WHERE USER_NAME IS ?;";
+      PreparedStatement pstmt = conn.prepareStatement(insertQuery);
+      pstmt.setString(1, value);
+      rs = pstmt.executeQuery(insertQuery);
+    } catch (SQLException e) {
+      userExists = false;
+    }
+    return userExists;
+  }
+
+  /**
+   * Selects Title where a Movie ID is equal to the Parameter
+   *
+   * @param Poster - Movie Id of the requested Title
+   * @return Title - Title of movie requested
+   */
+/*  public void CreateNewMovieFromMoviesWherePosterIs(String Poster) {
+    String Title = "";
+    ResultSet rs = null;
+    try {
+      String insertQuery = "SELECT * FROM MOVIES WHERE POSTER=?;";
+      PreparedStatement pstmt = conn.prepareStatement(insertQuery);
+      pstmt.setString(1, Poster);
+      rs = pstmt.executeQuery();
+      while (rs.next()) {
+        Movie movie = new Movie(
+                rs.getInt("movie_id"),
+                rs.getString("username"),
+                rs.getString("rating"),
+                rs.getString("genre"),
+                rs.getDouble("runtime"),
+                rs.getDouble("score"),
+                rs.getString("star"),
+                rs.getString("director"),
+                rs.getString("writer"),
+                rs.getString("overview"),
+                rs.getInt("popularity"),
+                rs.getString("poster"),
+                rs.getString("release_date"),
+                rs.getString("tagline"));
+      }
+    } catch (SQLException | IllegalMovieArgumentException e) {
+      System.out.println("ERROR: Selecting Title from Movies Failed.");
+      System.out.println("Reason:" + e);
+    }
+  }*/
+
 }

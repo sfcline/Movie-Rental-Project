@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #f6f6f6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.MovieRentalHomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #f6f6f6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.MovieRentalHomePageController">
   <children>
     <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="88.0" prefWidth="1142.0" style="-fx-background-color: #474448;">
       <children>
@@ -21,7 +22,7 @@
                   <Image url="@Generic_Movie_Company_Logo.gif" />
                </image>
             </ImageView>
-            <Button layoutX="314.0" layoutY="13.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="Home" textFill="#f6f6f6" AnchorPane.rightAnchor="699.0">
+            <Button layoutX="314.0" layoutY="13.0" mnemonicParsing="false" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="Home" textFill="#f6f6f6" AnchorPane.rightAnchor="699.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -29,7 +30,7 @@
                   <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
                </effect>
             </Button>
-            <Button fx:id="accountBtn" layoutX="506.0" layoutY="13.0" mnemonicParsing="false" onAction="#openAccountPage" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #474448;" text="Account" textFill="#fc9e4f">
+            <Button fx:id="accountBtn" layoutX="506.0" layoutY="13.0" mnemonicParsing="false" onAction="#openAccountPage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #474448;" text="Account" textFill="#fc9e4f">
                <font>
                   <Font size="22.0" />
                </font>
@@ -37,7 +38,7 @@
                   <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
                </effect>
             </Button>
-            <Button fx:id="moodBtn" layoutX="701.0" layoutY="13.0" mnemonicParsing="false" onAction="#openMoodPage" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="In a Mood" textFill="#fc9e4f" AnchorPane.leftAnchor="701.0">
+            <Button fx:id="moodBtn" layoutX="701.0" layoutY="13.0" mnemonicParsing="false" onAction="#openMoodPage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="In a Mood" textFill="#fc9e4f" AnchorPane.leftAnchor="701.0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -45,7 +46,6 @@
                   <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
                </effect>
             </Button>
-            <Button fx:id="load_movies_btn" layoutX="893.0" layoutY="32.0" mnemonicParsing="false" onAction="#loadMovies" text="Load Movies" />
       </children>
          <effect>
             <DropShadow height="25.0" radius="5.75" spread="0.25" width="0.0" />
@@ -83,7 +83,7 @@
                                        <children>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
                                              <children>
-                                                <ImageView fx:id="RecBanner1" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#growBanner" onMouseExited="#shrinkBanner" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RecBanner1" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -93,7 +93,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
                                              <children>
-                                                <ImageView fx:id="RecBanner2" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RecBanner2" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -103,7 +103,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
                                              <children>
-                                                <ImageView fx:id="RecBanner3" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RecBanner3" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -113,7 +113,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
                                              <children>
-                                                <ImageView fx:id="RecBanner4" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RecBanner4" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -123,7 +123,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
                                              <children>
-                                                <ImageView fx:id="RecBanner5" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RecBanner5" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -133,7 +133,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
                                              <children>
-                                                <ImageView fx:id="RecBanner6" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RecBanner6" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -143,7 +143,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
                                              <children>
-                                                <ImageView fx:id="RecBanner7" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RecBanner7" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -153,7 +153,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="7">
                                              <children>
-                                                <ImageView fx:id="RecBanner8" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RecBanner8" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -193,7 +193,7 @@
                                        <children>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
                                              <children>
-                                                <ImageView fx:id="RomBanner1" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RomBanner1" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRomance" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -203,7 +203,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
                                              <children>
-                                                <ImageView fx:id="RomBanner2" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RomBanner2" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRomance" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -213,7 +213,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
                                              <children>
-                                                <ImageView fx:id="RomBanner3" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RomBanner3" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRomance" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -223,7 +223,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
                                              <children>
-                                                <ImageView fx:id="RomBanner4" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RomBanner4" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRomance" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -233,7 +233,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
                                              <children>
-                                                <ImageView fx:id="RomBanner5" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RomBanner5" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRomance" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -243,7 +243,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
                                              <children>
-                                                <ImageView fx:id="RomBanner6" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RomBanner6" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRomance" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -253,7 +253,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
                                              <children>
-                                                <ImageView fx:id="RomBanner7" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RomBanner7" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRomance" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -263,7 +263,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="7">
                                              <children>
-                                                <ImageView fx:id="RomBanner8" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="RomBanner8" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRomance" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -303,7 +303,7 @@
                                        <children>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
                                              <children>
-                                                <ImageView fx:id="ComBanner1" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="ComBanner1" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsComedy" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -313,7 +313,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
                                              <children>
-                                                <ImageView fx:id="ComBanner2" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="ComBanner2" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsComedy" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -323,7 +323,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
                                              <children>
-                                                <ImageView fx:id="ComBanner3" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="ComBanner3" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsComedy" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -333,7 +333,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
                                              <children>
-                                                <ImageView fx:id="ComBanner4" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="ComBanner4" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsComedy" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -343,7 +343,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
                                              <children>
-                                                <ImageView fx:id="ComBanner5" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="ComBanner5" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsComedy" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -353,7 +353,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
                                              <children>
-                                                <ImageView fx:id="ComBanner6" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="ComBanner6" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsComedy" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -363,7 +363,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
                                              <children>
-                                                <ImageView fx:id="ComBanner7" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="ComBanner7" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsComedy" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -373,7 +373,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="7">
                                              <children>
-                                                <ImageView fx:id="ComBanner8" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="ComBanner8" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsComedy" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -413,7 +413,7 @@
                                        <children>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
                                              <children>
-                                                <ImageView fx:id="FamBanner1" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="FamBanner1" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsFamily" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -423,7 +423,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
                                              <children>
-                                                <ImageView fx:id="FamBanner2" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="FamBanner2" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsFamily" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -433,17 +433,22 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
                                              <children>
-                                                <ImageView fx:id="FamBanner3" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="FamBanner3" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsFamily" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
                                                 </ImageView>
                                                 <Label fx:id="FamLabel3" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                <ImageView fx:id="FamBanner31" fitHeight="168.0" fitWidth="133.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#showMovieDetailsFamily" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                   <effect>
+                                                      <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                   </effect>
+                                                </ImageView>
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
                                              <children>
-                                                <ImageView fx:id="FamBanner4" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="FamBanner4" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsFamily" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -453,7 +458,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
                                              <children>
-                                                <ImageView fx:id="FamBanner5" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="FamBanner5" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsFamily" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -463,7 +468,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
                                              <children>
-                                                <ImageView fx:id="FamBanner6" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="FamBanner6" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsFamily" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -473,7 +478,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
                                              <children>
-                                                <ImageView fx:id="FamBanner7" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="FamBanner7" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsFamily" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -483,7 +488,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="7">
                                              <children>
-                                                <ImageView fx:id="FamBanner8" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="FamBanner8" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsFamily" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -523,7 +528,7 @@
                                        <children>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
                                              <children>
-                                                <ImageView fx:id="HorBanner1" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="HorBanner1" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsHorror" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -533,7 +538,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
                                              <children>
-                                                <ImageView fx:id="HorBanner2" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="HorBanner2" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsHorror" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -543,7 +548,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
                                              <children>
-                                                <ImageView fx:id="HorBanner3" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="HorBanner3" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsHorror" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -553,7 +558,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
                                              <children>
-                                                <ImageView fx:id="HorBanner4" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="HorBanner4" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsHorror" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -563,7 +568,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
                                              <children>
-                                                <ImageView fx:id="HorBanner5" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="HorBanner5" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsHorror" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -573,7 +578,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
                                              <children>
-                                                <ImageView fx:id="HorBanner6" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="HorBanner6" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsHorror" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -583,7 +588,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
                                              <children>
-                                                <ImageView fx:id="HorBanner7" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="HorBanner7" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsHorror" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -593,7 +598,7 @@
                                           </AnchorPane>
                                           <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="7">
                                              <children>
-                                                <ImageView fx:id="HorBanner8" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="HorBanner8" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsHorror" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
                                                    <effect>
                                                       <DropShadow height="32.0" radius="15.5" width="32.0" />
                                                    </effect>
@@ -612,6 +617,80 @@
               </content>
             </ScrollPane>
          </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ShadowPane" onMouseClicked="#handleCloseMovieDetails" opacity="0.5" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="MovieDetailsPane" layoutX="155.0" layoutY="85.0" prefHeight="488.0" prefWidth="832.0" style="-fx-background-color: #f6f6f6;">
+         <children>
+            <ImageView fx:id="moviePosterDetails" fitHeight="431.0" fitWidth="285.0" layoutX="8.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+            <AnchorPane layoutX="303.0" layoutY="6.0" prefHeight="95.0" prefWidth="520.0" style="-fx-background-color: #ebebeb;">
+               <effect>
+                  <InnerShadow color="#00000055" height="5.0" radius="2.0" width="5.0" />
+               </effect>
+               <children>
+                  <Label fx:id="movieReleaseDateDetails" alignment="CENTER" layoutX="171.0" layoutY="66.0" prefHeight="30.0" prefWidth="177.5" text="Release Date">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="303.0" layoutY="106.0" prefHeight="318.0" prefWidth="520.0" style="-fx-background-color: #ebebeb;">
+               <effect>
+                  <InnerShadow color="#00000055" height="5.0" radius="2.0" width="5.0" />
+               </effect>
+               <children>
+                  <Label fx:id="movieOverviewDetails" alignment="CENTER" layoutX="10.0" layoutY="89.0" prefHeight="215.0" prefWidth="500.0" text="Overview" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="movieTaglineDetails" alignment="CENTER" layoutX="10.0" prefHeight="82.0" prefWidth="500.0" text="Tagline" wrapText="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="8.0" layoutY="443.0" prefHeight="41.0" prefWidth="285.0" style="-fx-background-color: #ebebeb;">
+               <effect>
+                  <InnerShadow color="#00000055" height="5.0" radius="2.0" width="5.0" />
+               </effect>
+            </AnchorPane>
+            <Label fx:id="movieTitleDetails" alignment="CENTER" layoutX="302.0" layoutY="10.0" prefHeight="62.0" prefWidth="520.0" text="MOVIE TITLE">
+               <font>
+                  <Font size="42.0" />
+               </font>
+            </Label>
+            <Label fx:id="movieRuntimeDetails" layoutX="10.0" layoutY="448.0" prefHeight="30.0" prefWidth="178.0" text="Runtime">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="movieRatingsDetails" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="189.0" layoutY="448.0" prefHeight="30.0" prefWidth="99.0" text="Rating" textAlignment="RIGHT">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button layoutX="446.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleRentMovie" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="54.0" prefWidth="378.0" style="-fx-background-color: fc9e4f;" text="Rent Now!" textFill="#f6f6f6">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
+               </effect>
+            </Button>
+            <Button layoutX="311.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleCloseMovieDetails" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="54.0" prefWidth="124.0" style="-fx-background-color: #474448;" text="Back" textFill="#f6f6f6">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
+               </effect>
+            </Button>
+         </children>
+         <effect>
+            <DropShadow color="#0000009c" height="74.37" radius="38.167500000000004" width="80.3" />
+         </effect>
       </AnchorPane>
   </children>
 </AnchorPane>
