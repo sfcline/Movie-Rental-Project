@@ -2,7 +2,9 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
@@ -46,6 +48,8 @@
                   <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
                </effect>
             </Button>
+            <TextField fx:id="SearchTF" layoutX="875.0" layoutY="32.0" promptText="Search Keyword" />
+            <Button fx:id="searchBtn" layoutX="1036.0" layoutY="32.0" mnemonicParsing="false" onAction="#searchQuery" text="Search" />
       </children>
          <effect>
             <DropShadow height="25.0" radius="5.75" spread="0.25" width="0.0" />
@@ -619,7 +623,7 @@
          </children>
       </AnchorPane>
       <AnchorPane fx:id="ShadowPane" onMouseClicked="#handleCloseMovieDetails" opacity="0.5" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <AnchorPane fx:id="MovieDetailsPane" layoutX="155.0" layoutY="85.0" prefHeight="488.0" prefWidth="832.0" style="-fx-background-color: #f6f6f6;">
+      <AnchorPane fx:id="MovieDetailsPane" layoutX="155.0" layoutY="85.0" prefHeight="488.0" prefWidth="832.0" style="-fx-background-color: #f6f6f6;" visible="false">
          <children>
             <ImageView fx:id="moviePosterDetails" fitHeight="431.0" fitWidth="285.0" layoutX="8.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
             <AnchorPane layoutX="303.0" layoutY="6.0" prefHeight="95.0" prefWidth="520.0" style="-fx-background-color: #ebebeb;">
@@ -691,6 +695,15 @@
          <effect>
             <DropShadow color="#0000009c" height="74.37" radius="38.167500000000004" width="80.3" />
          </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="750.0" layoutY="87.0" prefHeight="318.0" prefWidth="378.0" style="-fx-background-color: #f6f6f6;" visible="false">
+         <children>
+            <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="318.0" prefWidth="378.0">
+               <content>
+                  <ListView prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </ScrollPane>
+         </children>
       </AnchorPane>
   </children>
 </AnchorPane>

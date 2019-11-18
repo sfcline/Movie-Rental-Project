@@ -10,6 +10,7 @@ import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -48,6 +49,8 @@ public class MovieRentalHomePageController implements Initializable {
   @FXML Label movieTitleDetails, movieRuntimeDetails, movieReleaseDateDetails, movieRatingsDetails,
           movieTaglineDetails, movieOverviewDetails = new Label();
   @FXML ImageView moviePosterDetails = new ImageView();
+  @FXML TextField SearchTF = new TextField();
+  @FXML Button SearchBtn = new Button();
   //////////////////////////////////////////////////////////////////////////////////
 
   ArrayList<Node> recommendedList = new ArrayList<>();
@@ -230,6 +233,12 @@ public class MovieRentalHomePageController implements Initializable {
   public void handleCloseMovieDetails() {
     ShadowPane.setVisible(false);
     MovieDetailsPane.setVisible(false);
+  }
+
+  public void searchQuery(){
+      DBController searchController = new DBController();
+      searchController.connectToDB();
+      System.out.println(searchController.selectMovieFromMoviesWhereKeywordIs(SearchTF.getText()));
   }
 
 } // end
