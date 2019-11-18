@@ -7,6 +7,7 @@ package com.company;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -15,6 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
@@ -47,6 +49,8 @@ public class MovieRentalHomePageController implements Initializable {
           movieTaglineDetails, movieOverviewDetails = new Label();
   @FXML ImageView moviePosterDetails = new ImageView();
   //////////////////////////////////////////////////////////////////////////////////
+
+  ArrayList<Node> recommendedList = new ArrayList<>();
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
@@ -124,10 +128,20 @@ public class MovieRentalHomePageController implements Initializable {
    * @throws IllegalMovieArgumentException thrown if parameter to make Movie is rejected.
    */
   public void loadMovies() throws IllegalMovieArgumentException {
+    recommendedList.add(RecBanner1);recommendedList.add(RecBanner2);recommendedList.add(RecBanner3);
+    recommendedList.add(RecBanner4);recommendedList.add(RecBanner5);recommendedList.add(RecBanner6);
+    recommendedList.add(RecBanner7);recommendedList.add(RecBanner8);
+    recommendedList.add(RecLabel1);recommendedList.add(RecLabel2);recommendedList.add(RecLabel3);
+    recommendedList.add(RecLabel4);recommendedList.add(RecLabel5);recommendedList.add(RecLabel6);
+    recommendedList.add(RecLabel7);recommendedList.add(RecLabel8);
+
+    MovieRow Recommended = new MovieRow(recommendedList);
+    /*
     MovieRow Recommended = new MovieRow(RecBanner1, RecBanner2, RecBanner3, RecBanner4,
             RecBanner5, RecBanner6, RecBanner7, RecBanner8,
             RecLabel1, RecLabel2, RecLabel3, RecLabel4,
             RecLabel5, RecLabel6, RecLabel7, RecLabel8);
+    */
     DisplayedMovies.put("Recommended", Recommended.setPostersWithMovieIDs(1,2,3,4,5,6,7,8));
     MovieRow Romance = new MovieRow(RomBanner1, RomBanner2, RomBanner3, RomBanner4,
             RomBanner5, RomBanner6, RomBanner7, RomBanner8,
