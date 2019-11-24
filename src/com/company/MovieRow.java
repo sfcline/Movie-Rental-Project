@@ -29,8 +29,10 @@ public class MovieRow {
     private ArrayList<Label> LblList = new ArrayList<>();
 
 
-    public MovieRow(ImageView Location1IV, ImageView Location2IV, ImageView Location3IV, ImageView Location4IV, ImageView Location5IV, ImageView Location6IV, ImageView Location7IV, ImageView Location8IV,
-                    Label Location1Lbl, Label Location2Lbl, Label Location3Lbl, Label Location4Lbl, Label Location5Lbl, Label Location6Lbl, Label Location7Lbl, Label Location8Lbl) {
+    public MovieRow(ImageView Location1IV, ImageView Location2IV, ImageView Location3IV, ImageView Location4IV,
+                    ImageView Location5IV, ImageView Location6IV, ImageView Location7IV, ImageView Location8IV,
+                    Label Location1Lbl, Label Location2Lbl, Label Location3Lbl, Label Location4Lbl, Label Location5Lbl,
+                    Label Location6Lbl, Label Location7Lbl, Label Location8Lbl) {
         this.Location1IV = Location1IV;
         this.Location2IV = Location2IV;
         this.Location3IV = Location3IV;

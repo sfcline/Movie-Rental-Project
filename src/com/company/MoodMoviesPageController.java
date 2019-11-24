@@ -6,6 +6,7 @@ import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -46,7 +47,7 @@ public class MoodMoviesPageController implements Initializable {
             movieTaglineDetails, movieOverviewDetails = new Label();
     @FXML ImageView moviePosterDetails = new ImageView();
 
-    ArrayList<Node> recommendedList = new ArrayList<>();
+    ArrayList<Node> recommendedMoodList = new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources)  {
@@ -92,25 +93,86 @@ public class MoodMoviesPageController implements Initializable {
         tmp.setScaleY(.97);
         tmp.setCursor(Cursor.DEFAULT);
     }
-    public void loadMovies() throws Exception {
-        recommendedList.add(moodBanner1);
-        recommendedList.add(moodBanner2);
-        recommendedList.add(moodBanner3);
-        recommendedList.add(moodBanner4);
-        recommendedList.add(moodBanner5);
-        recommendedList.add(moodBanner6);
-        recommendedList.add(moodBanner7);
-        recommendedList.add(moodBanner8);
-        recommendedList.add(moodLabel1);
-        recommendedList.add(moodLabel2);
-        recommendedList.add(moodLabel3);
-        recommendedList.add(moodLabel4);
-        recommendedList.add(moodLabel5);
-        recommendedList.add(moodLabel6);
-        recommendedList.add(moodLabel7);
-        recommendedList.add(moodLabel8);
+    public void loadMovies() {
+        recommendedMoodList.add(moodBanner1);
+        recommendedMoodList.add(moodBanner2);
+        recommendedMoodList.add(moodBanner3);
+        recommendedMoodList.add(moodBanner4);
+        recommendedMoodList.add(moodBanner5);
+        recommendedMoodList.add(moodBanner6);
+        recommendedMoodList.add(moodBanner7);
+        recommendedMoodList.add(moodBanner8);
+        recommendedMoodList.add(moodBanner9);
+        recommendedMoodList.add(moodBanner10);
+        recommendedMoodList.add(moodBanner11);
+        recommendedMoodList.add(moodBanner12);
+        recommendedMoodList.add(moodBanner13);
+        recommendedMoodList.add(moodBanner14);
+        recommendedMoodList.add(moodBanner15);
+        recommendedMoodList.add(moodBanner16);
+        recommendedMoodList.add(moodLabel1);
+        recommendedMoodList.add(moodLabel2);
+        recommendedMoodList.add(moodLabel3);
+        recommendedMoodList.add(moodLabel4);
+        recommendedMoodList.add(moodLabel5);
+        recommendedMoodList.add(moodLabel6);
+        recommendedMoodList.add(moodLabel7);
+        recommendedMoodList.add(moodLabel8);
+        recommendedMoodList.add(moodLabel9);
+        recommendedMoodList.add(moodLabel10);
+        recommendedMoodList.add(moodLabel11);
+        recommendedMoodList.add(moodLabel12);
+        recommendedMoodList.add(moodLabel13);
+        recommendedMoodList.add(moodLabel14);
+        recommendedMoodList.add(moodLabel15);
+        recommendedMoodList.add(moodLabel16);
 
-        MovieRow Recommended = new MovieRow(recommendedList);
+
+        MovieRowMood Recommended = new MovieRowMood(recommendedMoodList);
+        DisplayedMoodMovies.put("Recommended", Recommended.setPostersWithMovieIDs(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16));
+
+        ShadowPane.setVisible(false);
+        MovieDetailsPane.setVisible(false);
+    }
+
+    public void showMovieDetailsRecommended(MouseEvent e) {
+        ImageView tmp = (ImageView) e.getSource();
+        Movie currentMovie = DisplayedMoodMovies.get("Recommended").get(Integer.parseInt(tmp.getId().substring((tmp.getId().length()-1)))-1);
+        setDetails(currentMovie);
+        showDetails();
+    }
+
+    public void showDetails(){
+        ShadowPane.setVisible(true);
+        MovieDetailsPane.setVisible(true);
+    }
+    public void setDetails(Movie movie) {
+        movieTitleDetails.setText(movie.getTitle());
+        movieRuntimeDetails.setText(formatRuntime(movie.getRunTime()));
+        movieRatingsDetails.setText(String.valueOf(movie.getRating()));
+        movieReleaseDateDetails.setText(movie.getReleaseDate());
+        movieTaglineDetails.setText(movie.getTagLine());
+        movieOverviewDetails.setText(movie.getOverview());
+        Image img = new Image(MOVIE_PREFIX + movie.getPoster());
+        moviePosterDetails.setImage(img);
+    }
+
+    public String formatRuntime(double runtime) {
+        String hours;
+        String minutes;
+        hours = String.valueOf((int)runtime/60);
+        minutes = String.valueOf(Math.round(runtime%60));
+        return hours + " hrs " + minutes + " mins";
+    }
+
+    public void handleRentMovie() {
+        handleCloseMovieDetails();
+        System.out.println("Movie Rented!");
+    }
+
+    public void handleCloseMovieDetails() {
+        ShadowPane.setVisible(false);
+        MovieDetailsPane.setVisible(false);
     }
 
     public void openMovieRentalHomePage() throws Exception {
