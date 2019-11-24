@@ -32,7 +32,7 @@ public class MovieRentalHomePageController implements Initializable {
   final String white = "#f6f6f6";
   final String MOVIE_PREFIX = "https://image.tmdb.org/t/p/original";
 
-  /////////// inserting Objects to be displayed on Survey Scene//////////////////////
+  /////////// inserting Objects to be displayed on Home Scene//////////////////////
   @FXML Button accountBtn = new Button();
   @FXML Button moodBtn = new Button();
   @FXML ImageView RecBanner1, RecBanner2, RecBanner3, RecBanner4, RecBanner5, RecBanner6, RecBanner7, RecBanner8,

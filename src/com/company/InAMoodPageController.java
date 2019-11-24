@@ -17,6 +17,17 @@ public class InAMoodPageController {
     @FXML Button accountBtn = new Button();
     @FXML Button homeBtn = new Button();
     @FXML Button dudeBtn = new Button();
+    @FXML Button grooveBtn = new Button();
+    @FXML Button smartBtn = new Button();
+    @FXML Button inspiredBtn = new Button();
+    @FXML Button laughBtn = new Button();
+    @FXML Button childrenBtn = new Button();
+    @FXML Button productiveBtn = new Button();
+    @FXML Button cryBtn = new Button();
+    @FXML Button leaveBtn = new Button();
+    @FXML Button cookBtn = new Button();
+    @FXML Button romanceBtn = new Button();
+    @FXML Button sleepBtn = new Button();
 
 
     public void openMovieRentalHomePage() throws Exception {
