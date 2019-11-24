@@ -4,12 +4,14 @@
  */
 package com.company;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -48,9 +50,21 @@ public class MovieRentalHomePageController implements Initializable {
   @FXML Label movieTitleDetails, movieRuntimeDetails, movieReleaseDateDetails, movieRatingsDetails,
           movieTaglineDetails, movieOverviewDetails = new Label();
   @FXML ImageView moviePosterDetails = new ImageView();
+  @FXML TextField SearchTF = new TextField();
+  @FXML Button SearchBtn = new Button();
+  @FXML
+  private AnchorPane searchPane;
+  @FXML
+  private TableView<Movie> searchTable;
+  @FXML
+  private TableColumn<?, ?> searchName;
+  @FXML
+  private TableColumn<?, ?> searchRating;
   //////////////////////////////////////////////////////////////////////////////////
 
   ArrayList<Node> recommendedList = new ArrayList<>();
+  ArrayList<Movie> searchResultsList = new ArrayList<>();
+  ObservableList<Movie> searchObservableList = FXCollections.observableArrayList();
 
   @Override
   public void initialize(URL location, ResourceBundle resources) {
@@ -59,6 +73,7 @@ public class MovieRentalHomePageController implements Initializable {
     } catch (IllegalMovieArgumentException e) {
       e.printStackTrace();
     }
+    searchPane.setVisible(false);
   }
 
   /**
@@ -230,6 +245,24 @@ public class MovieRentalHomePageController implements Initializable {
   public void handleCloseMovieDetails() {
     ShadowPane.setVisible(false);
     MovieDetailsPane.setVisible(false);
+  }
+
+  public void searchQuery(){
+    if (SearchTF.getText().length() > 0 && SearchTF.getText() != null) {
+      DBController searchController = new DBController();
+      searchController.connectToDB();
+      searchResultsList = searchController.selectMovieFromMoviesWhereKeywordIs(SearchTF.getText());
+      searchObservableList = FXCollections.observableArrayList(searchResultsList);
+      searchPane.setVisible(true);
+      searchName.setCellValueFactory(new PropertyValueFactory("Title"));
+      searchRating.setCellValueFactory(new PropertyValueFactory("Rating"));
+      searchTable.setItems(searchObservableList);
+
+      System.out.println(searchResultsList);
+    }
+    else{
+      System.out.println("Please Enter Text to Search.");
+    }
   }
 
 } // end

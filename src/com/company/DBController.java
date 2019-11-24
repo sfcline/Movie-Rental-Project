@@ -262,24 +262,54 @@ public class DBController {
     return userExists;
   }
 
-  /**
-   * Selects Title where a Movie ID is equal to the Parameter
-   *
-   * @param Poster - Movie Id of the requested Title
-   * @return Title - Title of movie requested
-   */
-/*  public void CreateNewMovieFromMoviesWherePosterIs(String Poster) {
-    String Title = "";
+  public void setUserName(String First, String Last, String username) {
     ResultSet rs = null;
     try {
-      String insertQuery = "SELECT * FROM MOVIES WHERE POSTER=?;";
+      String insertQuery = "UPDATE USERS SET FirstName =?, LastName =? WHERE USER_NAME=?;";
       PreparedStatement pstmt = conn.prepareStatement(insertQuery);
-      pstmt.setString(1, Poster);
+      pstmt.setString(1, First);
+      pstmt.setString(2, Last);
+      pstmt.setString(3, username);
+      rs = pstmt.executeQuery();
+    } catch (SQLException e) {
+      System.out.println("ERROR: Updating Name from Users Failed.");
+      System.out.println("Reason:" + e);
+    }
+  }
+
+  /**
+   * Selects Poster Suffix where a Title is equal to the Parameter
+   *
+   * @param Keyword- Movie Id of the requested Poster
+   * @return Poster - Poster Suffix of movie requested
+   */
+  public ArrayList<Movie> selectMovieFromMoviesWhereKeywordIs(String Keyword) {
+    ResultSet rs = null;
+    Movie movie = null;
+    ArrayList<Movie> Movies = new ArrayList<>();
+    try {
+      String insertQuery = "SELECT * FROM MOVIES WHERE " +
+              "TITLE LIKE ? " +
+              "OR RATING LIKE ? " +
+              "OR GENRE LIKE ? " +
+              "OR STAR LIKE ? " +
+              "OR DIRECTOR LIKE ? " +
+              "OR WRITER LIKE ? " +
+              "OR OVERVIEW LIKE ? " +
+              "OR TAGLINE LIKE ?;";
+      PreparedStatement pstmt = conn.prepareStatement(insertQuery);
+      pstmt.setString(1, ("%"+Keyword+"%"));
+      pstmt.setString(2, ("%"+Keyword+"%"));
+      pstmt.setString(3, ("%"+Keyword+"%"));
+      pstmt.setString(4, ("%"+Keyword+"%"));
+      pstmt.setString(5, ("%"+Keyword+"%"));
+      pstmt.setString(6, ("%"+Keyword+"%"));
+      pstmt.setString(7, ("%"+Keyword+"%"));
+      pstmt.setString(8, ("%"+Keyword+"%"));
       rs = pstmt.executeQuery();
       while (rs.next()) {
-        Movie movie = new Movie(
-                rs.getInt("movie_id"),
-                rs.getString("username"),
+        movie = new Movie(rs.getInt("movie_id"),
+                rs.getString("title"),
                 rs.getString("rating"),
                 rs.getString("genre"),
                 rs.getDouble("runtime"),
@@ -292,11 +322,13 @@ public class DBController {
                 rs.getString("poster"),
                 rs.getString("release_date"),
                 rs.getString("tagline"));
+        Movies.add(movie);
       }
     } catch (SQLException | IllegalMovieArgumentException e) {
-      System.out.println("ERROR: Selecting Title from Movies Failed.");
+      System.out.println("ERROR: Select Movie From Movies Where Keyword Is Failed.");
       System.out.println("Reason:" + e);
     }
-  }*/
+    return Movies;
+  }//end selectMoviePosterFromMoviesWhereMovieIDis
 
 }
