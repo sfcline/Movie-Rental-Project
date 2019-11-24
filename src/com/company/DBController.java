@@ -262,6 +262,21 @@ public class DBController {
     return userExists;
   }
 
+  public void setUserName(String First, String Last, String username) {
+    ResultSet rs = null;
+    try {
+      String insertQuery = "UPDATE USERS SET FirstName =?, LastName =? WHERE USER_NAME=?;";
+      PreparedStatement pstmt = conn.prepareStatement(insertQuery);
+      pstmt.setString(1, First);
+      pstmt.setString(2, Last);
+      pstmt.setString(3, username);
+      rs = pstmt.executeQuery();
+    } catch (SQLException e) {
+      System.out.println("ERROR: Updating Name from Users Failed.");
+      System.out.println("Reason:" + e);
+    }
+  }
+
   /**
    * Selects Poster Suffix where a Title is equal to the Parameter
    *
