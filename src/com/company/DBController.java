@@ -240,6 +240,7 @@ public class DBController {
     }else {
       System.out.println("User Already Exists!");
     }
+    conn.close();
   }//end insert into users
 
   /**
