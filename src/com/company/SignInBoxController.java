@@ -29,22 +29,22 @@ public class SignInBoxController {
    */
   public void signInButtonPressed() throws Exception {
     authenticateUser();
-    openMovieRentalHome();
   } // end pressButton
 
   /**
    * Tests if username and password are valid, if they are prints prompt, clears fields, and grants
    * access to program.
    */
-  public void authenticateUser() {
-      User.setUsername(usernameField.getText());
-      User.setPassword(passwordField.getText());
-    Boolean passwordStatus = User.isGoodPassword();
+  public void authenticateUser() throws Exception {
+      account.setUsername(usernameField.getText());
+      account.setPassword(passwordField.getText());
+    Boolean passwordStatus = account.isGoodPassword();
     if (passwordStatus) {
       passwordCheck.setTextFill(Paint.valueOf("#009918"));
       passwordCheck.setText("User Authentication Successful.");
       usernameField.clear();
       passwordField.clear();
+      openMovieRentalHome();
     } else {
       passwordCheck.setTextFill(Paint.valueOf("#cc0000"));
       passwordCheck.setText("User Authentication Failed. Please Try Again");

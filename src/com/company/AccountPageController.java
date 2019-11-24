@@ -48,6 +48,10 @@ public class AccountPageController {
   @FXML TextField editEmail = new TextField();
   @FXML TextField enterCurrentPassword = new TextField();
 
+  public AccountPageController() throws Exception {
+    loginInfoPressed();
+  }
+
   /**
    * Called when the signInButton is activated. calls openMovieRentalPage().
    *
