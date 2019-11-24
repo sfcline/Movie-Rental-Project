@@ -4,12 +4,12 @@
  */
 package com.company;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
-
-import java.util.concurrent.TimeUnit;
 
 /** Controls all functions of the sign in box. */
 public class SignInBoxController {
@@ -19,6 +19,7 @@ public class SignInBoxController {
   @FXML Button submitBtn = new Button();
   @FXML PasswordField passwordField = new PasswordField();
   @FXML Label passwordCheck = new Label();
+  private User account = new User();
   //////////////////////////////////////////////////////////////////////////////////
 
   /**
@@ -36,7 +37,9 @@ public class SignInBoxController {
    * access to program.
    */
   public void authenticateUser() {
-    Boolean passwordStatus = User.isGoodPassword(usernameField.getText(), passwordField.getText());
+      User.setUsername(usernameField.getText());
+      User.setPassword(passwordField.getText());
+    Boolean passwordStatus = User.isGoodPassword();
     if (passwordStatus) {
       passwordCheck.setTextFill(Paint.valueOf("#009918"));
       passwordCheck.setText("User Authentication Successful.");

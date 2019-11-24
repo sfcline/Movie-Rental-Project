@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 
 /** AccountPageController class, controls the account page. */
@@ -21,7 +22,10 @@ public class AccountPageController {
   final String white = "#f6f6f6";
 
   /////////// inserting Objects to be displayed on Survey Scene//////////////////////
-  @FXML Button homeBtn = new Button();
+    @FXML AnchorPane editUserPane = new AnchorPane();
+    @FXML AnchorPane loginInfoPane = new AnchorPane();
+    @FXML AnchorPane viewingHistoryPane = new AnchorPane();
+    @FXML Button homeBtn = new Button();
   @FXML Button moodBtn = new Button();
   @FXML Button saveChanges = new Button();
   @FXML Button loginInfo = new Button();
@@ -66,17 +70,8 @@ public class AccountPageController {
   public void loginInfoPressed() throws Exception {
     viewingHistory.setTextFill(Color.valueOf(white));
     loginInfo.setTextFill(Color.valueOf(orange));
-    vhTest.setVisible(false);
-    piTest.setVisible(false);
-    passLabel.setVisible(true);
-    userLabel.setVisible(true);
-    username.setVisible(true);
-    enterNewPassword.setVisible(true);
-    confirmNewPassword.setVisible(true);
-    enterCurrentPassword.setVisible(true);
-    userFirstName.setVisible(true);
-    userLastName.setVisible(true);
-    editUserAccountBtn.setVisible(true);
+    loginInfoPane.setVisible(true);
+    viewingHistoryPane.setVisible(false);
     // username.setText(user.getUsername());
     // userFirstName.setText(user.getFirstName());
     // userLastName.setText(user.getLastName());
@@ -85,19 +80,9 @@ public class AccountPageController {
   public void viewingHistoryPressed() throws Exception {
     viewingHistory.setTextFill(Color.valueOf(orange));
     loginInfo.setTextFill(Color.valueOf(white));
-    emailSent.setVisible(false);
-    passLabel.setVisible(false);
-    userLabel.setVisible(false);
-    username.setVisible(false);
-    enterNewPassword.setVisible(false);
-    confirmNewPassword.setVisible(false);
-    enterCurrentPassword.setVisible(false);
-    userFirstName.setVisible(false);
-    userLastName.setVisible(false);
-    editUserAccountBtn.setVisible(false);
-    changeName.setVisible(false);
-    piTest.setVisible(false);
-    vhTest.setVisible(true);
+      loginInfoPane.setVisible(false);
+      viewingHistoryPane.setVisible(true);
+      editUserPane.setVisible(false);
   }
 
   /**
@@ -135,31 +120,27 @@ public class AccountPageController {
   }
 
   public void editButtonPressed(){
-    /*
-    userFirstName.setVisible(false);
-    userLastName.setVisible(false);
-    edit.setVisible(false);
-    enterFirstName.setVisible(true);
-    enterLastName.setVisible(true);
-    changeName.setVisible(true);
+      if(editUserPane.isVisible()){
+          editUserPane.setVisible(false);
+          return;
+      }
 
-     */
+      editUserPane.setVisible(true);
   }
 
   public void changeNamePressed(){
-    /*userFirstName.setText(enterFirstName.getText());
-    userLastName.setText(enterLastName.getText());
-    userFirstName.setVisible(true);
-    userLastName.setVisible(true);
-    edit.setVisible(true);
-    enterFirstName.setVisible(false);
-    enterLastName.setVisible(false);
-    changeName.setVisible(false);
-    DBController db = new DBController();
-    db.connectToDB();
-    db.setUserName(enterFirstName.getText(), enterLastName.getText(), user.getUsername());
-    enterFirstName.clear();
-    enterLastName.clear();
-    */
+    //DBController db = new DBController();
+    //db.connectToDB();
+    //db.setUserName(editFirstName.getText(), editLastName.getText(), .getUsername());
+
+    userFirstName.setText(editFirstName.getText());
+    userLastName.setText(editLastName.getText());
+    userEmail.setText(editEmail.getText());
+    editFirstName.clear();
+    editLastName.clear();
+    enterNewPassword.clear();
+    confirmNewPassword.clear();
+    editEmail.clear();
+    enterCurrentPassword.clear();
   }
 } // end controller

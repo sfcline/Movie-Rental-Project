@@ -39,6 +39,18 @@ public class User {
         return passwordStatus;
     } // end isGoodPassword
 
+    ///////Helper Methods/////////////
+
+    // tests user entered PW and UN to previously saved UN and PW and returns t/f
+    public static Boolean isGoodPassword(){
+        if (username.equals(getUsername()) && password.equals(getPassword())){
+            passwordStatus = true;
+        }else{
+            passwordStatus = false;
+        }
+        return passwordStatus;
+    } // end isGoodPassword
+
 
     // checks if user has signed in based on passwordStatus
     public static Boolean hasSignedIn(){
