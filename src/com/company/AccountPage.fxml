@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.AccountPageController">
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.AccountPageController">
     <children>
         <AnchorPane prefHeight="122.0" prefWidth="1142.0" style="-fx-background-color: #474448;">
             <children>
@@ -106,26 +112,23 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                   </GridPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3">
+                  <AnchorPane fx:id="loginInfoPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #474448;" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3">
                      <children>
-                        <Label fx:id="userLabel" layoutX="14.0" layoutY="14.0" text="Username:" textFill="#f6f6f6">
+                        <Label fx:id="userLabel" layoutX="14.0" layoutY="149.0" text="Username:" textFill="#f6f6f6">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label fx:id="username" layoutX="165.0" layoutY="14.0" text="Test" textFill="#f6f6f6">
+                        <Label fx:id="username" layoutX="195.0" layoutY="149.0" text="User Username" textFill="#f6f6f6">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label fx:id="passLabel" layoutX="14.0" layoutY="60.0" text="Password :" textFill="#f6f6f6">
+                        <Label fx:id="passLabel" layoutX="14.0" layoutY="198.0" text="Password :" textFill="#f6f6f6">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="enterPass" layoutX="165.0" layoutY="70.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Enter your new password" />
-                        <TextField fx:id="confirmPass" layoutX="165.0" layoutY="106.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Confirm your new password" />
-                        <Button fx:id="changePass" layoutX="194.0" layoutY="141.0" mnemonicParsing="false" onAction="#changePassPressed" text="Change Password" />
                         <Label fx:id="emailSent" layoutX="56.0" layoutY="183.0" text="A confirmation has been sent to your email." textFill="#f6f6f6" visible="false">
                            <font>
                               <Font size="20.0" />
@@ -141,33 +144,45 @@
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label fx:id="firstName" layoutX="14.0" layoutY="225.0" text="First Name :" textFill="#f6f6f6">
+                        <Label fx:id="firstNameLabel" layoutX="14.0" layoutY="14.0" text="First Name :" textFill="#f6f6f6">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lastName" layoutX="15.0" layoutY="271.0" text="Last Name :" textFill="#f6f6f6">
+                        <Label fx:id="LastNameLabel" layoutX="16.0" layoutY="59.0" text="Last Name :" textFill="#f6f6f6">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label fx:id="userFirstName" layoutX="192.0" layoutY="225.0" text="Test First" textFill="#f6f6f6">
+                        <Label fx:id="userFirstName" layoutX="190.0" layoutY="14.0" text="User First Name" textFill="#f6f6f6">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label fx:id="userLastName" layoutX="194.0" layoutY="271.0" text="Test Last" textFill="#f6f6f6">
+                        <Label fx:id="userLastName" layoutX="192.0" layoutY="59.0" text="User Last Name" textFill="#f6f6f6">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Button fx:id="edit" layoutX="230.0" layoutY="317.0" mnemonicParsing="false" onAction="#editButtonPressed" text="Edit" />
-                        <TextField fx:id="enterFirstName" layoutX="183.0" layoutY="234.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Enter your first name" visible="false" />
-                        <TextField fx:id="enterLastName" layoutX="183.0" layoutY="280.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Enter your last name" visible="false" />
+                        <Button fx:id="edit" layoutX="120.0" layoutY="330.0" mnemonicParsing="false" onAction="#editButtonPressed" text="Edit User Account Information" />
                         <Button fx:id="changeName" layoutX="221.0" layoutY="317.0" mnemonicParsing="false" onAction="#changeNamePressed" text="Change Name" visible="false" />
+                        <Label fx:id="emailLabel" layoutX="14.0" layoutY="104.0" text="Email:" textFill="#f6f6f6">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userEmail" layoutX="192.0" layoutY="104.0" text="User Email" textFill="#f6f6f6">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userPasswordLabel" layoutX="192.0" layoutY="198.0" text="************" textFill="#f6f6f6">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
                      </children></AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #111111;" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3" />
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222222;" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3" />
+                  <AnchorPane fx:id="viewingHistoryPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #474448;" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3" />
                </children>
             </GridPane>
             <AnchorPane cacheShape="false" centerShape="false" layoutY="-20.0" prefHeight="90.0" prefWidth="1142.0" scaleShape="false" style="-fx-background-color: #777983;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -182,6 +197,40 @@
                   <DropShadow blurType="ONE_PASS_BOX" />
                </effect>
             </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="editUserPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #777983;" AnchorPane.bottomAnchor="125.0" AnchorPane.leftAnchor="725.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="200.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <TextField fx:id="enterNewPassword" layoutX="100.0" layoutY="146.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Enter your new password" />
+            <TextField fx:id="confirmNewPassword" layoutX="100.0" layoutY="179.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Confirm your new password" />
+            <Button fx:id="saveChanges" layoutX="139.0" layoutY="249.0" mnemonicParsing="false" onAction="#changePassPressed" text="Save Changes" />
+            <Label layoutX="20.0" layoutY="14.0" text="First Name:" textFill="#f6f6f6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="49.0" text="Last Name:" textFill="#f6f6f6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="83.0" text="Email:" textFill="#f6f6f6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="117.0" text="Password:" textFill="#f6f6f6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="editFirstName" layoutX="100.0" layoutY="11.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="User First Name" />
+            <TextField fx:id="editLastName" layoutX="100.0" layoutY="46.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="User Last name" />
+            <TextField fx:id="editEmail" layoutX="100.0" layoutY="80.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="User Email" />
+            <TextField fx:id="enterCurrentPassword" layoutX="100.0" layoutY="114.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Enter current password" />
          </children>
       </AnchorPane>
     </children>
