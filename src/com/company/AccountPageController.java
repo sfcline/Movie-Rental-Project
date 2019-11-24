@@ -23,25 +23,26 @@ public class AccountPageController {
   /////////// inserting Objects to be displayed on Survey Scene//////////////////////
   @FXML Button homeBtn = new Button();
   @FXML Button moodBtn = new Button();
-  @FXML Button changePass = new Button();
+  @FXML Button saveChanges = new Button();
   @FXML Button loginInfo = new Button();
   @FXML Button viewingHistory = new Button();
   @FXML Button changeName = new Button();
-  @FXML Button edit = new Button();
+  @FXML Button editUserAccountBtn = new Button();
   @FXML Label emailSent = new Label();
   @FXML Label passLabel = new Label();
   @FXML Label userLabel = new Label();
   @FXML Label username = new Label();
   @FXML Label piTest = new Label();
   @FXML Label vhTest = new Label();
-  @FXML Label firstName = new Label();
-  @FXML Label lastName = new Label();
   @FXML Label userFirstName = new Label();
   @FXML Label userLastName = new Label();
-  @FXML TextField enterPass = new TextField();
-  @FXML TextField confirmPass = new TextField();
-  @FXML TextField enterFirstName = new TextField();
-  @FXML TextField enterLastName = new TextField();
+  @FXML Label userEmail = new Label();
+  @FXML TextField enterNewPassword = new TextField();
+  @FXML TextField confirmNewPassword = new TextField();
+  @FXML TextField editFirstName = new TextField();
+  @FXML TextField editLastName = new TextField();
+  @FXML TextField editEmail = new TextField();
+  @FXML TextField enterCurrentPassword = new TextField();
 
   /**
    * Called when the signInButton is activated. calls openMovieRentalPage().
@@ -70,14 +71,12 @@ public class AccountPageController {
     passLabel.setVisible(true);
     userLabel.setVisible(true);
     username.setVisible(true);
-    enterPass.setVisible(true);
-    confirmPass.setVisible(true);
-    changePass.setVisible(true);
-    firstName.setVisible(true);
-    lastName.setVisible(true);
+    enterNewPassword.setVisible(true);
+    confirmNewPassword.setVisible(true);
+    enterCurrentPassword.setVisible(true);
     userFirstName.setVisible(true);
     userLastName.setVisible(true);
-    edit.setVisible(true);
+    editUserAccountBtn.setVisible(true);
     // username.setText(user.getUsername());
     // userFirstName.setText(user.getFirstName());
     // userLastName.setText(user.getLastName());
@@ -90,16 +89,12 @@ public class AccountPageController {
     passLabel.setVisible(false);
     userLabel.setVisible(false);
     username.setVisible(false);
-    enterPass.setVisible(false);
-    confirmPass.setVisible(false);
-    changePass.setVisible(false);
-    firstName.setVisible(false);
-    lastName.setVisible(false);
+    enterNewPassword.setVisible(false);
+    confirmNewPassword.setVisible(false);
+    enterCurrentPassword.setVisible(false);
     userFirstName.setVisible(false);
     userLastName.setVisible(false);
-    edit.setVisible(false);
-    enterFirstName.setVisible(false);
-    enterLastName.setVisible(false);
+    editUserAccountBtn.setVisible(false);
     changeName.setVisible(false);
     piTest.setVisible(false);
     vhTest.setVisible(true);
@@ -140,16 +135,19 @@ public class AccountPageController {
   }
 
   public void editButtonPressed(){
+    /*
     userFirstName.setVisible(false);
     userLastName.setVisible(false);
     edit.setVisible(false);
     enterFirstName.setVisible(true);
     enterLastName.setVisible(true);
     changeName.setVisible(true);
+
+     */
   }
 
   public void changeNamePressed(){
-    userFirstName.setText(enterFirstName.getText());
+    /*userFirstName.setText(enterFirstName.getText());
     userLastName.setText(enterLastName.getText());
     userFirstName.setVisible(true);
     userLastName.setVisible(true);
@@ -157,10 +155,11 @@ public class AccountPageController {
     enterFirstName.setVisible(false);
     enterLastName.setVisible(false);
     changeName.setVisible(false);
-    /*DBController db = new DBController();
+    DBController db = new DBController();
     db.connectToDB();
-    db.setUserName(enterFirstName.getText(), enterLastName.getText(), user.getUsername());*/
+    db.setUserName(enterFirstName.getText(), enterLastName.getText(), user.getUsername());
     enterFirstName.clear();
     enterLastName.clear();
+    */
   }
 } // end controller

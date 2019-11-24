@@ -164,7 +164,7 @@
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Button fx:id="edit" layoutX="120.0" layoutY="330.0" mnemonicParsing="false" onAction="#editButtonPressed" text="Edit User Account Information" />
+                        <Button fx:id="editUserAccountBtn" layoutX="120.0" layoutY="330.0" mnemonicParsing="false" onAction="#editButtonPressed" text="Edit User Account Information" />
                         <Button fx:id="changeName" layoutX="221.0" layoutY="317.0" mnemonicParsing="false" onAction="#changeNamePressed" text="Change Name" visible="false" />
                         <Label fx:id="emailLabel" layoutX="14.0" layoutY="104.0" text="Email:" textFill="#f6f6f6">
                            <font>
