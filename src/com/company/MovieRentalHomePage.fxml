@@ -173,10 +173,11 @@
                               </AnchorPane>
                               <AnchorPane fx:id="searchPane" layoutX="764.0" prefHeight="376.0" prefWidth="378.0">
                                  <children>
-                                    <TableView fx:id="searchTable" layoutX="-3.0" layoutY="-4.0" prefHeight="423.0" prefWidth="378.0">
+                                    <TableView fx:id="searchTable" layoutX="-3.0" layoutY="-4.0" prefHeight="558.0" prefWidth="378.0">
                                       <columns>
-                                        <TableColumn fx:id="searchName" prefWidth="180.7999267578125" text="Title" />
-                                        <TableColumn fx:id="searchRating" prefWidth="157.59991455078125" text="Rating" />
+                                        <TableColumn fx:id="searchName" prefWidth="215.20001220703125" text="Title" />
+                                        <TableColumn fx:id="searchRating" prefWidth="71.99993896484375" text="Rating" />
+                                          <TableColumn fx:id="searchYear" prefWidth="90.4000244140625" text="Year" />
                                       </columns>
                                     </TableView>
                                  </children>

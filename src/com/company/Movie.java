@@ -36,7 +36,7 @@ public class Movie {
 
   private String tagLine;
 
-  private String imageView;
+  private MovieImage imageView;
 
   /**
    * Movie Constructor.
@@ -447,7 +447,7 @@ public class Movie {
    */
   public void setImageView(String imageView) throws IllegalMovieArgumentException {
     if (imageView != null && imageView.length() > 0) {
-      this.imageView = imageView;
+      this.imageView = new MovieImaimageView;
     } else {
       throw new IllegalMovieArgumentException(
               "Invalid Image View ID "

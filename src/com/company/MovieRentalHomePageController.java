@@ -60,6 +60,8 @@ public class MovieRentalHomePageController implements Initializable {
   private TableColumn<?, ?> searchName;
   @FXML
   private TableColumn<?, ?> searchRating;
+  @FXML
+  private TableColumn<?, ?> searchYear;
   //////////////////////////////////////////////////////////////////////////////////
 
   ArrayList<Node> recommendedList = new ArrayList<>();
@@ -257,6 +259,7 @@ public class MovieRentalHomePageController implements Initializable {
       searchPane.setVisible(true);
       searchName.setCellValueFactory(new PropertyValueFactory("Title"));
       searchRating.setCellValueFactory(new PropertyValueFactory("Rating"));
+      searchYear.setCellValueFactory(new PropertyValueFactory("releaseDate"));
       searchTable.setItems(searchObservableList);
 
       System.out.println(searchResultsList);
