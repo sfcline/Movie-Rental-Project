@@ -14,12 +14,13 @@ public class MoodMoviesPage {
      * @param title title.
      * @throws Exception exception.
      */
-    public static void display(String title) throws Exception {
-        Parent root =
-                FXMLLoader.load(MovieRentalHomePage.class.getResource("MoodMoviesPage.fxml"));
+    public static void display(String title, String mood) throws Exception {
+        FXMLLoader loader = new FXMLLoader(MoodMoviesPage.class.getResource("MoodMoviesPage.fxml"));
+        Parent root = loader.load();
         MoodMoviesPage.setTitle("Mood Movies Page");
         MoodMoviesPage.setScene(new Scene(root, 1142, 658));
         MoodMoviesPage.setResizable(false);
+        loader.<MoodMoviesPageController>getController().settingMoodTitle(mood);
         MoodMoviesPage.show();
     }
 

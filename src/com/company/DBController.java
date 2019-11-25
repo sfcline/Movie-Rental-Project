@@ -224,6 +224,7 @@ public class DBController {
   }
 
   public void insertIntoUsers(String val1, String val2) throws SQLException {
+      connectToDB();
     if (!selectFromUsersWhereUsernameIs(val1)) {
       String[] insertValues = {val1, val2};
       try {
@@ -233,6 +234,7 @@ public class DBController {
         pstmt.setString(1, insertValues[0]);
         pstmt.setString(2, insertValues[1]);
         pstmt.executeUpdate();
+        conn.close();
       } catch (SQLException e) {
         System.out.println("ERROR: insertIntoUsers Failed!");
         System.out.println(e);
@@ -249,6 +251,7 @@ public class DBController {
    * @return userExists - true or false depending
    * */
   public boolean selectFromUsersWhereUsernameIs(String value) {
+      connectToDB();
     boolean userExists = true;
     ResultSet rs = null;
     try {
@@ -256,10 +259,26 @@ public class DBController {
       PreparedStatement pstmt = conn.prepareStatement(insertQuery);
       pstmt.setString(1, value);
       rs = pstmt.executeQuery(insertQuery);
+        conn.close();
     } catch (SQLException e) {
       userExists = false;
     }
     return userExists;
+  }
+
+  public void setUserName(String First, String Last, String username) {
+    ResultSet rs = null;
+    try {
+      String insertQuery = "UPDATE USERS SET FirstName =?, LastName =? WHERE USER_NAME=?;";
+      PreparedStatement pstmt = conn.prepareStatement(insertQuery);
+      pstmt.setString(1, First);
+      pstmt.setString(2, Last);
+      pstmt.setString(3, username);
+      rs = pstmt.executeQuery();
+    } catch (SQLException e) {
+      System.out.println("ERROR: Updating Name from Users Failed.");
+      System.out.println("Reason:" + e);
+    }
   }
 
   /**

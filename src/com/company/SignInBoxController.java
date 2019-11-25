@@ -4,12 +4,12 @@
  */
 package com.company;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
-
-import java.util.concurrent.TimeUnit;
 
 /** Controls all functions of the sign in box. */
 public class SignInBoxController {
@@ -19,6 +19,7 @@ public class SignInBoxController {
   @FXML Button submitBtn = new Button();
   @FXML PasswordField passwordField = new PasswordField();
   @FXML Label passwordCheck = new Label();
+  private User account = new User();
   //////////////////////////////////////////////////////////////////////////////////
 
   /**
@@ -28,20 +29,22 @@ public class SignInBoxController {
    */
   public void signInButtonPressed() throws Exception {
     authenticateUser();
-    openMovieRentalHome();
   } // end pressButton
 
   /**
    * Tests if username and password are valid, if they are prints prompt, clears fields, and grants
    * access to program.
    */
-  public void authenticateUser() {
-    Boolean passwordStatus = User.isGoodPassword(usernameField.getText(), passwordField.getText());
+  public void authenticateUser() throws Exception {
+      account.setUsername(usernameField.getText());
+      account.setPassword(passwordField.getText());
+    Boolean passwordStatus = account.isGoodPassword();
     if (passwordStatus) {
       passwordCheck.setTextFill(Paint.valueOf("#009918"));
       passwordCheck.setText("User Authentication Successful.");
       usernameField.clear();
       passwordField.clear();
+      openMovieRentalHome();
     } else {
       passwordCheck.setTextFill(Paint.valueOf("#cc0000"));
       passwordCheck.setText("User Authentication Failed. Please Try Again");
@@ -65,9 +68,11 @@ public class SignInBoxController {
    * @throws Exception exception.
    */
   public void openMovieRentalHome() throws Exception {
+    LoadingScreen.display("Loading Screen");
+    SignInBox.close();
     MovieRentalHomePage.display("Movie Rental Homepage");
     if (MovieRentalHomePage.MovieRentalWindow.isShowing()) {
-      SignInBox.close();
+      LoadingScreen.close();
     }
   }
 } // end SignInOrSignUpBoxController
