@@ -68,9 +68,11 @@ public class SignInBoxController {
    * @throws Exception exception.
    */
   public void openMovieRentalHome() throws Exception {
+    LoadingScreen.display("Loading Screen");
+    SignInBox.close();
     MovieRentalHomePage.display("Movie Rental Homepage");
     if (MovieRentalHomePage.MovieRentalWindow.isShowing()) {
-      SignInBox.close();
+      LoadingScreen.close();
     }
   }
 } // end SignInOrSignUpBoxController

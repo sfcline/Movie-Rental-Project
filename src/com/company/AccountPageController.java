@@ -9,6 +9,7 @@ import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
@@ -47,6 +48,20 @@ public class AccountPageController {
   @FXML TextField editLastName = new TextField();
   @FXML TextField editEmail = new TextField();
   @FXML TextField enterCurrentPassword = new TextField();
+  @FXML
+  ImageView historyBanner1, historyBanner2, historyBanner3, historyBanner4, historyBanner5, historyBanner6, historyBanner7,
+  historyBanner8, historyBanner9, historyBanner10, historyBanner11, historyBanner12, historyBanner13, historyBanner14,
+  historyBanner15, historyBanner16, historyBanner17, historyBanner18, historyBanner19, historyBanner20, historyBanner21,
+  historyBanner22, historyBanner23, historyBanner24, historyBanner25, historyBanner26, historyBanner27, historyBanner28,
+          historyBanner29, historyBanner30, historyBanner31, historyBanner32, historyBanner33, historyBanner34, historyBanner35
+          = new ImageView();
+  @FXML
+  Label historyLabel1, historyLabel2, historyLabel3, historyLabel4, historyLabel5, historyLabel6, historyLabel7,
+          historyLabel8, historyLabel9, historyLabel10, historyLabel11, historyLabel12, historyLabel13, historyLabel14,
+          historyLabel15, historyLabel16, historyLabel17, historyLabel18, historyLabel19, historyLabel20, historyLabel21,
+          historyLabel22, historyLabel23, historyLabel24, historyLabel25, historyLabel26, historyLabel27, historyLabel28,
+          historyLabel29, historyLabel30, historyLabel31, historyLabel32, historyLabel33, historyLabel34, historyLabel35
+          = new Label();
 
   public AccountPageController() throws Exception {
     loginInfoPressed();
@@ -70,6 +85,7 @@ public class AccountPageController {
   public void changePassPressed(){
     emailSent.setVisible(true);
   }
+
 
   public void loginInfoPressed() throws Exception {
     viewingHistory.setTextFill(Color.valueOf(white));
@@ -120,6 +136,22 @@ public class AccountPageController {
     Button tmp = (Button)e.getSource();
     tmp.setScaleX(.97);
     tmp.setScaleY(.97);
+    tmp.setCursor(Cursor.DEFAULT);
+  }
+  public void handleImageMouseEntered(MouseEvent e){
+    ImageView tmp = (ImageView)e.getSource();
+    tmp.setScaleX(1.02);
+    tmp.setScaleY(1.02);
+    tmp.setCursor(Cursor.HAND);
+  }
+
+  /**
+   * @param e - Mouse Event thrown by mouse entering the Node
+   */
+  public void handleImageMouseExit(MouseEvent e){
+    ImageView tmp = (ImageView)e.getSource();
+    tmp.setScaleX(.98);
+    tmp.setScaleY(.98);
     tmp.setCursor(Cursor.DEFAULT);
   }
 

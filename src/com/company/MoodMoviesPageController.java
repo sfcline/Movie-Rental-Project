@@ -32,6 +32,7 @@ public class MoodMoviesPageController implements Initializable {
     Button homeBtn = new Button();
     @FXML
     Button moodBtn = new Button();
+    @FXML Label moodTitle = new Label();
 
     @FXML
     ImageView moodBanner1, moodBanner2, moodBanner3, moodBanner4, moodBanner5, moodBanner6, moodBanner7, moodBanner8,
@@ -42,7 +43,7 @@ public class MoodMoviesPageController implements Initializable {
     moodLabel9, moodLabel10, moodLabel11, moodLabel12, moodLabel13, moodLabel14, moodLabel15, moodLabel16
             = new Label();
     @FXML
-    AnchorPane ShadowPane, MovieDetailsPane = new AnchorPane();
+    AnchorPane MovieDetailsPane = new AnchorPane();
     @FXML Label movieTitleDetails, movieRuntimeDetails, movieReleaseDateDetails, movieRatingsDetails,
             movieTaglineDetails, movieOverviewDetails = new Label();
     @FXML ImageView moviePosterDetails = new ImageView();
@@ -93,6 +94,11 @@ public class MoodMoviesPageController implements Initializable {
         tmp.setScaleY(.97);
         tmp.setCursor(Cursor.DEFAULT);
     }
+
+    public void settingMoodTitle(String mood) {
+        moodTitle.setText(mood);
+    }
+
     public void loadMovies() {
         recommendedMoodList.add(moodBanner1);
         recommendedMoodList.add(moodBanner2);
@@ -131,7 +137,6 @@ public class MoodMoviesPageController implements Initializable {
         MovieRowMood Recommended = new MovieRowMood(recommendedMoodList);
         DisplayedMoodMovies.put("Recommended", Recommended.setPostersWithMovieIDs(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16));
 
-        ShadowPane.setVisible(false);
         MovieDetailsPane.setVisible(false);
     }
 
@@ -143,7 +148,6 @@ public class MoodMoviesPageController implements Initializable {
     }
 
     public void showDetails(){
-        ShadowPane.setVisible(true);
         MovieDetailsPane.setVisible(true);
     }
     public void setDetails(Movie movie) {
@@ -171,7 +175,6 @@ public class MoodMoviesPageController implements Initializable {
     }
 
     public void handleCloseMovieDetails() {
-        ShadowPane.setVisible(false);
         MovieDetailsPane.setVisible(false);
     }
 

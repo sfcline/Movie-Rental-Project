@@ -81,6 +81,7 @@ public class MovieRentalHomePageController implements Initializable {
    *
    * @throws Exception exception.
    */
+
   public void openAccountPage() throws Exception {
     AccountPage.display("Account Page");
     MovieRentalHomePage.close();

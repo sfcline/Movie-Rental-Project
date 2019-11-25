@@ -38,8 +38,11 @@ public class InAMoodPageController {
         AccountPage.display("Account Page");
         InAMoodPage.close();
     }
-    public void openMoodMoviePage() throws Exception {
-        MoodMoviesPage.display("Mood Movies Page");
+
+    public void openMoodMoviePage(MouseEvent e) throws Exception {
+        Button tmp = (Button)e.getSource();
+        String mood = tmp.getText().toLowerCase() + "...";
+        MoodMoviesPage.display("Mood Movies Page", mood);
         InAMoodPage.close();
     }
 
