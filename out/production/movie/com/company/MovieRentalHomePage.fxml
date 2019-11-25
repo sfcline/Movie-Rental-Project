@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.InnerShadow?>
@@ -167,6 +169,16 @@
                                           </AnchorPane>
                                        </children>
                                     </GridPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="searchPane" layoutX="764.0" prefHeight="376.0" prefWidth="378.0">
+                                 <children>
+                                    <TableView fx:id="searchTable" layoutX="-3.0" layoutY="-4.0" prefHeight="423.0" prefWidth="378.0">
+                                      <columns>
+                                        <TableColumn fx:id="searchName" prefWidth="180.7999267578125" text="Title" />
+                                        <TableColumn fx:id="searchRating" prefWidth="157.59991455078125" text="Rating" />
+                                      </columns>
+                                    </TableView>
                                  </children>
                               </AnchorPane>
                            </children>

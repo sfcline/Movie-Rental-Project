@@ -13,8 +13,8 @@ public class User {
 
 
     ///////////Setters//////////////
-    public static void setUsername(String input){ username = input; }
-    public static void setPassword(String input){ password = input; }
+    public void setUsername(String input){ username = input; }
+    public void setPassword(String input){ password = input; }
 
 
     ///////////Getters//////////////
@@ -32,6 +32,18 @@ public class User {
     // tests user entered PW and UN to previously saved UN and PW and returns t/f
     public static Boolean isGoodPassword(String un, String pw){
         if (un.equals(getUsername()) && pw.equals(getPassword())){
+            passwordStatus = true;
+        }else{
+            passwordStatus = false;
+        }
+        return passwordStatus;
+    } // end isGoodPassword
+
+    ///////Helper Methods/////////////
+
+    // tests user entered PW and UN to previously saved UN and PW and returns t/f
+    public Boolean isGoodPassword(){
+        if (username.equals(getUsername()) && password.equals(getPassword())){
             passwordStatus = true;
         }else{
             passwordStatus = false;

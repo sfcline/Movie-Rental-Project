@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.AccountPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.AccountPageController">
     <children>
         <AnchorPane prefHeight="122.0" prefWidth="1142.0" style="-fx-background-color: #474448;">
             <children>
@@ -71,7 +72,6 @@
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Button fx:id="loginInfo" mnemonicParsing="false" onAction="#loginInfoPressed" prefHeight="461.0" prefWidth="618.0" style="-fx-background-color: #777983;" text="Login Info" textAlignment="CENTER" textFill="#fc9e4f">
@@ -79,12 +79,7 @@
                               <DropShadow />
                            </effect>
                         </Button>
-                        <Button fx:id="personalInfo" mnemonicParsing="false" onAction="#personalInfoPressed" prefHeight="461.0" prefWidth="618.0" style="-fx-background-color: #777983;" text="Personal Information" textAlignment="CENTER" textFill="#f6f6f6" GridPane.rowIndex="1">
-                           <effect>
-                              <DropShadow />
-                           </effect>
-                        </Button>
-                        <Button fx:id="viewingHistory" mnemonicParsing="false" onAction="#viewingHistoryPressed" prefHeight="461.0" prefWidth="618.0" style="-fx-background-color: #777983;" text="Viewing History" textAlignment="CENTER" textFill="#f6f6f6" GridPane.rowIndex="2">
+                        <Button fx:id="viewingHistory" mnemonicParsing="false" onAction="#viewingHistoryPressed" prefHeight="461.0" prefWidth="618.0" style="-fx-background-color: #777983;" text="Viewing History" textAlignment="CENTER" textFill="#f6f6f6" GridPane.rowIndex="1">
                            <effect>
                               <DropShadow />
                            </effect>
@@ -118,49 +113,537 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                   </GridPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3">
+                  <AnchorPane fx:id="loginInfoPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #474448;" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3">
                      <children>
-                        <Label fx:id="userLabel" layoutX="14.0" layoutY="14.0" text="Username:" textFill="#f6f6f6">
+                        <Label fx:id="userLabel" layoutX="14.0" layoutY="149.0" text="Username:" textFill="#f6f6f6">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label fx:id="username" layoutX="165.0" layoutY="14.0" text="Test" textFill="#f6f6f6">
+                        <Label fx:id="username" layoutX="195.0" layoutY="149.0" text="User Username" textFill="#f6f6f6">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label fx:id="passLabel" layoutX="14.0" layoutY="60.0" text="Password :" textFill="#f6f6f6">
+                        <Label fx:id="passLabel" layoutX="14.0" layoutY="198.0" text="Password :" textFill="#f6f6f6">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="enterPass" layoutX="165.0" layoutY="70.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Enter your new password" />
-                        <TextField fx:id="confirmPass" layoutX="165.0" layoutY="106.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Confirm your new password" />
-                        <Button fx:id="changePass" layoutX="194.0" layoutY="141.0" mnemonicParsing="false" onAction="#changePassPressed" text="Change Password" />
-                        <Label fx:id="emailSent" layoutX="56.0" layoutY="183.0" text="A confirmation has been sent to your email." textFill="#f6f6f6" visible="false">
+                        <Label fx:id="emailSent" layoutX="18.0" layoutY="273.0" prefHeight="32.0" prefWidth="455.0" text="A confirmation has been sent to your email." textFill="#f6f6f6" visible="false">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <Label fx:id="piTest" layoutX="371.0" layoutY="198.0" text="Personal Info Test" textFill="#f6f6f6" visible="false">
+                        <Label fx:id="firstNameLabel" layoutX="14.0" layoutY="14.0" text="First Name :" textFill="#f6f6f6">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
-                        <Label fx:id="vhTest" layoutX="368.0" layoutY="198.0" text="Viewing History Test" textFill="#f6f6f6" visible="false">
+                        <Label fx:id="LastNameLabel" layoutX="16.0" layoutY="59.0" text="Last Name :" textFill="#f6f6f6">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userFirstName" layoutX="190.0" layoutY="14.0" text="User First Name" textFill="#f6f6f6">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userLastName" layoutX="192.0" layoutY="59.0" text="User Last Name" textFill="#f6f6f6">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="editUserAccountBtn" layoutX="120.0" layoutY="330.0" mnemonicParsing="false" onAction="#editButtonPressed" text="Edit User Account Information" />
+                        <Button fx:id="changeName" layoutX="221.0" layoutY="317.0" mnemonicParsing="false" onAction="#changeNamePressed" text="Change Name" visible="false" />
+                        <Label fx:id="emailLabel" layoutX="14.0" layoutY="104.0" text="Email:" textFill="#f6f6f6">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userEmail" layoutX="192.0" layoutY="104.0" text="User Email" textFill="#f6f6f6">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userPasswordLabel" layoutX="192.0" layoutY="198.0" text="************" textFill="#f6f6f6">
                            <font>
                               <Font size="30.0" />
                            </font>
                         </Label>
                      </children></AnchorPane>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #111111;" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3" />
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222222;" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3" />
+                  <AnchorPane fx:id="viewingHistoryPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f6f6f6;" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="5" GridPane.rowSpan="3">
+                     <children>
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="464.0" prefWidth="1041.0" style="-fx-background-color: #f6f6f6;" vbarPolicy="NEVER">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1000.0" prefWidth="1041.0" style="-fx-background-color: #f6f6f6;">
+                                 <children>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="199.0" prefWidth="1041.0" style="-fx-background-color: #f6f6f6;">
+                                       <children>
+                                          <GridPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="199.0" prefWidth="1041.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner1" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel1" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner2" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel2" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner3" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel3" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner4" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel4" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner5" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel5" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner6" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel6" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefHeight="17.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner7" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel7" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="199.0" prefWidth="1041.0" style="-fx-background-color: #f6f6f6;" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="200.0">
+                                       <children>
+                                          <GridPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="199.0" prefWidth="1041.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner8" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel8" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="177.0" prefHeight="17.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner9" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel9" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefHeight="17.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner10" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel10" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner11" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel11" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner12" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel12" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner13" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel13" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner14" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel14" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="199.0" prefWidth="1041.0" style="-fx-background-color: #f6f6f6;" AnchorPane.topAnchor="400.0">
+                                       <children>
+                                          <GridPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="199.0" prefWidth="1142.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner15" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel15" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner16" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel16" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner17" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel17" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner18" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel18" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner19" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel19" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefHeight="0.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner20" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel20" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner21" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel21" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="199.0" prefWidth="1041.0" style="-fx-background-color: #f6f6f6;" AnchorPane.topAnchor="600.0">
+                                       <children>
+                                          <GridPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="199.0" prefWidth="1142.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner22" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel22" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner23" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel23" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
+                                                   <children>
+                                                      <Label fx:id="historyLabel24" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                      <ImageView fx:id="historyBanner24" fitHeight="168.0" fitWidth="133.0" layoutX="25.0" layoutY="10.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner25" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel25" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner26" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel26" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefHeight="0.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner27" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel27" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner28" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel28" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="199.0" prefWidth="1041.0" style="-fx-background-color: #f6f6f6;" AnchorPane.topAnchor="800.0">
+                                       <children>
+                                          <GridPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="199.0" prefWidth="1041.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner29" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel29" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner30" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel30" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner31" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel31" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner32" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel32" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner33" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel33" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefHeight="0.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner34" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel34" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
+                                                   <children>
+                                                      <ImageView fx:id="historyBanner35" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
+                                                         <effect>
+                                                            <DropShadow height="32.0" radius="15.5" width="32.0" />
+                                                         </effect>
+                                                      </ImageView>
+                                                      <Label fx:id="historyLabel35" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" prefWidth="150.0" text="Movie Title" textAlignment="CENTER" textFill="#514e4e" AnchorPane.bottomAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children></AnchorPane>
                </children>
             </GridPane>
             <AnchorPane cacheShape="false" centerShape="false" layoutY="-20.0" prefHeight="90.0" prefWidth="1142.0" scaleShape="false" style="-fx-background-color: #777983;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Label layoutX="52.0" layoutY="29.0" text="My Account:" textAlignment="CENTER" textFill="#f6f6f6">
+                  <Label layoutX="52.0" layoutY="29.0" text="Welcome, " textAlignment="CENTER" textFill="#f6f6f6">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="welcomeName" layoutX="154.0" layoutY="29.0" prefHeight="32.0" prefWidth="211.0" text="User name!" textAlignment="CENTER" textFill="#f6f6f6">
                      <font>
                         <Font size="22.0" />
                      </font>
@@ -170,6 +653,40 @@
                   <DropShadow blurType="ONE_PASS_BOX" />
                </effect>
             </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="editUserPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #777983;" visible="false" AnchorPane.bottomAnchor="125.0" AnchorPane.leftAnchor="725.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="200.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <TextField fx:id="enterNewPassword" layoutX="100.0" layoutY="146.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Enter your new password" />
+            <TextField fx:id="confirmNewPassword" layoutX="100.0" layoutY="179.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Confirm your new password" />
+            <Button fx:id="saveChanges" layoutX="139.0" layoutY="249.0" mnemonicParsing="false" onAction="#changePassPressed" text="Save Changes" />
+            <Label layoutX="20.0" layoutY="14.0" text="First Name:" textFill="#f6f6f6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="49.0" text="Last Name:" textFill="#f6f6f6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="83.0" text="Email:" textFill="#f6f6f6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="117.0" text="Password:" textFill="#f6f6f6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="editFirstName" layoutX="100.0" layoutY="11.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="User First Name" />
+            <TextField fx:id="editLastName" layoutX="100.0" layoutY="46.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="User Last name" />
+            <TextField fx:id="editEmail" layoutX="100.0" layoutY="80.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="User Email" />
+            <TextField fx:id="enterCurrentPassword" layoutX="100.0" layoutY="114.0" maxHeight="26.0" maxWidth="168.0" minHeight="26.0" minWidth="168.0" prefHeight="26.0" prefWidth="168.0" promptText="Enter current password" />
          </children>
       </AnchorPane>
     </children>
