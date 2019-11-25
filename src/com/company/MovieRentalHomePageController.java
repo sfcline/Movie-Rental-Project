@@ -31,6 +31,7 @@ public class MovieRentalHomePageController implements Initializable {
   final String lightGray = "#6b6d76";
   final String white = "#f6f6f6";
   final String MOVIE_PREFIX = "https://image.tmdb.org/t/p/original";
+  String tempSearch = " ";
 
   /////////// inserting Objects to be displayed on Home Scene//////////////////////
   @FXML Button accountBtn = new Button();
@@ -62,6 +63,8 @@ public class MovieRentalHomePageController implements Initializable {
   private TableColumn<?, ?> searchRating;
   @FXML
   private TableColumn<?, ?> searchYear;
+  @FXML
+  private TableColumn<MovieImage, ImageView> searchImage;
   //////////////////////////////////////////////////////////////////////////////////
 
   ArrayList<Node> recommendedList = new ArrayList<>();
@@ -248,25 +251,46 @@ public class MovieRentalHomePageController implements Initializable {
   public void handleCloseMovieDetails() {
     ShadowPane.setVisible(false);
     MovieDetailsPane.setVisible(false);
+    searchPane.setVisible(false);
   }
 
   public void searchQuery(){
-    if (SearchTF.getText().length() > 0 && SearchTF.getText() != null) {
+    if (SearchTF.getText().length() > 0 && SearchTF.getText() != null && !(SearchTF.getText().equals(tempSearch))) {
+      tempSearch = SearchTF.getText();
       DBController searchController = new DBController();
       searchController.connectToDB();
       searchResultsList = searchController.selectMovieFromMoviesWhereKeywordIs(SearchTF.getText());
+
+
+      for(Movie movie: searchResultsList){
+        movie.setMovieImage(movie.getPoster());
+        System.out.println(MOVIE_PREFIX + movie.getPoster());
+        System.out.println(movie.getMovieImage());
+      }
+
       searchObservableList = FXCollections.observableArrayList(searchResultsList);
       searchPane.setVisible(true);
+      ShadowPane.setVisible(true);
+      searchImage.setCellValueFactory(new PropertyValueFactory<>("movieImage"));
       searchName.setCellValueFactory(new PropertyValueFactory("Title"));
       searchRating.setCellValueFactory(new PropertyValueFactory("Rating"));
       searchYear.setCellValueFactory(new PropertyValueFactory("releaseDate"));
       searchTable.setItems(searchObservableList);
-
       System.out.println(searchResultsList);
     }
     else{
       System.out.println("Please Enter Text to Search.");
     }
+  }
+  public void movieSearchDetails(){
+    setDetails(searchTable.getSelectionModel().getSelectedItem());
+    showDetails();
+    searchPane.setVisible(false);
+  }
+
+  public void movieSearchShow() {
+    searchPane.setVisible(true);
+    ShadowPane.setVisible(true);
   }
 
 } // end

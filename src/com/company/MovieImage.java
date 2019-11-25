@@ -7,12 +7,18 @@ public class MovieImage {
 
     private ImageView image;
 
+    final String MOVIE_PREFIX = "https://image.tmdb.org/t/p/original";
+
     MovieImage(String image) {
         setImage(image);
     }
 
     public void setImage(String newImage) {
-        image = new ImageView(new Image(newImage));
+        ImageView tempImage;
+        tempImage = new ImageView(new Image(MOVIE_PREFIX + newImage));
+        tempImage.setPreserveRatio(true);
+        tempImage.setFitWidth(100);
+        image = tempImage;
     }
 
     public ImageView getImage() {

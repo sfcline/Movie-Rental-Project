@@ -4,6 +4,9 @@
  */
 package com.company;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 import java.util.ArrayList;
 
 public class Movie {
@@ -36,7 +39,9 @@ public class Movie {
 
   private String tagLine;
 
-  private MovieImage imageView;
+  private String imageView;
+
+  private MovieImage movieImage;
 
   /**
    * Movie Constructor.
@@ -114,6 +119,14 @@ public class Movie {
               + " Movie ID must be greater than 0 "
               + "and must be unique.");
     }
+  }
+
+  public void setMovieImage(String newImage){
+    this.movieImage = new MovieImage(newImage);
+  }
+
+  public ImageView getMovieImage(){
+    return movieImage.getImage();
   }
 
   /**
@@ -447,7 +460,7 @@ public class Movie {
    */
   public void setImageView(String imageView) throws IllegalMovieArgumentException {
     if (imageView != null && imageView.length() > 0) {
-      this.imageView = new MovieImaimageView;
+      this.imageView = imageView;
     } else {
       throw new IllegalMovieArgumentException(
               "Invalid Image View ID "
