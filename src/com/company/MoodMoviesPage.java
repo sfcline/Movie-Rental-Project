@@ -17,10 +17,10 @@ public class MoodMoviesPage {
     public static void display(String title, String mood) throws Exception {
         FXMLLoader loader = new FXMLLoader(MoodMoviesPage.class.getResource("MoodMoviesPage.fxml"));
         Parent root = loader.load();
-        MoodMoviesPage.setTitle("Mood Movies Page");
+        MoodMoviesPage.setTitle(title);
         MoodMoviesPage.setScene(new Scene(root, 1142, 658));
         MoodMoviesPage.setResizable(false);
-        loader.<MoodMoviesPageController>getController().settingMoodTitle(mood);
+        loader.<MoodMoviesPageController>getController().loadMovies(mood);
         MoodMoviesPage.show();
     }
 

@@ -179,7 +179,7 @@ public class MovieRowMood {
         ArrayList<Movie> posterArray = moviePosterController.selectRANDOMMoviePostersFromMoviesWhereTagIs(Tag, 16);
 
         // Load Image loop 1-16
-        for(int i = 0; i<16; i++){
+        for(int i = 0; i<posterArray.size(); i++){
             Image tempImg = new Image(MOVIE_PREFIX + posterArray.get(i).getPoster());
             (IVList.get(i)).setImage(tempImg);
             (LblList.get(i)).setText(posterArray.get(i).getTitle());

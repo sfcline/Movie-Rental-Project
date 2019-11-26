@@ -17,7 +17,7 @@ public class LoadingScreen {
     public static void display(String title) throws Exception {
         Parent root =
                 FXMLLoader.load(LoadingScreen.class.getResource("LoadingScreen.fxml"));
-        LoadingScreenPage.setTitle("Loading Screen");
+        LoadingScreenPage.setTitle(title);
         LoadingScreenPage.setScene(new Scene(root, 1142, 658));
         LoadingScreenPage.setResizable(false);
         LoadingScreenPage.show();

@@ -19,8 +19,8 @@ public class AccountPage {
 
   // sets up Sign Up Window
   public static void display(String title) throws Exception {
-    Parent root = FXMLLoader.load(MovieRentalHomePage.class.getResource("AccountPage.fxml"));
-    AccountWindow.setTitle("Account Page");
+    Parent root = FXMLLoader.load(AccountPage.class.getResource("AccountPage.fxml"));
+    AccountWindow.setTitle(title);
     AccountWindow.setScene(new Scene(root, 1142, 658));
     AccountWindow.setResizable(false);
     AccountWindow.show();
