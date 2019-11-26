@@ -239,6 +239,7 @@ public class MovieRentalHomePageController implements Initializable {
   }
 
   public void handleRentMovie() {
+
     handleCloseMovieDetails();
     System.out.println("Movie Rented!");
   }
