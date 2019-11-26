@@ -137,7 +137,7 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
                      <children>
-                        <Button fx:id="scaredBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO BE SCARED ****LESS" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
+                        <Button fx:id="scaredBtn" layoutX="47.0" layoutY="37.0" mnemonicParsing="false" onMouseClicked="#openMoodMoviePage" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="116.0" prefWidth="192.0" style="-fx-background-color: #6b6d76; -fx-background-radius: 7;" text="TO BE SCARED POOPLESS" textAlignment="CENTER" textFill="#f6f6f6" wrapText="true">
                            <font>
                               <Font name="System Bold" size="22.0" />
                            </font>

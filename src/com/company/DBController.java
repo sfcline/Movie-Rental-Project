@@ -4,6 +4,8 @@
  */
 package com.company;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -156,43 +158,80 @@ public class DBController {
 
       while (rs.next()) {
         MovieNames.add(rs.getString("MOVIE_NAME"));
+        System.out.println(rs.getString("MOVIE_NAME"));
       }
     } catch (SQLException e) {
       System.out.println("ERROR: Selecting Poster from MovieNames Failed.");
       System.out.println("Reason1:" + e);
     }
     Random rdm = new Random();
-    for (int i = 0; i < amountofPosters; i++) {
-      String movieChoice = MovieNames.get(rdm.nextInt((MovieNames.size()-i)));
-      Posters[i] = movieChoice;
-      MovieNames.remove(movieChoice);
-      try {
-        String insertQuery = "SELECT * FROM MOVIES WHERE TITLE=?;";
-        PreparedStatement pstmt = conn.prepareStatement(insertQuery);
-        pstmt.setString(1, Posters[i]);
-        rs = pstmt.executeQuery();
+    if (amountofPosters > MovieNames.size()) {
+      for (int i = 0; i < MovieNames.size(); i++) {
+        String movieChoice = MovieNames.get((rdm.nextInt((MovieNames.size()))));
+        Posters[i] = movieChoice;
+        MovieNames.remove(movieChoice);
+        try {
+          String insertQuery = "SELECT * FROM MOVIES WHERE TITLE=?;";
+          PreparedStatement pstmt = conn.prepareStatement(insertQuery);
+          pstmt.setString(1, Posters[i]);
+          rs = pstmt.executeQuery();
 
-        while (rs.next()) {
-          movie = new Movie(rs.getInt("movie_id"),
-                  rs.getString("title"),
-                  rs.getString("rating"),
-                  rs.getString("genre"),
-                  rs.getDouble("runtime"),
-                  rs.getDouble("score"),
-                  rs.getString("star"),
-                  rs.getString("director"),
-                  rs.getString("writer"),
-                  rs.getString("overview"),
-                  rs.getInt("popularity"),
-                  rs.getString("poster"),
-                  rs.getString("release_date"),
-                  rs.getString("tagline"));
-          Posters[i] = (movie.getPoster());
-          Movies.add(movie);
+          while (rs.next()) {
+            movie = new Movie(rs.getInt("movie_id"),
+                    rs.getString("title"),
+                    rs.getString("rating"),
+                    rs.getString("genre"),
+                    rs.getDouble("runtime"),
+                    rs.getDouble("score"),
+                    rs.getString("star"),
+                    rs.getString("director"),
+                    rs.getString("writer"),
+                    rs.getString("overview"),
+                    rs.getInt("popularity"),
+                    rs.getString("poster"),
+                    rs.getString("release_date"),
+                    rs.getString("tagline"));
+            Posters[i] = (movie.getPoster());
+            Movies.add(movie);
+          }
+        } catch (SQLException | IllegalMovieArgumentException e) {
+          System.out.println("ERROR: Selecting Poster from MovieNames Failed.");
+          System.out.println("Reason2:" + e);
         }
-      } catch (SQLException | IllegalMovieArgumentException e) {
-        System.out.println("ERROR: Selecting Poster from MovieNames Failed.");
-        System.out.println("Reason2:" + e);
+      }
+    }else{
+      for (int i = 0; i < amountofPosters; i++) {
+        String movieChoice = MovieNames.get((rdm.nextInt((MovieNames.size()))));
+        Posters[i] = movieChoice;
+        MovieNames.remove(movieChoice);
+        try {
+          String insertQuery = "SELECT * FROM MOVIES WHERE TITLE=?;";
+          PreparedStatement pstmt = conn.prepareStatement(insertQuery);
+          pstmt.setString(1, Posters[i]);
+          rs = pstmt.executeQuery();
+
+          while (rs.next()) {
+            movie = new Movie(rs.getInt("movie_id"),
+                    rs.getString("title"),
+                    rs.getString("rating"),
+                    rs.getString("genre"),
+                    rs.getDouble("runtime"),
+                    rs.getDouble("score"),
+                    rs.getString("star"),
+                    rs.getString("director"),
+                    rs.getString("writer"),
+                    rs.getString("overview"),
+                    rs.getInt("popularity"),
+                    rs.getString("poster"),
+                    rs.getString("release_date"),
+                    rs.getString("tagline"));
+            Posters[i] = (movie.getPoster());
+            Movies.add(movie);
+          }
+        } catch (SQLException | IllegalMovieArgumentException e) {
+          System.out.println("ERROR: Selecting Poster from MovieNames Failed.");
+          System.out.println("Reason2:" + e);
+        }
       }
     }
     return Movies;
