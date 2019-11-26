@@ -4,6 +4,9 @@
  */
 package com.company;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 import java.util.ArrayList;
 
 public class Movie {
@@ -37,6 +40,8 @@ public class Movie {
   private String tagLine;
 
   private String imageView;
+
+  private MovieImage movieImage;
 
   /**
    * Movie Constructor.
@@ -114,6 +119,14 @@ public class Movie {
               + " Movie ID must be greater than 0 "
               + "and must be unique.");
     }
+  }
+
+  public void setMovieImage(String newImage){
+    this.movieImage = new MovieImage(newImage);
+  }
+
+  public ImageView getMovieImage(){
+    return movieImage.getImage();
   }
 
   /**
