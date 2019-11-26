@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <Label layoutX="256.0" layoutY="303.0" text="Please wait, your movies are loading..." textFill="#f6f6f6">
+      <font>
+        <Font size="36.0" />
+      </font>
+    </Label>
+    <ImageView fitHeight="465.0" fitWidth="620.0" layoutX="245.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+        <Image url="@Generic_Movie_Company_Logo.png" />
+      </image>
+    </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="481.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@loading_big.gif" />
+         </image>
+      </ImageView>
+  </children>
+</AnchorPane>
