@@ -1,6 +1,6 @@
 /**
  * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
- * Stephen Cline, Sean Lamont
+ * Stephen Cline, Sean Lamont.
  */
 package com.company;
 
@@ -15,7 +15,12 @@ public class SignInBox {
 
   public static Stage SignInWindow = new Stage();
 
-  // sets up Sign In Window
+  /**
+   * Sets up the sign in window to be displayed.
+   *
+   * @param title the title of the window.
+   * @throws Exception thrown if Exception is found.
+   */
   public static void display(String title) throws Exception {
     SignInWindow.initModality(Modality.APPLICATION_MODAL);
     Parent root = FXMLLoader.load(SignInBox.class.getResource("SignInBox.fxml"));

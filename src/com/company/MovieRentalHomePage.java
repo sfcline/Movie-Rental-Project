@@ -1,6 +1,6 @@
 /**
  * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
- * Stephen Cline, Sean Lamont
+ * Stephen Cline, Sean Lamont.
  */
 package com.company;
 
@@ -28,7 +28,7 @@ public class MovieRentalHomePage {
     MovieRentalWindow.show();
   }
 
-  public static void close(){
+  public static void close() {
     MovieRentalWindow.close();
   }
 }

@@ -1,6 +1,6 @@
 /**
  * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
- * Stephen Cline, Sean Lamont
+ * Stephen Cline, Sean Lamont.
  */
 package com.company;
 
@@ -34,10 +34,12 @@ public class SignInBoxController {
   /**
    * Tests if username and password are valid, if they are prints prompt, clears fields, and grants
    * access to program.
+   *
+   * @throws Exception thrown if user parameter is invalid.
    */
   public void authenticateUser() throws Exception {
-      account.setUsername(usernameField.getText());
-      account.setPassword(passwordField.getText());
+    account.setUsername(usernameField.getText());
+    account.setPassword(passwordField.getText());
     Boolean passwordStatus = account.isGoodPassword();
     if (passwordStatus) {
       passwordCheck.setTextFill(Paint.valueOf("#009918"));

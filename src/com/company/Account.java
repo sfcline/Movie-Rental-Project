@@ -2,6 +2,7 @@
  * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
  * Stephen Cline, Sean Lamont.
  */
+
 package com.company;
 
 /** Abstract Parent class for every type of users and admins. */
