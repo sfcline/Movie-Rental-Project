@@ -18,7 +18,7 @@ Instructions:
 * Sign in
 
 ## Built With
-* IntelliJ IDEA 2019.2.2
+* IntelliJ IDEA 2019.3
 
 ## Acknowledgements
 * https://stackoverflow.com
