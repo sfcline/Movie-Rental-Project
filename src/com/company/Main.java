@@ -1,23 +1,17 @@
 /**
  * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
- * Stephen Cline, Sean Lamont
+ * Stephen Cline, Sean Lamont.
  */
 package com.company;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-
-/** Main class, calls Controllers */
+/** Main class, calls Controllers. */
 public class Main extends Application {
 
-
   /**
-   * Sets up Movie Rental Home Page
+   * Sets up Movie Rental Home Page.
    *
    * @param primaryStage stage.
    * @throws Exception exception.
@@ -30,7 +24,7 @@ public class Main extends Application {
   } // ends start
 
   /**
-   * Runnable,calls launch(args)
+   * Runnable,calls launch(args).
    *
    * @param args main.
    */

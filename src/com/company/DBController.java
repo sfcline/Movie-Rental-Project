@@ -1,10 +1,8 @@
 /**
  * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
- * Stephen Cline, Sean Lamont
+ * Stephen Cline, Sean Lamont.
  */
 package com.company;
-
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,10 +19,7 @@ public class DBController {
   private Connection conn = null;
   private Statement statement;
 
-
-  /**
-   * Connects to Data Base.
-   */
+  /** Connects to Data Base. */
   public void connectToDB() {
     try {
       Class.forName(JDBC_DRIVER);
@@ -38,11 +33,9 @@ public class DBController {
     } catch (Exception ex) {
       ex.printStackTrace();
     }
-  }//end connectToDB
+  } // end connectToDB
 
-  /**
-   * Selects all from Movies Table, and Prints with formatting.
-   */
+  /** Selects all from Movies Table, and Prints with formatting. */
   public void selectAllFromMovies() {
     ResultSet rs = null;
     try {
@@ -70,10 +63,10 @@ public class DBController {
       System.out.println("ERROR: Selecting all from Movies Failed.");
       System.out.println("Reason:" + e);
     }
-  }//end selectAllFromMovies
+  } // end selectAllFromMovies
 
   /**
-   * Selects Poster Suffix where a Movie ID is equal to the Parameter
+   * Selects Poster Suffix where a Movie ID is equal to the Parameter.
    *
    * @param Movie_ID - Movie Id of the requested Poster
    * @return Poster - Poster Suffix of movie requested
@@ -88,7 +81,9 @@ public class DBController {
       rs = pstmt.executeQuery();
 
       while (rs.next()) {
-        movie = new Movie(rs.getInt("movie_id"),
+        movie =
+            new Movie(
+                rs.getInt("movie_id"),
                 rs.getString("title"),
                 rs.getString("rating"),
                 rs.getString("genre"),
@@ -108,14 +103,12 @@ public class DBController {
       System.out.println("Reason:" + e);
     }
     return movie;
-  }//end selectMoviePosterFromMoviesWhereMovieIDis
-
-
+  } // end selectMoviePosterFromMoviesWhereMovieIDis
 
   /**
-   * Selects Poster Suffix where a Title is equal to the Parameter
+   * Selects Poster Suffix where a Title is equal to the Parameter.
    *
-   * @param Title- Movie Id of the requested Poster
+   * @param Title Movie Id of the requested Poster
    * @return Poster - Poster Suffix of movie requested
    */
   public String selectMoviePosterFromMoviesWhereTitleis(String Title) {
@@ -135,16 +128,17 @@ public class DBController {
       System.out.println("Reason:" + e);
     }
     return Poster;
-  }//end selectMoviePosterFromMoviesWhereMovieIDis
-
+  } // end selectMoviePosterFromMoviesWhereMovieIDis
 
   /**
-   * Selects Poster Suffix where a Title is equal to the Parameter
+   * Selects Poster Suffix where a Title is equal to the Parameter.
    *
-   * @param Tag- Movie Id of the requested Poster
+   * @param Tag Movie Id of the requested Poster
+   * @param amountofPosters the quantity of posters.
    * @return Poster - Poster Suffix of movie requested
    */
-  public ArrayList<Movie> selectRANDOMMoviePostersFromMoviesWhereTagIs(String Tag, int amountofPosters) {
+  public ArrayList<Movie> selectRANDOMMoviePostersFromMoviesWhereTagIs(
+      String Tag, int amountofPosters) {
     ArrayList<String> MovieNames = new ArrayList<>();
     String[] Posters = new String[amountofPosters];
     ResultSet rs = null;
@@ -177,7 +171,9 @@ public class DBController {
           rs = pstmt.executeQuery();
 
           while (rs.next()) {
-            movie = new Movie(rs.getInt("movie_id"),
+            movie =
+                new Movie(
+                    rs.getInt("movie_id"),
                     rs.getString("title"),
                     rs.getString("rating"),
                     rs.getString("genre"),
@@ -199,7 +195,7 @@ public class DBController {
           System.out.println("Reason2:" + e);
         }
       }
-    }else{
+    } else {
       for (int i = 0; i < amountofPosters; i++) {
         String movieChoice = MovieNames.get((rdm.nextInt((MovieNames.size()))));
         Posters[i] = movieChoice;
@@ -211,7 +207,9 @@ public class DBController {
           rs = pstmt.executeQuery();
 
           while (rs.next()) {
-            movie = new Movie(rs.getInt("movie_id"),
+            movie =
+                new Movie(
+                    rs.getInt("movie_id"),
                     rs.getString("title"),
                     rs.getString("rating"),
                     rs.getString("genre"),
@@ -235,10 +233,10 @@ public class DBController {
       }
     }
     return Movies;
-  }//end selectMoviePosterFromMoviesWhereMovieIDis
+  } // end selectMoviePosterFromMoviesWhereMovieIDis
 
   /**
-   * Selects Title where a Movie ID is equal to the Parameter
+   * Selects Title where a Movie ID is equal to the Parameter.
    *
    * @param Poster - Movie Id of the requested Title
    * @return Title - Title of movie requested
@@ -262,13 +260,19 @@ public class DBController {
     return Title;
   }
 
+  /**
+   * Adds a new user to the Database when called.
+   *
+   * @param val1 values for the user's information.
+   * @param val2 values for the user's information.
+   * @throws SQLException thrown if problem with database is found.
+   */
   public void insertIntoUsers(String val1, String val2) throws SQLException {
-      connectToDB();
+    connectToDB();
     if (!selectFromUsersWhereUsernameIs(val1)) {
       String[] insertValues = {val1, val2};
       try {
-        String insertQuery = "INSERT INTO USERS"
-                + "(USER_NAME, PASSWORD)" + " VALUES (?, ?);";
+        String insertQuery = "INSERT INTO USERS" + "(USER_NAME, PASSWORD)" + " VALUES (?, ?);";
         PreparedStatement pstmt = conn.prepareStatement(insertQuery);
         pstmt.setString(1, insertValues[0]);
         pstmt.setString(2, insertValues[1]);
@@ -278,19 +282,19 @@ public class DBController {
         System.out.println("ERROR: insertIntoUsers Failed!");
         System.out.println(e);
       }
-    }else {
+    } else {
       System.out.println("User Already Exists!");
     }
-  }//end insert into users
+  } // end insert into users
 
   /**
-   * Used to find if a user exist's with the chosen Username
+   * Used to find if a user exist's with the chosen Username.
    *
    * @param value - value of Username that you are searching for
    * @return userExists - true or false depending
-   * */
+   */
   public boolean selectFromUsersWhereUsernameIs(String value) {
-      connectToDB();
+    connectToDB();
     boolean userExists = true;
     ResultSet rs = null;
     try {
@@ -298,13 +302,20 @@ public class DBController {
       PreparedStatement pstmt = conn.prepareStatement(insertQuery);
       pstmt.setString(1, value);
       rs = pstmt.executeQuery(insertQuery);
-        conn.close();
+      conn.close();
     } catch (SQLException e) {
       userExists = false;
     }
     return userExists;
   }
 
+  /**
+   * Sets the User name when called.
+   *
+   * @param First First name.
+   * @param Last Last Name.
+   * @param username userName.
+   */
   public void setUserName(String First, String Last, String username) {
     ResultSet rs = null;
     try {
@@ -321,37 +332,40 @@ public class DBController {
   }
 
   /**
-   * Selects Poster Suffix where a Title is equal to the Parameter
+   * Selects Poster Suffix where a Title is equal to the Parameter.
    *
-   * @param Keyword- Movie Id of the requested Poster
-   * @return Poster - Poster Suffix of movie requested
+   * @param Keyword Movie Id of the requested Poster
+   * @return Poster Poster Suffix of movie requested
    */
   public ArrayList<Movie> selectMovieFromMoviesWhereKeywordIs(String Keyword) {
     ResultSet rs = null;
     Movie movie = null;
     ArrayList<Movie> Movies = new ArrayList<>();
     try {
-      String insertQuery = "SELECT * FROM MOVIES WHERE " +
-              "TITLE LIKE ? " +
-              "OR RATING LIKE ? " +
-              "OR GENRE LIKE ? " +
-              "OR STAR LIKE ? " +
-              "OR DIRECTOR LIKE ? " +
-              "OR WRITER LIKE ? " +
-              "OR OVERVIEW LIKE ? " +
-              "OR TAGLINE LIKE ?;";
+      String insertQuery =
+          "SELECT * FROM MOVIES WHERE "
+              + "TITLE LIKE ? "
+              + "OR RATING LIKE ? "
+              + "OR GENRE LIKE ? "
+              + "OR STAR LIKE ? "
+              + "OR DIRECTOR LIKE ? "
+              + "OR WRITER LIKE ? "
+              + "OR OVERVIEW LIKE ? "
+              + "OR TAGLINE LIKE ?;";
       PreparedStatement pstmt = conn.prepareStatement(insertQuery);
-      pstmt.setString(1, ("%"+Keyword+"%"));
-      pstmt.setString(2, ("%"+Keyword+"%"));
-      pstmt.setString(3, ("%"+Keyword+"%"));
-      pstmt.setString(4, ("%"+Keyword+"%"));
-      pstmt.setString(5, ("%"+Keyword+"%"));
-      pstmt.setString(6, ("%"+Keyword+"%"));
-      pstmt.setString(7, ("%"+Keyword+"%"));
-      pstmt.setString(8, ("%"+Keyword+"%"));
+      pstmt.setString(1, ("%" + Keyword + "%"));
+      pstmt.setString(2, ("%" + Keyword + "%"));
+      pstmt.setString(3, ("%" + Keyword + "%"));
+      pstmt.setString(4, ("%" + Keyword + "%"));
+      pstmt.setString(5, ("%" + Keyword + "%"));
+      pstmt.setString(6, ("%" + Keyword + "%"));
+      pstmt.setString(7, ("%" + Keyword + "%"));
+      pstmt.setString(8, ("%" + Keyword + "%"));
       rs = pstmt.executeQuery();
       while (rs.next()) {
-        movie = new Movie(rs.getInt("movie_id"),
+        movie =
+            new Movie(
+                rs.getInt("movie_id"),
                 rs.getString("title"),
                 rs.getString("rating"),
                 rs.getString("genre"),
@@ -372,6 +386,5 @@ public class DBController {
       System.out.println("Reason:" + e);
     }
     return Movies;
-  }//end selectMoviePosterFromMoviesWhereMovieIDis
-
+  } // end selectMoviePosterFromMoviesWhereMovieIDis
 }

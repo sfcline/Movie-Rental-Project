@@ -1,6 +1,6 @@
 /**
  * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
- * Stephen Cline, Sean Lamont
+ * Stephen Cline, Sean Lamont.
  */
 package com.company;
 
@@ -16,6 +16,8 @@ public class Users extends Account {
   private ArrayList<Movie> recommendationsList;
 
   /**
+   * 7 parameter constructor.
+   *
    * @param accountID int, passed to Account constructor.
    * @param userName String, passed to Account constructor.
    * @param password String, passed to Account constructor.

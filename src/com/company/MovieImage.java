@@ -5,23 +5,28 @@ import javafx.scene.image.ImageView;
 
 public class MovieImage {
 
-    private ImageView image;
+  private ImageView image;
 
-    final String MOVIE_PREFIX = "https://image.tmdb.org/t/p/original";
+  final String MOVIE_PREFIX = "https://image.tmdb.org/t/p/original";
 
-    MovieImage(String image) {
-        setImage(image);
-    }
+  MovieImage(String image) {
+    setImage(image);
+  }
 
-    public void setImage(String newImage) {
-        ImageView tempImage;
-        tempImage = new ImageView(new Image(MOVIE_PREFIX + newImage));
-        tempImage.setPreserveRatio(true);
-        tempImage.setFitWidth(100);
-        image = tempImage;
-    }
+  /**
+   * Formats the image up to be displayed in the scroll pane.
+   *
+   * @param newImage the image to be formatted.
+   */
+  public void setImage(String newImage) {
+    ImageView tempImage;
+    tempImage = new ImageView(new Image(MOVIE_PREFIX + newImage));
+    tempImage.setPreserveRatio(true);
+    tempImage.setFitWidth(100);
+    image = tempImage;
+  }
 
-    public ImageView getImage() {
-        return image;
-    }
+  public ImageView getImage() {
+    return image;
+  }
 }

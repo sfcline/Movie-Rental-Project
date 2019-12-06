@@ -1,6 +1,6 @@
 /**
  * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
- * Stephen Cline, Sean Lamont
+ * Stephen Cline, Sean Lamont.
  */
 package com.company;
 
@@ -15,7 +15,7 @@ public class SignUpBox {
   public static Stage SignUpWindow = new Stage();
 
   /**
-   * Sets up Sign Up Window
+   * Sets up Sign Up Window.
    *
    * @param title title.
    * @throws Exception exception.

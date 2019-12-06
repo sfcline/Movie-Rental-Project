@@ -1,6 +1,6 @@
 /**
  * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
- * Stephen Cline, Sean Lamont
+ * Stephen Cline, Sean Lamont.
  */
 package com.company;
 
@@ -28,7 +28,7 @@ public class SignUpBoxController {
   private DBController SignUpController = new DBController();
 
   /**
-   * Checks if Username Fields 1 & 2 are of correct length and if they match.
+   * Checks if Username Fields 1 and 2 are of correct length and if they match.
    *
    * @return boolean, returns true if username is approved, false if it is not.
    */
@@ -62,7 +62,7 @@ public class SignUpBoxController {
   } // end checkUsernameLength
 
   /**
-   * Checks if Password Fields 1 & 2 are of correct length and if they match.
+   * Checks if Password Fields 1 and 2 are of correct length and if they match.
    *
    * @return boolean, true if the match, false if they don't.
    */
@@ -95,7 +95,11 @@ public class SignUpBoxController {
     return isGoodPassword;
   } // end checkPasswordLength
 
-  /** Called when the sign up button is pressed. */
+  /**
+   * Called when the sign up button is pressed.
+   *
+   * @throws SQLException thrown if there is a database error.
+   */
   public void signUpButtonPressed() throws SQLException {
     boolean UsernameStatus = checkUsernameLength();
     boolean PasswordStatus = checkPasswordLength();
@@ -105,7 +109,7 @@ public class SignUpBoxController {
     if (ageButton.isSelected()) {
       ageError.setText(" ");
       if (UsernameStatus && PasswordStatus) { // If Username is UNIQUE, then add user to DataBase
-        SignUpController.insertIntoUsers(username1.getText().trim(),password1.getText().trim());
+        SignUpController.insertIntoUsers(username1.getText().trim(), password1.getText().trim());
         System.out.println("[remove this later] NEW USER CREATED!");
         SignUpWindow.close();
       } else { // If Username is not UNIQUE, then reject user Creation

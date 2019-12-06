@@ -1,6 +1,6 @@
 /**
  * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
- * Stephen Cline, Sean Lamont
+ * Stephen Cline, Sean Lamont.
  */
 package com.company;
 
@@ -23,10 +23,10 @@ public class AccountPageController {
   final String white = "#f6f6f6";
 
   /////////// inserting Objects to be displayed on Survey Scene//////////////////////
-    @FXML AnchorPane editUserPane = new AnchorPane();
-    @FXML AnchorPane loginInfoPane = new AnchorPane();
-    @FXML AnchorPane viewingHistoryPane = new AnchorPane();
-    @FXML Button homeBtn = new Button();
+  @FXML AnchorPane editUserPane = new AnchorPane();
+  @FXML AnchorPane loginInfoPane = new AnchorPane();
+  @FXML AnchorPane viewingHistoryPane = new AnchorPane();
+  @FXML Button homeBtn = new Button();
   @FXML Button moodBtn = new Button();
   @FXML Button saveChanges = new Button();
   @FXML Button loginInfo = new Button();
@@ -48,20 +48,77 @@ public class AccountPageController {
   @FXML TextField editLastName = new TextField();
   @FXML TextField editEmail = new TextField();
   @FXML TextField enterCurrentPassword = new TextField();
-  @FXML
-  ImageView historyBanner1, historyBanner2, historyBanner3, historyBanner4, historyBanner5, historyBanner6, historyBanner7,
-  historyBanner8, historyBanner9, historyBanner10, historyBanner11, historyBanner12, historyBanner13, historyBanner14,
-  historyBanner15, historyBanner16, historyBanner17, historyBanner18, historyBanner19, historyBanner20, historyBanner21,
-  historyBanner22, historyBanner23, historyBanner24, historyBanner25, historyBanner26, historyBanner27, historyBanner28,
-          historyBanner29, historyBanner30, historyBanner31, historyBanner32, historyBanner33, historyBanner34, historyBanner35
-          = new ImageView();
-  @FXML
-  Label historyLabel1, historyLabel2, historyLabel3, historyLabel4, historyLabel5, historyLabel6, historyLabel7,
-          historyLabel8, historyLabel9, historyLabel10, historyLabel11, historyLabel12, historyLabel13, historyLabel14,
-          historyLabel15, historyLabel16, historyLabel17, historyLabel18, historyLabel19, historyLabel20, historyLabel21,
-          historyLabel22, historyLabel23, historyLabel24, historyLabel25, historyLabel26, historyLabel27, historyLabel28,
-          historyLabel29, historyLabel30, historyLabel31, historyLabel32, historyLabel33, historyLabel34, historyLabel35
-          = new Label();
+  @FXML ImageView historyBanner1 = new ImageView();
+  @FXML ImageView historyBanner2 = new ImageView();
+  @FXML ImageView historyBanner3 = new ImageView();
+  @FXML ImageView historyBanner4 = new ImageView();
+  @FXML ImageView historyBanner5 = new ImageView();
+  @FXML ImageView historyBanner6 = new ImageView();
+  @FXML ImageView historyBanner7 = new ImageView();
+  @FXML ImageView historyBanner8 = new ImageView();
+  @FXML ImageView historyBanner9 = new ImageView();
+  @FXML ImageView historyBanner10 = new ImageView();
+  @FXML ImageView historyBanner11 = new ImageView();
+  @FXML ImageView historyBanner12 = new ImageView();
+  @FXML ImageView historyBanner13 = new ImageView();
+  @FXML ImageView historyBanner14 = new ImageView();
+  @FXML ImageView historyBanner15 = new ImageView();
+  @FXML ImageView historyBanner16 = new ImageView();
+  @FXML ImageView historyBanner17 = new ImageView();
+  @FXML ImageView historyBanner18 = new ImageView();
+  @FXML ImageView historyBanner19 = new ImageView();
+  @FXML ImageView historyBanner20 = new ImageView();
+  @FXML ImageView historyBanner21 = new ImageView();
+  @FXML ImageView historyBanner22 = new ImageView();
+  @FXML ImageView historyBanner23 = new ImageView();
+  @FXML ImageView historyBanner24 = new ImageView();
+  @FXML ImageView historyBanner25 = new ImageView();
+  @FXML ImageView historyBanner26 = new ImageView();
+  @FXML ImageView historyBanner27 = new ImageView();
+  @FXML ImageView historyBanner28 = new ImageView();
+  @FXML ImageView historyBanner29 = new ImageView();
+  @FXML ImageView historyBanner30 = new ImageView();
+  @FXML ImageView historyBanner31 = new ImageView();
+  @FXML ImageView historyBanner32 = new ImageView();
+  @FXML ImageView historyBanner33 = new ImageView();
+  @FXML ImageView historyBanner34 = new ImageView();
+  @FXML ImageView historyBanner35 = new ImageView();
+
+  @FXML Label historyLabel1 = new Label();
+  @FXML Label historyLabel2 = new Label();
+  @FXML Label historyLabel3 = new Label();
+  @FXML Label historyLabel4 = new Label();
+  @FXML Label historyLabel5 = new Label();
+  @FXML Label historyLabel6 = new Label();
+  @FXML Label historyLabel7 = new Label();
+  @FXML Label historyLabel8 = new Label();
+  @FXML Label historyLabel9 = new Label();
+  @FXML Label historyLabel10 = new Label();
+  @FXML Label historyLabel11 = new Label();
+  @FXML Label historyLabel12 = new Label();
+  @FXML Label historyLabel13 = new Label();
+  @FXML Label historyLabel14 = new Label();
+  @FXML Label historyLabel15 = new Label();
+  @FXML Label historyLabel16 = new Label();
+  @FXML Label historyLabel17 = new Label();
+  @FXML Label historyLabel18 = new Label();
+  @FXML Label historyLabel19 = new Label();
+  @FXML Label historyLabel20 = new Label();
+  @FXML Label historyLabel21 = new Label();
+  @FXML Label historyLabel22 = new Label();
+  @FXML Label historyLabel23 = new Label();
+  @FXML Label historyLabel24 = new Label();
+  @FXML Label historyLabel25 = new Label();
+  @FXML Label historyLabel26 = new Label();
+  @FXML Label historyLabel27 = new Label();
+  @FXML Label historyLabel28 = new Label();
+  @FXML Label historyLabel29 = new Label();
+  @FXML Label historyLabel30 = new Label();
+  @FXML Label historyLabel31 = new Label();
+  @FXML Label historyLabel32 = new Label();
+  @FXML Label historyLabel33 = new Label();
+  @FXML Label historyLabel34 = new Label();
+  @FXML Label historyLabel35 = new Label();
 
   public AccountPageController() throws Exception {
     loginInfoPressed();
@@ -82,11 +139,22 @@ public class AccountPageController {
     AccountPage.close();
   }
 
-  public void changePassPressed(){
+  /**
+   * Called when change password button is pressed.
+   *
+   * @throws IllegalAccountArgumentException Thrown if illegal parameter for password is passed.
+   */
+  public void changePassPressed() throws IllegalAccountArgumentException {
+
     emailSent.setVisible(true);
+    setUserInfo();
   }
 
-
+  /**
+   * Called when the login Info button is pressed.
+   *
+   * @throws Exception thrown if any parameters are found to be invalid.
+   */
   public void loginInfoPressed() throws Exception {
     viewingHistory.setTextFill(Color.valueOf(white));
     loginInfo.setTextFill(Color.valueOf(orange));
@@ -97,12 +165,40 @@ public class AccountPageController {
     // userLastName.setText(user.getLastName());
   }
 
+  /**
+   * Called when the viewing history button is pressed.
+   *
+   * @throws Exception thrown if IllegalMovieArgumentException is thrown.
+   */
   public void viewingHistoryPressed() throws Exception {
     viewingHistory.setTextFill(Color.valueOf(orange));
     loginInfo.setTextFill(Color.valueOf(white));
-      loginInfoPane.setVisible(false);
-      viewingHistoryPane.setVisible(true);
-      editUserPane.setVisible(false);
+    loginInfoPane.setVisible(false);
+    viewingHistoryPane.setVisible(true);
+    editUserPane.setVisible(false);
+  }
+
+  /**
+   * Called when setting user information.
+   *
+   * @throws IllegalAccountArgumentException thrown if illegal Account argument is found.
+   */
+  public void setUserInfo() throws IllegalAccountArgumentException {
+    String firstName = editFirstName.getText();
+    String lastName = editLastName.getText();
+    String email = editEmail.getText();
+    String password = enterCurrentPassword.getText();
+    /*
+    try{
+      Users currentUser = new Users();
+
+    Users currentUser = new Users(firstName, lastName, email, password);
+    }
+    catch(IllegalAccountArgumentException e){
+      System.out.println("Error creating User Account");
+    }
+
+     */
   }
 
   /**
@@ -113,61 +209,74 @@ public class AccountPageController {
   public void openMovieRentalHomePage() throws Exception {
     MovieRentalHomePage.display("Movie Rental Homepage");
   }
+
   public void openMoodPage() throws Exception {
     InAMoodPage.display("In A Mood Page");
   }
 
-
-
   /**
+   * Called when the mouse "mouses over" an Node object.
+   *
    * @param e - Mouse Event thrown by mouse entering the Node
    */
-  public void handleButtonMouseEntered(MouseEvent e){
-    Button tmp = (Button)e.getSource();
+  public void handleButtonMouseEntered(MouseEvent e) {
+    Button tmp = (Button) e.getSource();
     tmp.setScaleX(1.03);
     tmp.setScaleY(1.03);
     tmp.setCursor(Cursor.HAND);
   }
 
   /**
+   * Called when the mouse exits a Node object.
+   *
    * @param e - Mouse Event thrown by mouse entering the Node
    */
-  public void handleButtonMouseExit(MouseEvent e){
-    Button tmp = (Button)e.getSource();
+  public void handleButtonMouseExit(MouseEvent e) {
+    Button tmp = (Button) e.getSource();
     tmp.setScaleX(.97);
     tmp.setScaleY(.97);
     tmp.setCursor(Cursor.DEFAULT);
   }
-  public void handleImageMouseEntered(MouseEvent e){
-    ImageView tmp = (ImageView)e.getSource();
+
+  /**
+   * Called when the mouse enters a Node.
+   *
+   * @param e the mouse event.
+   */
+  public void handleImageMouseEntered(MouseEvent e) {
+    ImageView tmp = (ImageView) e.getSource();
     tmp.setScaleX(1.02);
     tmp.setScaleY(1.02);
     tmp.setCursor(Cursor.HAND);
   }
 
   /**
+   * Called when the mouse exits a Node object.
+   *
    * @param e - Mouse Event thrown by mouse entering the Node
    */
-  public void handleImageMouseExit(MouseEvent e){
-    ImageView tmp = (ImageView)e.getSource();
+  public void handleImageMouseExit(MouseEvent e) {
+    ImageView tmp = (ImageView) e.getSource();
     tmp.setScaleX(.98);
     tmp.setScaleY(.98);
     tmp.setCursor(Cursor.DEFAULT);
   }
 
-  public void editButtonPressed(){
-      if(editUserPane.isVisible()){
-          editUserPane.setVisible(false);
-          return;
-      }
+  /** Called when the Edit Button is pressed. */
+  public void editButtonPressed() {
+    if (editUserPane.isVisible()) {
+      editUserPane.setVisible(false);
+      return;
+    }
 
-      editUserPane.setVisible(true);
+    editUserPane.setVisible(true);
   }
 
-  public void changeNamePressed(){
-    //DBController db = new DBController();
-    //db.connectToDB();
-    //db.setUserName(editFirstName.getText(), editLastName.getText(), .getUsername());
+  /** Called when the Change Name button is pressed. */
+  public void changeNamePressed() {
+    // DBController db = new DBController();
+    // db.connectToDB();
+    // db.setUserName(editFirstName.getText(), editLastName.getText(), .getUsername());
 
     userFirstName.setText(editFirstName.getText());
     userLastName.setText(editLastName.getText());

@@ -1,13 +1,11 @@
 /**
  * Movie Rental Project Software Engineering Fundamentals Fall 2019 Jeremy Martin, Liana Madden,
- * Stephen Cline, Sean Lamont
+ * Stephen Cline, Sean Lamont.
  */
 package com.company;
 
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-
 import java.util.ArrayList;
+import javafx.scene.image.ImageView;
 
 public class Movie {
 
@@ -63,20 +61,20 @@ public class Movie {
    * @throws IllegalMovieArgumentException throws exception.
    */
   public Movie(
-          int movieID,
-          String title,
-          String rating,
-          String genre,
-          double runTime,
-          double score,
-          String star,
-          String director,
-          String writer,
-          String overview,
-          double popularity,
-          String poster,
-          String releaseDate,
-          String tagLine)
+      int movieID,
+      String title,
+      String rating,
+      String genre,
+      double runTime,
+      double score,
+      String star,
+      String director,
+      String writer,
+      String overview,
+      double popularity,
+      String poster,
+      String releaseDate,
+      String tagLine)
       throws IllegalMovieArgumentException {
     setMovieID(movieID);
     setTitle(title);
@@ -107,7 +105,7 @@ public class Movie {
    * Sets unique movie ID.
    *
    * @param movieID Unique Movie ID.
-   * @throws IllegalMovieArgumentException thrown if <=0;
+   * @throws IllegalMovieArgumentException thrown if less than or equal to 0;
    */
   public void setMovieID(int movieID) throws IllegalMovieArgumentException {
     if (movieID > 0) {
@@ -121,11 +119,11 @@ public class Movie {
     }
   }
 
-  public void setMovieImage(String newImage){
+  public void setMovieImage(String newImage) {
     this.movieImage = new MovieImage(newImage);
   }
 
-  public ImageView getMovieImage(){
+  public ImageView getMovieImage() {
     return movieImage.getImage();
   }
 
@@ -218,7 +216,7 @@ public class Movie {
    * Sets movie runtime.
    *
    * @param runTime how long the movie is.
-   * @throws IllegalMovieArgumentException thrown if invalid runtime <0.
+   * @throws IllegalMovieArgumentException thrown if invalid runtime less than  0.
    */
   public void setRunTime(double runTime) throws IllegalMovieArgumentException {
     if (runTime > 0) {
@@ -242,7 +240,7 @@ public class Movie {
    * Sets movie score.
    *
    * @param score Critic's rating.
-   * @throws IllegalMovieArgumentException thrown if invalid double ie <0.
+   * @throws IllegalMovieArgumentException thrown if invalid double ie  less than 0.
    */
   public void setScore(double score) throws IllegalMovieArgumentException {
     if (score > 0) {
@@ -368,7 +366,7 @@ public class Movie {
    * Sets movie's popularity.
    *
    * @param popularity Movie's popularity in a double.
-   * @throws IllegalMovieArgumentException Thrown if invalid double <0.
+   * @throws IllegalMovieArgumentException Thrown if invalid double lee than 0.
    */
   public void setPopularity(double popularity) throws IllegalMovieArgumentException {
     if (popularity > 0) {
@@ -463,10 +461,10 @@ public class Movie {
       this.imageView = imageView;
     } else {
       throw new IllegalMovieArgumentException(
-              "Invalid Image View ID "
-                      + imageView
-                      + " Image View ID must be "
-                      + "greater than zero characters long.");
+          "Invalid Image View ID "
+              + imageView
+              + " Image View ID must be "
+              + "greater than zero characters long.");
     }
   }
 
@@ -506,6 +504,4 @@ public class Movie {
     }
     return isUnique;
   }
-
-
 }
