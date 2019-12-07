@@ -53,3 +53,4 @@ sfcline/Movie-Rental-Project is licensed under the GNU General Public License v3
 * https://www.geeksforgeeks.org
 * https://docs.oracle.com
 * https://www.themoviedb.org
+* https://developers.themoviedb.org/3/getting-started/introduction
