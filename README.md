@@ -21,15 +21,13 @@ Requirements:
 * Java SE Runtime Environment 8 
 
 Instructions:
-* Run Application
-* Sign up
-* Sign in
-
-## Software Specifications
-https://sfcline.github.io/Movie-Rental-Project/Movie_Rental_Project_Software_Specifications.pdf
+* Please reference the User Guide below
 
 ## User Guide
 https://sfcline.github.io/Movie-Rental-Project/User%20Manual%20YASS.pdf
+
+## Software Specifications
+https://sfcline.github.io/Movie-Rental-Project/Movie_Rental_Project_Software_Specifications.pdf
 
 ## Documentation
 https://sfcline.github.io/Movie-Rental-Project/index.html
