@@ -12,324 +12,431 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="688.0" prefWidth="1142.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.MoodMoviesPageController">
-   <children>
-      <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="88.0" prefWidth="1142.0" style="-fx-background-color: #474448;">
-         <children>
-            <ImageView fx:id="Logo1" fitHeight="124.0" fitWidth="300.0" layoutX="83.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Generic_Movie_Company_Logo.gif" />
-               </image>
-            </ImageView>
-            <Button fx:id="homeBtn" layoutX="314.0" layoutY="13.0" mnemonicParsing="false" onAction="#openMovieRentalHomePage" prefHeight="62.0" prefWidth="129.0" style="-fx-background-color: #474448;" text="Home" textFill="#fc9e4f" AnchorPane.rightAnchor="699.0">
-               <font>
-                  <Font size="22.0" />
-               </font>
-               <effect>
-                  <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
-               </effect>
-            </Button>
-            <Button fx:id="accountBtn" layoutX="506.0" layoutY="13.0" mnemonicParsing="false" onAction="#openAccountPage" prefHeight="62.0" prefWidth="133.0" style="-fx-background-color: #474448;" text="Account" textFill="#fc9e4f">
-               <font>
-                  <Font size="22.0" />
-               </font>
-               <effect>
-                  <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
-               </effect>
-            </Button>
-            <Button fx:id="moodBtn" layoutX="701.0" layoutY="13.0" mnemonicParsing="false" onAction="#openMoodPage" prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="In a Mood" textFill="#f6f6f6" AnchorPane.leftAnchor="701.0">
-               <font>
-                  <Font size="22.0" />
-               </font>
-               <effect>
-                  <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
-               </effect>
-            </Button>
-         </children>
-         <effect>
-            <DropShadow height="25.0" radius="5.75" spread="0.25" width="0.0" />
-         </effect>
-      </AnchorPane>
-      <AnchorPane layoutX="-1.0" layoutY="89.0" prefHeight="600.0" prefWidth="1142.0" style="-fx-background-color: #f6f6f6;">
-         <children>
-            <GridPane layoutY="118.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="199.0" prefWidth="1142.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
-                     <children>
-                        <ImageView fx:id="moodBanner01" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel01" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
-                     <children>
-                        <ImageView fx:id="moodBanner02" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel02" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
-                     <children>
-                        <ImageView fx:id="moodBanner03" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel03" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
-                     <children>
-                        <ImageView fx:id="moodBanner04" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel04" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
-                     <children>
-                        <ImageView fx:id="moodBanner05" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel05" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
-                     <children>
-                        <ImageView fx:id="moodBanner06" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel06" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefHeight="17.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
-                     <children>
-                        <ImageView fx:id="moodBanner07" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel07" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="7">
-                     <children>
-                        <ImageView fx:id="moodBanner08" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel08" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </GridPane>
-            <GridPane layoutY="333.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="199.0" prefWidth="1142.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
-                     <children>
-                        <ImageView fx:id="moodBanner09" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel09" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="1">
-                     <children>
-                        <ImageView fx:id="moodBanner10" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel10" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="2">
-                     <children>
-                        <ImageView fx:id="moodBanner11" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel11" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="3">
-                     <children>
-                        <ImageView fx:id="moodBanner12" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel12" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="4">
-                     <children>
-                        <ImageView fx:id="moodBanner13" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel13" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="5">
-                     <children>
-                        <ImageView fx:id="moodBanner14" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel14" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefHeight="17.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="6">
-                     <children>
-                        <ImageView fx:id="moodBanner15" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel15" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0" GridPane.columnIndex="7">
-                     <children>
-                        <ImageView fx:id="moodBanner16" fitHeight="168.0" fitWidth="133.0" layoutX="15.0" onMouseClicked="#showMovieDetailsRecommended" onMouseEntered="#handleImageMouseEntered" onMouseExited="#handleImageMouseExit" pickOnBounds="true" preserveRatio="true">
-                           <effect>
-                              <DropShadow height="32.0" radius="15.5" width="32.0" />
-                           </effect>
-                        </ImageView>
-                        <Label fx:id="moodLabel16" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </GridPane>
-            <Label layoutX="27.0" layoutY="28.0" text="In a mood ">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-            <Label fx:id="moodTitle" layoutX="200.0" layoutY="28.0" text="for something...">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="MovieDetailsPane" prefHeight="517.0" prefWidth="834.0" style="-fx-background-color: #f6f6f6;" visible="false" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="153.0" AnchorPane.topAnchor="100.0">
-         <children>
-            <ImageView fx:id="moviePosterDetails" fitHeight="431.0" fitWidth="285.0" layoutX="8.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
-            <AnchorPane layoutX="303.0" layoutY="6.0" prefHeight="95.0" prefWidth="520.0" style="-fx-background-color: #ebebeb;">
-               <effect>
-                  <InnerShadow color="#00000055" height="5.0" radius="2.0" width="5.0" />
-               </effect>
-               <children>
-                  <Label fx:id="movieReleaseDateDetails" alignment="CENTER" layoutX="171.0" layoutY="66.0" prefHeight="30.0" prefWidth="177.5" text="Release Date">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-               </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="688.0"
+            prefWidth="1142.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.company.MoodMoviesPageController">
+    <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="88.0" prefWidth="1142.0"
+                style="-fx-background-color: #474448;">
+        <effect>
+            <DropShadow height="25.0" radius="5.75" spread="0.25" width="0.0"/>
+        </effect>
+        <Button fx:id="homeBtn" layoutX="314.0" layoutY="13.0" mnemonicParsing="false"
+                onAction="#openMovieRentalHomePage" prefHeight="62.0" prefWidth="129.0"
+                style="-fx-background-color: #474448;" text="Home" textFill="#fc9e4f"
+                AnchorPane.rightAnchor="699.0">
+            <font>
+                <Font size="22.0"/>
+            </font>
+            <effect>
+                <DropShadow blurType="TWO_PASS_BOX" color="#000000aa"/>
+            </effect>
+        </Button>
+        <Button fx:id="accountBtn" layoutX="506.0" layoutY="13.0" mnemonicParsing="false"
+                onAction="#openAccountPage" prefHeight="62.0" prefWidth="133.0"
+                style="-fx-background-color: #474448;" text="Account" textFill="#fc9e4f">
+            <font>
+                <Font size="22.0"/>
+            </font>
+            <effect>
+                <DropShadow blurType="TWO_PASS_BOX" color="#000000aa"/>
+            </effect>
+        </Button>
+        <Button fx:id="moodBtn" layoutX="701.0" layoutY="13.0" mnemonicParsing="false" onAction="#openMoodPage"
+                prefHeight="62.0" prefWidth="150.0" style="-fx-background-color: #474448;" text="In a Mood"
+                textFill="#f6f6f6" AnchorPane.leftAnchor="701.0">
+            <font>
+                <Font size="22.0"/>
+            </font>
+            <effect>
+                <DropShadow blurType="TWO_PASS_BOX" color="#000000aa"/>
+            </effect>
+        </Button>
+        <ImageView fitHeight="80.0" fitWidth="227.0" layoutX="14.0" layoutY="4.0"
+                   pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0">
+            <Image url="@Generic_Movie_Company_Logo.png"/>
+        </ImageView>
+    </AnchorPane>
+    <AnchorPane layoutX="-1.0" layoutY="89.0" prefHeight="600.0" prefWidth="1142.0"
+                style="-fx-background-color: #f6f6f6;">
+        <GridPane layoutY="118.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="199.0"
+                  prefWidth="1142.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
+                <ImageView fx:id="moodBanner01" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel01" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0"
+                       maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e"
+                       wrapText="true" AnchorPane.bottomAnchor="5.0"/>
             </AnchorPane>
-            <AnchorPane layoutX="303.0" layoutY="106.0" prefHeight="318.0" prefWidth="520.0" style="-fx-background-color: #ebebeb;">
-               <effect>
-                  <InnerShadow color="#00000055" height="5.0" radius="2.0" width="5.0" />
-               </effect>
-               <children>
-                  <Label fx:id="movieOverviewDetails" alignment="CENTER" layoutX="10.0" layoutY="89.0" prefHeight="215.0" prefWidth="500.0" text="Overview" textAlignment="JUSTIFY" wrapText="true">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="movieTaglineDetails" alignment="CENTER" layoutX="10.0" prefHeight="82.0" prefWidth="500.0" text="Tagline" wrapText="true">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-               </children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="1">
+                <ImageView fx:id="moodBanner02" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel02" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0"
+                       layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER"
+                       textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0"/>
             </AnchorPane>
-            <AnchorPane layoutX="8.0" layoutY="443.0" prefHeight="41.0" prefWidth="285.0" style="-fx-background-color: #ebebeb;">
-               <effect>
-                  <InnerShadow color="#00000055" height="5.0" radius="2.0" width="5.0" />
-               </effect>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="2">
+                <ImageView fx:id="moodBanner03" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel03" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0"
+                       layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER"
+                       textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0"/>
             </AnchorPane>
-            <Label fx:id="movieTitleDetails" alignment="CENTER" layoutX="302.0" layoutY="10.0" prefHeight="62.0" prefWidth="520.0" text="MOVIE TITLE">
-               <font>
-                  <Font size="42.0" />
-               </font>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="3">
+                <ImageView fx:id="moodBanner04" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel04" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0"
+                       layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER"
+                       textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0"/>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="4">
+                <ImageView fx:id="moodBanner05" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel05" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0"
+                       maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e"
+                       wrapText="true" AnchorPane.bottomAnchor="5.0"/>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="5">
+                <ImageView fx:id="moodBanner06" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel06" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0"
+                       maxWidth="150.0" prefHeight="17.0" prefWidth="150.0" textAlignment="CENTER"
+                       textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0"/>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="6">
+                <ImageView fx:id="moodBanner07" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel07" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0"
+                       maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e"
+                       wrapText="true" AnchorPane.bottomAnchor="5.0"/>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="7">
+                <ImageView fx:id="moodBanner08" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel08" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0"
+                       maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e"
+                       wrapText="true" AnchorPane.bottomAnchor="5.0"/>
+            </AnchorPane>
+        </GridPane>
+        <GridPane layoutY="333.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="199.0"
+                  prefWidth="1142.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0">
+                <ImageView fx:id="moodBanner09" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel09" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0"
+                       maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e"
+                       wrapText="true" AnchorPane.bottomAnchor="5.0"/>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="1">
+                <ImageView fx:id="moodBanner10" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel10" alignment="CENTER" contentDisplay="CENTER" layoutX="-7.0"
+                       layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER"
+                       textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0"/>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="2">
+                <ImageView fx:id="moodBanner11" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel11" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0"
+                       layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER"
+                       textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0"/>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="3">
+                <ImageView fx:id="moodBanner12" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel12" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0"
+                       layoutY="177.0" maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER"
+                       textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0"/>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="4">
+                <ImageView fx:id="moodBanner13" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel13" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0"
+                       maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e"
+                       wrapText="true" AnchorPane.bottomAnchor="5.0"/>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="5">
+                <ImageView fx:id="moodBanner14" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel14" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0"
+                       maxWidth="150.0" prefHeight="17.0" prefWidth="150.0" textAlignment="CENTER"
+                       textFill="#514e4e" wrapText="true" AnchorPane.bottomAnchor="5.0"/>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="6">
+                <ImageView fx:id="moodBanner15" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel15" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0"
+                       maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e"
+                       wrapText="true" AnchorPane.bottomAnchor="5.0"/>
+            </AnchorPane>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="199.0" prefWidth="150.0"
+                        GridPane.columnIndex="7">
+                <ImageView fx:id="moodBanner16" fitHeight="168.0" fitWidth="133.0" layoutX="15.0"
+                           onMouseClicked="#showMovieDetailsRecommended"
+                           onMouseEntered="#handleImageMouseEntered"
+                           onMouseExited="#handleImageMouseExit" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow height="32.0" radius="15.5" width="32.0"/>
+                    </effect>
+                </ImageView>
+                <Label fx:id="moodLabel16" alignment="CENTER" contentDisplay="CENTER" layoutY="177.0"
+                       maxWidth="150.0" prefWidth="150.0" textAlignment="CENTER" textFill="#514e4e"
+                       wrapText="true" AnchorPane.bottomAnchor="5.0"/>
+            </AnchorPane>
+        </GridPane>
+        <Label layoutX="27.0" layoutY="28.0" text="In a mood ">
+            <font>
+                <Font size="36.0"/>
+            </font>
+        </Label>
+        <Label fx:id="moodTitle" layoutX="200.0" layoutY="28.0" text="for something...">
+            <font>
+                <Font size="36.0"/>
+            </font>
+        </Label>
+    </AnchorPane>
+    <AnchorPane fx:id="MovieDetailsPane" prefHeight="517.0" prefWidth="834.0" style="-fx-background-color: #f6f6f6;"
+                AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="153.0"
+                AnchorPane.topAnchor="100.0">
+        <effect>
+            <DropShadow color="#0000009c" height="74.37" radius="38.167500000000004" width="80.3"/>
+        </effect>
+        <ImageView fx:id="moviePosterDetails" fitHeight="431.0" fitWidth="285.0" layoutX="8.0" layoutY="10.0"
+                   pickOnBounds="true" preserveRatio="true"/>
+        <AnchorPane layoutX="303.0" layoutY="6.0" prefHeight="95.0" prefWidth="520.0"
+                    style="-fx-background-color: #ebebeb;">
+            <effect>
+                <InnerShadow color="#00000055" height="5.0" radius="2.0" width="5.0"/>
+            </effect>
+            <Label fx:id="movieReleaseDateDetails" alignment="CENTER" layoutX="171.0" layoutY="66.0"
+                   prefHeight="30.0" prefWidth="177.5" text="Release Date">
+                <font>
+                    <Font size="16.0"/>
+                </font>
             </Label>
-            <Label fx:id="movieRuntimeDetails" layoutX="10.0" layoutY="448.0" prefHeight="30.0" prefWidth="178.0" text="Runtime">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
+        </AnchorPane>
+        <AnchorPane layoutX="303.0" layoutY="106.0" prefHeight="318.0" prefWidth="520.0"
+                    style="-fx-background-color: #ebebeb;">
+            <effect>
+                <InnerShadow color="#00000055" height="5.0" radius="2.0" width="5.0"/>
+            </effect>
+            <Label fx:id="movieOverviewDetails" alignment="CENTER" layoutX="10.0" layoutY="93.0"
+                   prefHeight="215.0" prefWidth="500.0" text="Overview" textAlignment="JUSTIFY"
+                   wrapText="true">
+                <font>
+                    <Font size="20.0"/>
+                </font>
             </Label>
-            <Label fx:id="movieRatingsDetails" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="189.0" layoutY="448.0" prefHeight="30.0" prefWidth="99.0" text="Rating" textAlignment="RIGHT">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
+            <Label fx:id="movieTaglineDetails" alignment="CENTER" layoutX="10.0" layoutY="52.0"
+                   prefHeight="41.0" prefWidth="500.0" text="Tagline" wrapText="true">
+                <font>
+                    <Font size="20.0"/>
+                </font>
             </Label>
-            <Button layoutX="446.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleRentMovie" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="54.0" prefWidth="378.0" style="-fx-background-color: fc9e4f;" text="Rent Now!" textFill="#f6f6f6">
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-               <effect>
-                  <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
-               </effect>
-            </Button>
-            <Button layoutX="311.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleCloseMovieDetails" onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit" prefHeight="54.0" prefWidth="124.0" style="-fx-background-color: #474448;" text="Back" textFill="#f6f6f6">
-               <font>
-                  <Font size="22.0" />
-               </font>
-               <effect>
-                  <DropShadow blurType="TWO_PASS_BOX" color="#000000aa" />
-               </effect>
-            </Button>
-         </children>
-         <effect>
-            <DropShadow color="#0000009c" height="74.37" radius="38.167500000000004" width="80.3" />
-         </effect>
-      </AnchorPane>
-   </children>
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="52.0" text="Starring:">
+                <font>
+                    <Font name="System Bold" size="12.0"/>
+                </font>
+            </Label>
+            <Label fx:id="movieStarringDetails" layoutX="62.0" layoutY="10.0" prefHeight="30.0"
+                   prefWidth="178.0" text="Label"/>
+            <Label layoutX="260.0" layoutY="10.0" prefHeight="30.0" prefWidth="73.0" text="Directed By:">
+                <font>
+                    <Font name="System Bold" size="12.0"/>
+                </font>
+            </Label>
+            <Label fx:id="movieDirectedByDetails" layoutX="333.0" layoutY="10.0" prefHeight="30.0"
+                   prefWidth="178.0" text="Label"/>
+        </AnchorPane>
+        <AnchorPane layoutX="8.0" layoutY="443.0" prefHeight="41.0" prefWidth="285.0"
+                    style="-fx-background-color: #ebebeb;">
+            <effect>
+                <InnerShadow color="#00000055" height="5.0" radius="2.0" width="5.0"/>
+            </effect>
+        </AnchorPane>
+        <Label fx:id="movieTitleDetails" alignment="CENTER" layoutX="302.0" layoutY="10.0" prefHeight="62.0"
+               prefWidth="520.0" text="MOVIE TITLE">
+            <font>
+                <Font size="42.0"/>
+            </font>
+        </Label>
+        <Label fx:id="movieRuntimeDetails" layoutX="10.0" layoutY="448.0" prefHeight="30.0" prefWidth="178.0"
+               text="Runtime">
+            <font>
+                <Font name="System Bold" size="20.0"/>
+            </font>
+        </Label>
+        <Label fx:id="movieRatingsDetails" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="189.0"
+               layoutY="448.0" prefHeight="30.0" prefWidth="99.0" text="Rating" textAlignment="RIGHT">
+            <font>
+                <Font name="System Bold" size="20.0"/>
+            </font>
+        </Label>
+        <Button layoutX="446.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleRentMovie"
+                onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit"
+                prefHeight="54.0" prefWidth="378.0" style="-fx-background-color: fc9e4f;" text="Rent Now!"
+                textFill="#f6f6f6">
+            <font>
+                <Font name="System Bold" size="22.0"/>
+            </font>
+            <effect>
+                <DropShadow blurType="TWO_PASS_BOX" color="#000000aa"/>
+            </effect>
+        </Button>
+        <Button layoutX="311.0" layoutY="430.0" mnemonicParsing="false" onAction="#handleCloseMovieDetails"
+                onMouseEntered="#handleButtonMouseEntered" onMouseExited="#handleButtonMouseExit"
+                prefHeight="54.0" prefWidth="124.0" style="-fx-background-color: #474448;" text="Back"
+                textFill="#f6f6f6">
+            <font>
+                <Font size="22.0"/>
+            </font>
+            <effect>
+                <DropShadow blurType="TWO_PASS_BOX" color="#000000aa"/>
+            </effect>
+        </Button>
+    </AnchorPane>
 </AnchorPane>

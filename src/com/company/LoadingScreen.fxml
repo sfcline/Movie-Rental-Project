@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label layoutX="255.0" layoutY="148.0" text="Please wait, your movies are loading..." textFill="#f6f6f6">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Label>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0"
+            prefWidth="1142.0" style="-fx-background-color: #474448;" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <Label layoutX="272.0" layoutY="249.0" text="Please wait, your movies are loading..." textFill="#f6f6f6">
+        <font>
+            <Font size="36.0"/>
+        </font>
+    </Label>
+    <ImageView fx:id="Logo" fitHeight="195.0" fitWidth="554.0" layoutX="295.0" layoutY="44.0" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@Generic_Movie_Company_Logo.png"/>
+    </ImageView>
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="496.0" layoutY="357.0" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@loading_big.gif"/>
+    </ImageView>
 </AnchorPane>

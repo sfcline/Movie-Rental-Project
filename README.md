@@ -4,7 +4,7 @@
 ![Program](https://github.com/sfcline/Movie-Rental-Project/blob/master/image.png?raw=true)
   
 ## Features
-* Scroll through an endless collection of 249 movies
+* Scroll through an endless collection of 250 movies
 * Choose a movie from our Recommended List that is made specifically for
 the user
 * Search through our collection of movies using keywords, actor’s names,

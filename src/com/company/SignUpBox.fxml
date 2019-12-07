@@ -13,55 +13,70 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="676.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.SignUpBoxController">
-  <children>
-    <GridPane layoutX="0.0" layoutY="0.0" prefHeight="676.0" prefWidth="400.0">
-      <children>
-        <AnchorPane prefHeight="205.0" prefWidth="205.0" style="-fx-background-color: #474448;" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
-               <children>
-                  <ImageView fitHeight="88.0" fitWidth="91.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Generic_Movie_Company_Logo.gif" />
-                     </image>
-                  </ImageView>
-            <Label layoutX="102.0" layoutY="38.0" text="Sign up now!" textFill="#fdfdfd">
-              <font>
-                <Font size="34.0" />
-              </font>
-            </Label>
-               </children></AnchorPane>
-        <AnchorPane prefHeight="292.0" prefWidth="400.0" style="-fx-background-color: #474448;" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
-          <children>
-                  <Label layoutX="97.0" layoutY="40.0" text="First Name" textFill="#fdfdfd" />
-                  <TextField id="userName1" fx:id="username13" layoutX="100.0" layoutY="57.0" onKeyReleased="#checkUsernameLength" prefWidth="200.0" promptText="Type First Name" style="-fx-background-color: #6b6d76;" />
-                  <Label layoutX="97.0" layoutY="102.0" text="Last Name" textFill="#fdfdfd" />
-                  <TextField id="userName1" fx:id="username12" layoutX="97.0" layoutY="119.0" onKeyReleased="#checkUsernameLength" prefWidth="200.0" promptText="Type Last Name" style="-fx-background-color: #6b6d76;" />
-                  <Label layoutX="97.0" layoutY="160.0" text="Email" textFill="#fdfdfd" />
-                  <TextField id="userName1" fx:id="username11" layoutX="97.0" layoutY="177.0" onKeyReleased="#checkUsernameLength" prefWidth="200.0" promptText="Type Email" style="-fx-background-color: #6b6d76;" />
-            <Label layoutX="97.0" layoutY="236.0" text="Create Username" textFill="#fdfdfd" />
-            <TextField id="userName1" fx:id="username1" layoutX="97.0" layoutY="252.0" onKeyReleased="#checkUsernameLength" prefWidth="200.0" promptText="Type Username" style="-fx-background-color: #6b6d76;" />
-            <TextField id="userName2" fx:id="username2" layoutX="97.0" layoutY="285.0" onKeyReleased="#checkUsernameLength" prefWidth="200.0" promptText="Re-Type Username" style="-fx-background-color: #6b6d76;" />
-            <Label fx:id="errorCodeTop" alignment="CENTER" layoutY="310.0" prefWidth="400.0" text="" textAlignment="CENTER" textFill="RED" />
-            <Label layoutX="99.0" layoutY="343.0" text="Create Password" textFill="#fdfdfd" />
-            <PasswordField fx:id="password1" layoutX="97.0" layoutY="360.0" onKeyReleased="#checkPasswordLength" prefWidth="200.0" promptText="Type Password" style="-fx-background-color: #6b6d76;" />
-            <PasswordField fx:id="password2" layoutX="97.0" layoutY="392.0" onKeyReleased="#checkPasswordLength" prefWidth="200.0" promptText="Re-Type Password" style="-fx-background-color: #6b6d76;" />
-            <Label fx:id="errorCodeBottom" alignment="CENTER" layoutX="1.0" layoutY="417.0" prefWidth="398.0" text="" textAlignment="CENTER" textFill="RED" />
-                  <RadioButton fx:id="ageButton" layoutX="97.0" layoutY="453.0" mnemonicParsing="false" text="I am over the age of 13" textFill="#f6f6f6" />
-                  <Label fx:id="ageError" alignment="CENTER" layoutX="-3.0" layoutY="470.0" prefHeight="17.0" prefWidth="400.0" textAlignment="CENTER" />
-            <Button id="signInBtn" fx:id="signUpBtn" layoutX="271.0" layoutY="514.0" mnemonicParsing="false" onAction="#signUpButtonPressed" style="-fx-background-color: #fc9e4f;" text="Sign Up" textFill="#fdfdfd" />
-            <Label fx:id="newUserLabel" alignment="CENTER" layoutX="-2.0" layoutY="555.0" prefWidth="398.0" text="" textAlignment="CENTER" />
-          </children>
+<AnchorPane prefHeight="676.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.company.SignUpBoxController">
+    <GridPane prefHeight="676.0" prefWidth="400.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="81.5" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="394.5" minHeight="10.0" prefHeight="368.5" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <AnchorPane prefHeight="205.0" prefWidth="205.0" style="-fx-background-color: #474448;"
+                    GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
+            <ImageView fitHeight="88.0" fitWidth="223.0" layoutX="89.0" layoutY="14.0" pickOnBounds="true"
+                       preserveRatio="true">
+                <Image url="@Generic_Movie_Company_Logo.png"/>
+            </ImageView>
         </AnchorPane>
-      </children>
-      <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      </columnConstraints>
-      <rowConstraints>
-        <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="81.5" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="394.5" minHeight="10.0" prefHeight="368.5" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      </rowConstraints>
+        <AnchorPane prefHeight="292.0" prefWidth="400.0" style="-fx-background-color: #474448;"
+                    GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="2">
+            <Label layoutX="97.0" layoutY="40.0" text="First Name" textFill="#fdfdfd"/>
+            <TextField id="userName1" layoutX="100.0" layoutY="57.0"
+                       onKeyReleased="#checkUsernameLength" prefWidth="200.0" promptText="Type First Name"
+                       style="-fx-background-color: #6b6d76;"/>
+            <Label layoutX="97.0" layoutY="102.0" text="Last Name" textFill="#fdfdfd"/>
+            <TextField id="userName1" layoutX="97.0" layoutY="119.0"
+                       onKeyReleased="#checkUsernameLength" prefWidth="200.0" promptText="Type Last Name"
+                       style="-fx-background-color: #6b6d76;"/>
+            <Label layoutX="97.0" layoutY="160.0" text="Email" textFill="#fdfdfd"/>
+            <TextField id="userName1" layoutX="97.0" layoutY="177.0"
+                       onKeyReleased="#checkUsernameLength" prefWidth="200.0" promptText="Type Email"
+                       style="-fx-background-color: #6b6d76;"/>
+            <Label layoutX="97.0" layoutY="236.0" text="Create Username" textFill="#fdfdfd"/>
+            <TextField id="userName1" fx:id="username1" layoutX="97.0" layoutY="252.0"
+                       onKeyReleased="#checkUsernameLength" prefWidth="200.0" promptText="Type Username"
+                       style="-fx-background-color: #6b6d76;"/>
+            <TextField id="userName2" fx:id="username2" layoutX="97.0" layoutY="285.0"
+                       onKeyReleased="#checkUsernameLength" prefWidth="200.0" promptText="Re-Type Username"
+                       style="-fx-background-color: #6b6d76;"/>
+            <Label fx:id="errorCodeTop" alignment="CENTER" layoutY="310.0" prefWidth="400.0"
+                   textAlignment="CENTER" textFill="RED"/>
+            <Label layoutX="99.0" layoutY="343.0" text="Create Password" textFill="#fdfdfd"/>
+            <PasswordField fx:id="password1" layoutX="97.0" layoutY="360.0"
+                           onKeyReleased="#checkPasswordLength" prefWidth="200.0" promptText="Type Password"
+                           style="-fx-background-color: #6b6d76;"/>
+            <PasswordField fx:id="password2" layoutX="97.0" layoutY="392.0"
+                           onKeyReleased="#checkPasswordLength" prefWidth="200.0"
+                           promptText="Re-Type Password" style="-fx-background-color: #6b6d76;"/>
+            <Label fx:id="errorCodeBottom" alignment="CENTER" layoutX="1.0" layoutY="417.0"
+                   prefWidth="398.0" textAlignment="CENTER" textFill="RED"/>
+            <RadioButton fx:id="ageButton" layoutX="97.0" layoutY="453.0" mnemonicParsing="false"
+                         text="I am over the age of 13" textFill="#f6f6f6"/>
+            <Label fx:id="ageError" alignment="CENTER" layoutX="-3.0" layoutY="470.0" prefHeight="17.0"
+                   prefWidth="400.0" textAlignment="CENTER"/>
+            <Button id="signInBtn" fx:id="signUpBtn" layoutX="271.0" layoutY="514.0" mnemonicParsing="false"
+                    onAction="#signUpButtonPressed" style="-fx-background-color: #fc9e4f;" text="Sign Up"
+                    textFill="#fdfdfd"/>
+            <Label fx:id="newUserLabel" alignment="CENTER" layoutX="-2.0" layoutY="555.0" prefWidth="398.0"
+                   textAlignment="CENTER"/>
+            <Label layoutX="133.0" text="Sign up now!" textFill="#fdfdfd">
+                <font>
+                    <Font size="22.0"/>
+                </font>
+            </Label>
+        </AnchorPane>
     </GridPane>
-  </children>
 </AnchorPane>
