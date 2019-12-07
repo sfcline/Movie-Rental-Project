@@ -21,7 +21,7 @@ Requirements:
 * Java SE Runtime Environment 8 
 
 Instructions:
-* Please reference the User Guide below
+* Please reference the [User Guide](https://sfcline.github.io/Movie-Rental-Project/User%20Manual%20YASS.pdf "YASS User Guide")
 
 ## User Guide
 https://sfcline.github.io/Movie-Rental-Project/User%20Manual%20YASS.pdf
