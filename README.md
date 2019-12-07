@@ -25,6 +25,9 @@ Instructions:
 * Sign up
 * Sign in
 
+## Software Specifications
+https://sfcline.github.io/Movie-Rental-Project/Movie_Rental_Project_Software_Specifications.pdf
+
 ## User Guide
 https://sfcline.github.io/Movie-Rental-Project/User%20Manual%20YASS.pdf
 
